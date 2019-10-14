@@ -4,6 +4,7 @@ var express = require('express');
 var compress = require('compression');
 var fs = require('fs-extra');
 var path = require('path');
+var sass = require('node-sass');
 
 var app = express();
 app.use(compress());
@@ -40,7 +41,8 @@ app.get('/js', (_req, res) => {
 });
 
 app.get('/css', (_req, res) => {
-	readFile('client/stylesheet.css')
+	readFile('client/stylesheet.scss')
+		.then((data) => renderSass(data))
 		.then((data) => {
 			res.type('text/css');
 			res.status(200);
@@ -65,5 +67,14 @@ function readFile(filename) {
 			.then((bytes) => bytes.toString())
 			.then((data) => resolve(data))
 			.catch((err) => reject(err));
+	});
+}
+
+function renderSass(data) {
+	return new Promise((resolve, reject) => {
+		sass.render({ data: data }, (err, result) => {
+			if (err) reject(err);
+			else resolve(result.css.toString());
+		});
 	});
 }
