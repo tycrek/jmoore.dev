@@ -1,0 +1,23 @@
+{
+  "name": "jmoore.dev",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tycrek/jmoore.dev.git"
+  },
+  "author": "Joshua Moore",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/tycrek/jmoore.dev/issues"
+  },
+  "homepage": "https://github.com/tycrek/jmoore.dev#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1"
+  }
+}
