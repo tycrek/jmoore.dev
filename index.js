@@ -9,7 +9,10 @@ var sass = require('node-sass');
 
 var app = express();
 app.use(compress());
-app.use(helmet());
+app.use(helmet({
+	noCache: true,
+	referrerPolicy: true
+}));
 
 // routes
 app.get('/', (_req, res) => {
@@ -31,6 +34,7 @@ app.get('/js', (_req, res) => {
 	readFile('client/jmoore.js')
 		.then((data) => {
 			res.type('js');
+			res.removeHeader('X-XSS-Protection');
 			res.status(200);
 			return data;
 		})
@@ -47,6 +51,7 @@ app.get('/css', (_req, res) => {
 		.then((data) => renderSass(data))
 		.then((data) => {
 			res.type('text/css');
+			res.removeHeader('X-XSS-Protection');
 			res.status(200);
 			return data;
 		})
