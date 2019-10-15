@@ -10,11 +10,19 @@ var sass = require('node-sass');
 var app = express();
 app.use(compress());
 app.use(helmet({
-	noCache: true,
 	referrerPolicy: true
 }));
 
 // routes
+app.use((_req, res, next) => {
+	res.setHeader('Cache-Control', 'no-store, no-cache, proxy-revalidate');
+	res.setHeader('Surrogate-Control', 'no-store');
+	res.setHeader('Pragma', 'no-cache');
+	res.setHeader('Expires', '0');
+
+	next();
+});
+
 app.get('/', (_req, res) => {
 	readFile('client/index.html')
 		.then((data) => {
