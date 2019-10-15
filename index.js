@@ -2,12 +2,14 @@ const PORT = 8235;
 
 var express = require('express');
 var compress = require('compression');
+var helmet = require('helmet');
 var fs = require('fs-extra');
 var path = require('path');
 var sass = require('node-sass');
 
 var app = express();
 app.use(compress());
+app.use(helmet());
 
 // routes
 
