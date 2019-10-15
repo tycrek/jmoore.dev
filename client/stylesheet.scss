@@ -52,14 +52,20 @@ body {
 
 		#social {
 			display: inline-block;
-			text-align: left;
 			font-size: 2em;
 			line-height: 2em;
 
 			a {
 				text-decoration: none;
 				color: #EF6C00;
+				display: table-row;
 				&:hover { border-bottom: 2px solid orange; }
+				i, text {
+					display: table-cell;
+				}
+				text {
+					text-align: left;
+				}
 			}
 		}
 	}
