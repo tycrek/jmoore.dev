@@ -10,6 +10,12 @@ var app = express();
 app.use(compress());
 
 // routes
+
+app.use((_req, res, next) => {
+	res.removeHeader('X-Powered-By');
+	next();
+});
+
 app.get('/', (_req, res) => {
 	readFile('client/index.html')
 		.then((data) => {
