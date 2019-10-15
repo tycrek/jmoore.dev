@@ -15,7 +15,7 @@ app.use(helmet({
 
 // routes
 app.use((_req, res, next) => {
-	res.setHeader('Cache-Control', 'no-store, no-cache, proxy-revalidate');
+	res.setHeader('Cache-Control', 'no-cache, proxy-revalidate');
 	res.setHeader('Surrogate-Control', 'no-store');
 	res.setHeader('Pragma', 'no-cache');
 	res.setHeader('Expires', '0');
