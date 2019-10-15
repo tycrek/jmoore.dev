@@ -5,7 +5,7 @@ Source code for my personal website
 
 #### Android
 
-- [ ] Chrome
+- [x] Chrome
 - [x] Chrome Beta
 - [x] Chrome Dev
 - [x] Chrome Canary
@@ -14,15 +14,15 @@ Source code for my personal website
 - [x] Firefox Preview
 - [x] Firefox Focus
 - [x] Edge
-- [ ] Samsung Internet
-- [ ] Opera
-- [ ] Opera Mini
-- [ ] Brave
-- [ ] UC Turbo
-- [ ] Mint Browser
-- [ ] CM Browser
-- [ ] PHX Browser
-- [ ] Dolphin
+- [x] Samsung Internet
+- [x] Opera
+- [x] Opera Mini
+- [x] Brave
+- [x] UC Turbo
+- [x] Mint Browser
+- [x] CM Browser
+- [x] PHX Browser
+- [x] Dolphin
 
 #### iOS
 
@@ -49,8 +49,8 @@ Source code for my personal website
 
 #### Linux
 
-- [ ] Firefox
-- [ ] Chromium
+- [x] Firefox
+- [x] Chromium
 
 #### Other
 
