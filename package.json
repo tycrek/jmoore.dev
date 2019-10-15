@@ -20,6 +20,7 @@
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "fs-extra": "^8.1.0",
+    "helmet": "^3.21.1",
     "node-sass": "^4.12.0"
   }
 }
