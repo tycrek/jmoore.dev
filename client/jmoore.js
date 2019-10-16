@@ -62,6 +62,7 @@ const DATA = {
 	socials: SOCIALS,
 };
 
+// Vue.js components //
 Vue.component('social-link', {
 	props: ['address', 'icon', 'title'],
 	template: TEMPLATES.socialLink
@@ -77,6 +78,7 @@ Vue.component('photo', {
 	template: TEMPLATES.photo
 });
 
+// Vue.js app //
 var app = new Vue({
 	el: '#card',
 	data: DATA
