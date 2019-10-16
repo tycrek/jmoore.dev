@@ -45,7 +45,7 @@
 	<!-- Scripts -->
 	<script src="https://kit.fontawesome.com/f2f926ac2d.js" crossorigin="anonymous"
 		integrity="sha384-7uTRzazbrutfIzOojrJw4QL+wCBwLn03McGtkCd53kDbTPTqB20x+Ah36TGTcRHB"></script>
-	<script src="js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 </head>
 
 <body>
@@ -75,7 +75,10 @@
 				<div id="card-right" class="col-6 card-column">
 					<div id="social">
 
-						<a target="_blank" rel="noopener noreferrer" href="mailto:josh.moore@jmoore.dev">
+						<social-link v-for="social in socials" :key="social.id" :address="social.address"
+							:icon="social.icon" :title="social.title"></social-link>
+
+						<!--a target="_blank" rel="noopener noreferrer" href="mailto:josh.moore@jmoore.dev">
 							<i class="far fa-envelope"></i>
 							&nbsp;
 							<text>Email</text>
@@ -98,7 +101,7 @@
 							<i class="fab fa-instagram"></i>
 							&nbsp;
 							<text>Instagram</text>
-						</a>
+						</a-->
 					</div>
 				</div>
 			</div>
@@ -106,6 +109,7 @@
 
 		<div class="col-2">&nbsp;</div>
 	</div>
+	<script src="js"></script>
 </body>
 
 </html>
