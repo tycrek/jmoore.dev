@@ -1,3 +1,4 @@
+// jmoore.dev //
 
 // Information for social links //
 const SOCIALS = [
@@ -34,8 +35,7 @@ const TEMPLATES = {
 			<i :class="icon"></i>
 			&nbsp;
 			<title>{{ title }}</title>
-		</a>
-	`,
+		</a>`,
 	profile: `
 		<div>
 			<strong id="name">{{ name }}</strong>
@@ -44,13 +44,11 @@ const TEMPLATES = {
 			<br>
 			<i class="fas fa-map-marker-alt"></i>
 			{{ location }}
-		</div>
-	`,
+		</div>`,
 	photo: `
 		<div>
 			<img :id="id" :src="src" :alt="alt">
-		</div>
-	`
+		</div>`
 };
 
 // Vue.js primary data object //
