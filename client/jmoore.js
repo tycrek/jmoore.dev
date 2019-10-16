@@ -50,6 +50,18 @@ const TEMPLATES = {
 	`
 };
 
+const DATA = {
+	name: 'Joshua Moore',
+	career: 'Software developer',
+	location: 'Edmonton, Alberta',
+	photo: {
+		id: 'profile-picture',
+		src: 'https://space.jmoore.dev/images/profile-normal-small.jpg',
+		alt: 'Profile picture of Joshua Moore.'
+	},
+	socials: SOCIALS,
+};
+
 Vue.component('social-link', {
 	props: ['address', 'icon', 'title'],
 	template: TEMPLATES.socialLink
@@ -67,15 +79,5 @@ Vue.component('photo', {
 
 var app = new Vue({
 	el: '#card',
-	data: {
-		name: 'Joshua Moore',
-		career: 'Software developer',
-		location: 'Edmonton, Alberta',
-		photo: {
-			id: 'profile-picture',
-			src: 'https://space.jmoore.dev/images/profile-normal-small.jpg',
-			alt: 'Profile picture of Joshua Moore.'
-		},
-		socials: SOCIALS,
-	}
+	data: DATA
 });
