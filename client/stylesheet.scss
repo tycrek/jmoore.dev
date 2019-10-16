@@ -60,10 +60,10 @@ body {
 				color: #EF6C00;
 				display: table-row;
 				&:hover { border-bottom: 2px solid orange; }
-				i, text {
+				i, title {
 					display: table-cell;
 				}
-				text {
+				title {
 					text-align: left;
 				}
 			}
