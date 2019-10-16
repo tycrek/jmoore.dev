@@ -58,50 +58,21 @@
 				<!-- Card left -->
 				<div id="card-left" class="col-6 card-column">
 					<div>
-						<img id="profile-picture" src="https://space.jmoore.dev/images/profile-normal-small.jpg"
-							alt="Profile picture of Joshua Moore.">
+						<img :id="picture.id" :src="picture.src" :alt="picture.alt">
 					</div>
 
-					<div>
-						<strong id="name">Joshua Moore</strong><br>
-						<em>Software developer</em>
-						<br>
-						<i class="fas fa-map-marker-alt"></i>
-						Edmonton, Alberta
-					</div>
+					<strong id="name">{{ name }}</strong><br>
+					<em>{{ career }}</em>
+					<br>
+					<i class="fas fa-map-marker-alt"></i>
+					{{ location }}
 				</div>
 
 				<!-- Card right -->
 				<div id="card-right" class="col-6 card-column">
 					<div id="social">
-
 						<social-link v-for="social in socials" :key="social.id" :address="social.address"
 							:icon="social.icon" :title="social.title"></social-link>
-
-						<!--a target="_blank" rel="noopener noreferrer" href="mailto:josh.moore@jmoore.dev">
-							<i class="far fa-envelope"></i>
-							&nbsp;
-							<text>Email</text>
-						</a>
-
-						<a target="_blank" rel="noopener noreferrer"
-							href="https://www.linkedin.com/in/joshua-moore-95445313b/">
-							<i class="fab fa-linkedin"></i>
-							&nbsp;
-							<text>LinkedIn</text>
-						</a>
-
-						<a target="_blank" rel="noopener noreferrer" href="https://github.com/tycrek">
-							<i class="fab fa-github"></i>
-							&nbsp;
-							<text>GitHub</text>
-						</a>
-
-						<a target="_blank" rel="noopener noreferrer" href="https://instagram.com/tycrek">
-							<i class="fab fa-instagram"></i>
-							&nbsp;
-							<text>Instagram</text>
-						</a-->
 					</div>
 				</div>
 			</div>

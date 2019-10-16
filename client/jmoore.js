@@ -44,6 +44,14 @@ Vue.component('social-link', {
 var app = new Vue({
 	el: '#card',
 	data: {
+		name: 'Joshua Moore',
+		career: 'Software developer',
+		location: 'Edmonton, Alberta',
+		picture: {
+			id: 'profile-picture',
+			src: 'https://space.jmoore.dev/images/profile-normal-small.jpg',
+			alt: 'Profile picture of Joshua Moore.'
+		},
 		socials: SOCIALS,
 	}
 });
