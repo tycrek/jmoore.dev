@@ -25,47 +25,44 @@ const SOCIALS = [
 	}
 ];
 
-
-var socialLinkTemplate = `
-<a target="_blank" rel="noopener noreferrer"
-	:href="address">
-
-	<i :class="icon"></i>
-	&nbsp;
-	<title>{{ title }}</title>
-</a>
-`;
-
-var profileTemplate = `
-<div>
-	<strong id="name">{{ name }}</strong>
-	<br>
-	<em id="career">{{ career }}</em>
-	<br>
-	<i class="fas fa-map-marker-alt"></i>
-	{{ location }}
-</div>
-`;
-
-var photoTemplate = `
-<div>
-	<img :id="id" :src="src" :alt="alt">
-</div>
-`;
+const TEMPLATES = {
+	socialLink: `
+		<a :href="address" target="_blank" rel="noopener noreferrer">
+			<i :class="icon"></i>
+			&nbsp;
+			<title>{{ title }}</title>
+		</a>
+	`,
+	profile: `
+		<div>
+			<strong id="name">{{ name }}</strong>
+			<br>
+			<em id="career">{{ career }}</em>
+			<br>
+			<i class="fas fa-map-marker-alt"></i>
+			{{ location }}
+		</div>
+	`,
+	photo: `
+		<div>
+			<img :id="id" :src="src" :alt="alt">
+		</div>
+	`
+};
 
 Vue.component('social-link', {
 	props: ['address', 'icon', 'title'],
-	template: socialLinkTemplate
+	template: TEMPLATES.socialLink
 });
 
 Vue.component('profile', {
 	props: ['name', 'career', 'location'],
-	template: profileTemplate
+	template: TEMPLATES.profile
 });
 
 Vue.component('photo', {
 	props: ['id', 'src', 'alt'],
-	template: photoTemplate
+	template: TEMPLATES.photo
 });
 
 var app = new Vue({
