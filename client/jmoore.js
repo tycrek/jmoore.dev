@@ -36,9 +36,25 @@ var socialLinkTemplate = `
 </a>
 `;
 
+var profileTemplate = `
+<div>
+	<strong id="name">{{ name }}</strong>
+	<br>
+	<em id="career">{{ career }}</em>
+	<br>
+	<i class="fas fa-map-marker-alt"></i>
+	{{ location }}
+</div>
+`;
+
 Vue.component('social-link', {
 	props: ['address', 'icon', 'title'],
 	template: socialLinkTemplate
+});
+
+Vue.component('profile', {
+	props: ['name', 'career', 'location'],
+	template: profileTemplate
 });
 
 var app = new Vue({

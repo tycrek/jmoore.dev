@@ -61,11 +61,7 @@
 						<img :id="picture.id" :src="picture.src" :alt="picture.alt">
 					</div>
 
-					<strong id="name">{{ name }}</strong><br>
-					<em>{{ career }}</em>
-					<br>
-					<i class="fas fa-map-marker-alt"></i>
-					{{ location }}
+					<profile :name="name" :career="career" :location="location"></profile>
 				</div>
 
 				<!-- Card right -->
