@@ -1,3 +1,5 @@
+
+// Information for social links //
 const SOCIALS = [
 	{
 		address: 'mailto:josh.moore@jmoore.dev',
@@ -25,6 +27,7 @@ const SOCIALS = [
 	}
 ];
 
+// Vue.js component templates //
 const TEMPLATES = {
 	socialLink: `
 		<a :href="address" target="_blank" rel="noopener noreferrer">
@@ -50,6 +53,7 @@ const TEMPLATES = {
 	`
 };
 
+// Vue.js primary data object //
 const DATA = {
 	name: 'Joshua Moore',
 	career: 'Software developer',
