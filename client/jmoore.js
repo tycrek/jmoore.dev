@@ -33,7 +33,8 @@ var socialLinkTemplate = `
 	<i :class="icon"></i>
 	&nbsp;
 	<title>{{ title }}</title>
-</a>`;
+</a>
+`;
 
 Vue.component('social-link', {
 	props: ['address', 'icon', 'title'],
