@@ -47,6 +47,12 @@ var profileTemplate = `
 </div>
 `;
 
+var photoTemplate = `
+<div>
+	<img :id="id" :src="src" :alt="alt">
+</div>
+`;
+
 Vue.component('social-link', {
 	props: ['address', 'icon', 'title'],
 	template: socialLinkTemplate
@@ -57,13 +63,18 @@ Vue.component('profile', {
 	template: profileTemplate
 });
 
+Vue.component('photo', {
+	props: ['id', 'src', 'alt'],
+	template: photoTemplate
+});
+
 var app = new Vue({
 	el: '#card',
 	data: {
 		name: 'Joshua Moore',
 		career: 'Software developer',
 		location: 'Edmonton, Alberta',
-		picture: {
+		photo: {
 			id: 'profile-picture',
 			src: 'https://space.jmoore.dev/images/profile-normal-small.jpg',
 			alt: 'Profile picture of Joshua Moore.'

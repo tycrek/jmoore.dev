@@ -57,9 +57,7 @@
 
 				<!-- Card left -->
 				<div id="card-left" class="col-6 card-column">
-					<div>
-						<img :id="picture.id" :src="picture.src" :alt="picture.alt">
-					</div>
+					<photo :id="photo.id" :src="photo.src" :alt="photo.alt"></photo>
 
 					<profile :name="name" :career="career" :location="location"></profile>
 				</div>
