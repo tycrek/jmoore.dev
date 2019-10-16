@@ -79,7 +79,10 @@ function readFile(filename) {
 
 function renderSass(data) {
 	return new Promise((resolve, reject) => {
-		sass.render({ data: data }, (err, result) => {
+		sass.render({
+			data: data,
+			outputStyle: 'compressed'
+		}, (err, result) => {
 			if (err) reject(err);
 			else resolve(result.css.toString());
 		});
