@@ -1,0 +1,19 @@
+/* SASS colors */
+$sass-orange: hsl(27.1, 100%, 46.9%);
+$sass-black: hsl(0, 0%, 0%);
+$sass-white: hsl(0, 0%, 100%);
+$sass-grey: hsl(0, 0%, 50%);
+$sass-light-grey: hsl(0, 0%, 75%);
+
+/* Theme colors */
+$theme-primary-color: $sass-orange;
+$card-border-color: $sass-grey;
+$divider-color: $sass-light-grey;
+
+/* Variables */
+$font-stack: (
+  'Source Sans Pro',
+  'Arial',
+  'Helvetica',
+  sans-serif,
+);
