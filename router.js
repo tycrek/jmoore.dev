@@ -39,6 +39,19 @@ router.get('/css', (_req, res) => {
 		.then((data) => res.send(data));
 });
 
+// 404 response
+router.use((_req, res, next) => {
+	res.status(404).type('text');
+	res.send('404 - This is not the page you are looking for');
+});
+
+// 500 response
+router.use((err, req, res, next) => {
+	console.error(err.stack);
+	res.status(500).type('text');
+	res.send('500 - The server is on fire');
+});
+
 // Export router so index.js can access it
 module.exports = router;
 
