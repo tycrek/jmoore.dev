@@ -20,4 +20,8 @@
 .social-title {
   display: table-cell;
   text-align: left;
+
+  &::before {
+    content: $nbsp;
+  }
 }

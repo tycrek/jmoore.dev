@@ -33,7 +33,6 @@ const TEMPLATES = {
 	socialLink: `
 		<a :href="address" class="social-item" target="_blank" rel="noopener noreferrer">
 			<i :class="icon"></i>
-			&nbsp;
 			<span class="social-title">{{ title }}</span>
 		</a>`,
 	profile: `

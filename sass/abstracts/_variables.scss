@@ -25,3 +25,6 @@ $breakpoints: (
   'huge': (min-width: 1200px),
   'medium-old': (max-width: 800px),
 );
+
+/* Non-breaking space code */
+$nbsp: '\00a0';
