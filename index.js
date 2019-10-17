@@ -19,10 +19,10 @@ app.use(helmet({
 // Express routes
 app.get('/', (_req, res) => {
 	readFile('client/index.html')
-		.then((data) => {
+		.then((html) => {
 			res.type('html');
 			res.status(200);
-			return data;
+			return html;
 		})
 		.catch((err) => {
 			res.type('text');
@@ -34,10 +34,10 @@ app.get('/', (_req, res) => {
 
 app.get('/js', (_req, res) => {
 	readFile('client/jmoore.js')
-		.then((data) => {
+		.then((js) => {
 			res.type('js');
 			res.status(200);
-			return data;
+			return js;
 		})
 		.catch((err) => {
 			res.type('text');
@@ -49,11 +49,11 @@ app.get('/js', (_req, res) => {
 
 app.get('/css', (_req, res) => {
 	readFile('client/stylesheet.scss')
-		.then((data) => renderSass(data))
-		.then((data) => {
+		.then((scss) => renderSass(scss))
+		.then((css) => {
 			res.type('text/css');
 			res.status(200);
-			return data;
+			return css;
 		})
 		.catch((err) => {
 			res.type('text');
@@ -77,10 +77,10 @@ function readFile(filename) {
 }
 
 // Render SASS to CSS
-function renderSass(data) {
+function renderSass(scss) {
 	return new Promise((resolve, reject) => {
 		sass.render({
-			data: data,
+			data: scss,
 			outputStyle: 'compressed'
 		}, (err, result) => {
 			if (err) reject(err);
