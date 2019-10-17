@@ -28,8 +28,7 @@ router.get('/js', (_req, res) => {
 
 // CSS route
 router.get('/css', (_req, res) => {
-	readFile('client/stylesheet.scss')
-		.then((scss) => renderSass(scss))
+	renderSass()
 		.then((css) => (res.status(200).type('css'), css))
 		.catch((err) => err)
 		.then((data) => res.send(data));
@@ -59,11 +58,11 @@ function readFile(filename) {
 }
 
 // Render SASS to CSS
-function renderSass(scss) {
+function renderSass() {
 	return new Promise((resolve, reject) => {
 		sass.render({
-			data: scss,
-			outputStyle: 'compressed'
+			file: path.join(__dirname, 'sass/main.scss'),
+			outputStyle: "compressed"
 		}, (err, result) => {
 			if (err) reject(err);
 			else resolve(result.css.toString());
