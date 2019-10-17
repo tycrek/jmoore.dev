@@ -28,7 +28,7 @@ router.get('/js', (_req, res) => {
 
 // CSS route
 router.get('/css', (_req, res) => {
-	readFile('sass/main.scss')
+	readFile('client/stylesheet.scss')
 		.then((scss) => renderSass(scss))
 		.then((css) => (res.status(200).type('css'), css))
 		.catch((err) => err)
