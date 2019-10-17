@@ -12,7 +12,8 @@
     padding: 48px;
   }
 
-  @media only screen and (max-width: 768px) {
+  //@media only screen and (max-width: 768px) {
+  @include respond-to('medium-old') {
     margin-top: unset;
     box-shadow: unset;
     padding: 0 32px 0 32px;
@@ -40,7 +41,8 @@
   #card-right {
     text-align: center;
     border-left: 2px solid $divider-color;
-    @media only screen and (max-width: 768px) {
+    //@media only screen and (max-width: 768px) {
+    @include respond-to('medium-old') {
       border-left: unset;
       border-top: 2px solid $divider-color;
     }
