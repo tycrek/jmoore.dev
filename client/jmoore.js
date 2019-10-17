@@ -31,10 +31,10 @@ const SOCIALS = [
 // Vue.js component templates //
 const TEMPLATES = {
 	socialLink: `
-		<a :href="address" target="_blank" rel="noopener noreferrer">
+		<a :href="address" class="social-item" target="_blank" rel="noopener noreferrer">
 			<i :class="icon"></i>
 			&nbsp;
-			<title>{{ title }}</title>
+			<span class="social-title">{{ title }}</span>
 		</a>`,
 	profile: `
 		<div>

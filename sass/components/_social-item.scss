@@ -1,0 +1,12 @@
+.social-item {
+  color: $theme-primary-color;
+  text-decoration: none;
+  display: table-row;
+  border-bottom: 2px solid $sass-white;
+  &:hover { border-bottom: 2px solid $theme-primary-color; }
+}
+
+.social-title {
+  display: table-cell;
+  text-align: left;
+}
