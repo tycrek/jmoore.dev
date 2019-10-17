@@ -9,13 +9,13 @@
   @include clearfix;
 }
 
+// Single column for mobile devices
 [class*="col-"] {
   float: left;
   width: 100%;
 }
 
-/* Desktop */
-//@media only screen and (min-width: 768px) {
+// Desktop
 @include respond-to('medium') {
   .col-1 { width: 8.33%; }
   .col-2 { width: 16.66%; }
