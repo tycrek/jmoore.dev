@@ -7,13 +7,6 @@ var sass = require('node-sass');
 // Set up the router
 var router = express.Router();
 
-// Preset error response just in case
-router.use((_req, res, next) => {
-	res.type('text');
-	res.status(500);
-	next();
-});
-
 // Index route
 router.get('/', (_req, res) => {
 	readFile('client/index.html')
