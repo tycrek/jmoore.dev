@@ -25,11 +25,11 @@ body {
 }
 
 #card {
-  box-shadow: 2px 2px 2px 2px $card-border-color;
   float: left;
   margin-top: 15vh;
+  box-shadow: 2px 2px 2px 2px $card-border-color;
 
-  .row { // Must keep!
+  .row {
     display: flex;
     align-items: center;
   }
@@ -106,7 +106,6 @@ body {
   display: table;
 }
 [class*="col-"] {
-  width: 100%;
   float: left;
 }
 .col-1 {width: 8.33%;}
