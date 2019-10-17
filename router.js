@@ -14,7 +14,7 @@ router.use((_req, res, next) => {
 	next();
 });
 
-// Express routes
+// Index route
 router.get('/', (_req, res) => {
 	readFile('client/index.html')
 		.then((html) => (res.status(200).type('html'), html))
@@ -22,6 +22,7 @@ router.get('/', (_req, res) => {
 		.then((data) => res.send(data));
 });
 
+// JavaScript route
 router.get('/js', (_req, res) => {
 	readFile('client/jmoore.js')
 		.then((js) => (res.status(200).type('js'), js))
@@ -29,6 +30,7 @@ router.get('/js', (_req, res) => {
 		.then((data) => res.send(data));
 });
 
+// CSS route
 router.get('/css', (_req, res) => {
 	readFile('client/stylesheet.scss')
 		.then((scss) => renderSass(scss))
