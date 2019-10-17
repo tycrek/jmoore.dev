@@ -37,12 +37,10 @@ const TEMPLATES = {
 		</a>`,
 	profile: `
 		<div>
-			<strong id="name">{{ name }}</strong>
-			<br>
-			<em id="career">{{ career }}</em>
-			<br>
+			<strong id="name">{{ name }}</strong><br>
+			<em id="career">{{ career }}</em><br>
 			<i class="fas fa-map-marker-alt"></i>
-			{{ location }}
+			<span id="location">{{ location }}</span>
 		</div>`,
 	photo: `
 		<div>
