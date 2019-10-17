@@ -1,5 +1,6 @@
 const PORT = 8235;
 
+// NPM Module imports
 var express = require('express');
 var compress = require('compression');
 var helmet = require('helmet');
@@ -7,6 +8,7 @@ var fs = require('fs-extra');
 var path = require('path');
 var sass = require('node-sass');
 
+// Express app setup
 var app = express();
 app.use(compress());
 app.use(helmet({
@@ -14,7 +16,7 @@ app.use(helmet({
 	referrerPolicy: true
 }));
 
-// routes
+// Express routes
 app.get('/', (_req, res) => {
 	readFile('client/index.html')
 		.then((data) => {
@@ -63,20 +65,20 @@ app.get('/css', (_req, res) => {
 		.then((data) => res.send(data));
 });
 
-// start
+// Run Express app
 app.listen(PORT, () => console.log(`Server hosted on port: ${PORT}`));
 
-// functions
+// Read files with path and buffer conversion
 function readFile(filename) {
 	return new Promise((resolve, reject) => {
-		let filepath = path.join(__dirname, filename);
-		fs.readFile(filepath)
+		fs.readFile(path.join(__dirname, filename))
 			.then((bytes) => bytes.toString())
 			.then((data) => resolve(data))
 			.catch((err) => reject(err));
 	});
 }
 
+// Render SASS to CSS
 function renderSass(data) {
 	return new Promise((resolve, reject) => {
 		sass.render({
