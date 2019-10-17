@@ -7,6 +7,9 @@ var sass = require('node-sass');
 // Set up the router
 var router = express.Router();
 
+// Export router so index.js can access it
+module.exports = router;
+
 // Index route
 router.get('/', (_req, res) => {
 	readFile('client/index.html')
@@ -44,9 +47,6 @@ router.use((err, _req, res, _next) => {
 	res.status(500).type('text');
 	res.send('500 - The server is on fire');
 });
-
-// Export router so index.js can access it
-module.exports = router;
 
 // Read files with path and buffer conversion
 function readFile(filename) {
