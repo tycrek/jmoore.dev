@@ -1,41 +1,36 @@
 #card {
   float: left;
-  margin-top: 15vh;
-  box-shadow: 2px 2px 2px 2px $card-border-color;
+  padding: 0 32px 0 32px;
 
-  .row {
-    display: flex;
-    align-items: center;
+  @include respond-to('medium') {
+    margin-top: 15vh;
+    box-shadow: 2px 2px 2px 2px $card-border-color;
   }
+}
 
-  .card-column {
+.card-column {
+  padding: 16px;
+  text-align: center;
+
+  @include respond-to('medium') {
     padding: 48px;
   }
+}
 
-  //@media only screen and (max-width: 768px) {
-  @include respond-to('medium-old') {
-    margin-top: unset;
-    box-shadow: unset;
-    padding: 0 32px 0 32px;
-    .row {
-      display: block;
-    }
-    .card-column {
-      padding: 16px;
-    }
+#card-row {
+  display: block;
+  align-items: center;
+
+  @include respond-to('medium') {
+    display: flex;
   }
+}
 
-  #card-left {
-    text-align: center;
-  }
+#card-right {
+  border-top: 2px solid $divider-color;
 
-  #card-right {
-    text-align: center;
+  @include respond-to('medium') {
+    border-top: unset;
     border-left: 2px solid $divider-color;
-    //@media only screen and (max-width: 768px) {
-    @include respond-to('medium-old') {
-      border-left: unset;
-      border-top: 2px solid $divider-color;
-    }
   }
 }
