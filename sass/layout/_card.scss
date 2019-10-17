@@ -3,8 +3,17 @@
   padding: 0 32px 0 32px;
 
   @include respond-to('medium') {
-    margin-top: 15vh;
     box-shadow: 2px 2px 2px 2px $card-border-color;
+    margin-top: 15vh;
+  }
+}
+
+#card-row {
+  align-items: center;
+  display: block;
+
+  @include respond-to('medium') {
+    display: flex;
   }
 }
 
@@ -17,15 +26,7 @@
   }
 }
 
-#card-row {
-  display: block;
-  align-items: center;
-
-  @include respond-to('medium') {
-    display: flex;
-  }
-}
-
+// Displays the divider between the card sides
 #card-right {
   border-top: 2px solid $divider-color;
 
