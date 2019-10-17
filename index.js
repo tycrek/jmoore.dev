@@ -16,6 +16,12 @@ app.use(helmet({
 	referrerPolicy: true
 }));
 
+app.use((_req, res, next) => {
+	res.type('text');
+	res.status(500);
+	next();
+})
+
 // Express routes
 app.get('/', (_req, res) => {
 	readFile('client/index.html')
@@ -24,11 +30,7 @@ app.get('/', (_req, res) => {
 			res.status(200);
 			return html;
 		})
-		.catch((err) => {
-			res.type('text');
-			res.status(500);
-			return err;
-		})
+		.catch((err) => err)
 		.then((data) => res.send(data));
 });
 
@@ -39,11 +41,7 @@ app.get('/js', (_req, res) => {
 			res.status(200);
 			return js;
 		})
-		.catch((err) => {
-			res.type('text');
-			res.status(500);
-			return err;
-		})
+		.catch((err) => err)
 		.then((data) => res.send(data));
 });
 
@@ -51,15 +49,11 @@ app.get('/css', (_req, res) => {
 	readFile('client/stylesheet.scss')
 		.then((scss) => renderSass(scss))
 		.then((css) => {
-			res.type('text/css');
+			res.type('css');
 			res.status(200);
 			return css;
 		})
-		.catch((err) => {
-			res.type('text');
-			res.status(500);
-			return err;
-		})
+		.catch((err) => err)
 		.then((data) => res.send(data));
 });
 
