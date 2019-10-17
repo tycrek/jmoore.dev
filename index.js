@@ -26,8 +26,7 @@ app.use((_req, res, next) => {
 app.get('/', (_req, res) => {
 	readFile('client/index.html')
 		.then((html) => {
-			res.type('html');
-			res.status(200);
+			res.status(200).type('html');
 			return html;
 		})
 		.catch((err) => err)
@@ -37,8 +36,7 @@ app.get('/', (_req, res) => {
 app.get('/js', (_req, res) => {
 	readFile('client/jmoore.js')
 		.then((js) => {
-			res.type('js');
-			res.status(200);
+			res.status(200).type('js');
 			return js;
 		})
 		.catch((err) => err)
@@ -49,8 +47,7 @@ app.get('/css', (_req, res) => {
 	readFile('client/stylesheet.scss')
 		.then((scss) => renderSass(scss))
 		.then((css) => {
-			res.type('css');
-			res.status(200);
+			res.status(200).type('css');
 			return css;
 		})
 		.catch((err) => err)
