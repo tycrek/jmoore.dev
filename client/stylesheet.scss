@@ -20,6 +20,7 @@ $font-stack: (
   sans-serif,
 );
 
+/* Styling */
 body {
   font-family: $font-stack;
 }
@@ -69,7 +70,6 @@ body {
     @media only screen and (max-width: 768px) {
       border-left: unset;
       border-top: 2px solid $divider-color;
-
     }
 
     #social {
@@ -80,11 +80,11 @@ body {
 
       a {
         text-decoration: none;
-        color:   $theme-primary-color;
+        color: $theme-primary-color;
         display: table-row;
         border-bottom: 2px solid $sass-white;
 
-        &:hover { border-bottom: 2px solid   $theme-primary-color; }
+        &:hover { border-bottom: 2px solid $theme-primary-color; }
         i, title { display: table-cell; }
         title { text-align: left; }
       }
@@ -101,6 +101,7 @@ body {
 
 /* Responsive web design */
 // https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+
 * {
   box-sizing: border-box;
 }
