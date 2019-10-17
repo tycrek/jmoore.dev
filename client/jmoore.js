@@ -46,7 +46,7 @@ const TEMPLATES = {
 		</div>`,
 	photo: `
 		<div>
-			<img :id="id" :src="src" :alt="alt">
+			<img id="photo" :src="src" :alt="alt">
 		</div>`
 };
 
@@ -56,7 +56,6 @@ const DATA = {
 	career: 'Software developer',
 	location: 'Edmonton, Alberta',
 	photo: {
-		id: 'profile-picture',
 		src: 'https://space.jmoore.dev/images/profile-normal-small.jpg',
 		alt: 'Profile picture of Joshua Moore.'
 	},
@@ -75,7 +74,7 @@ Vue.component('profile', {
 });
 
 Vue.component('photo', {
-	props: ['id', 'src', 'alt'],
+	props: ['src', 'alt'],
 	template: TEMPLATES.photo
 });
 
