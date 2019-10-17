@@ -1,11 +1,22 @@
+// Encompasses both the icon and the text for a social link (anchor)
 .social-item {
+  // Override default anchor styles
   color: $theme-primary-color;
   text-decoration: none;
+
+  // Lets us align the text left while centering the icons
   display: table-row;
+
+  // Add a "hidden" underline to prevent shifting on hover
   border-bottom: 2px solid $sass-white;
-  &:hover { border-bottom: 2px solid $theme-primary-color; }
+
+  // Display an underline when the mouse hovers the element
+  &:hover {
+    border-bottom: 2px solid $theme-primary-color;
+  }
 }
 
+// The words beside a social icon
 .social-title {
   display: table-cell;
   text-align: left;
