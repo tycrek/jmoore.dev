@@ -45,7 +45,7 @@
 	<div class="row">
 		<div class="col-2">&nbsp;</div>
 		<div id="card" class="col-8">
-			<div class="row">
+			<div id="card-row" class="row">
 				<!-- Card left -->
 				<div id="card-left" class="col-6 card-column">
 					<photo :id="photo.id" :src="photo.src" :alt="photo.alt"></photo>
@@ -53,7 +53,7 @@
 				</div>
 				<!-- Card right -->
 				<div id="card-right" class="col-6 card-column">
-					<div id="social">
+					<div id="social-container">
 						<social-link v-for="social in socials" :key="social.id" :address="social.address"
 							:icon="social.icon" :title="social.title"></social-link>
 					</div>

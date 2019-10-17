@@ -31,23 +31,20 @@ const SOCIALS = [
 // Vue.js component templates //
 const TEMPLATES = {
 	socialLink: `
-		<a :href="address" target="_blank" rel="noopener noreferrer">
+		<a :href="address" class="social-item" target="_blank" rel="noopener noreferrer">
 			<i :class="icon"></i>
-			&nbsp;
-			<title>{{ title }}</title>
+			<span class="social-title">{{ title }}</span>
 		</a>`,
 	profile: `
 		<div>
-			<strong id="name">{{ name }}</strong>
-			<br>
-			<em id="career">{{ career }}</em>
-			<br>
+			<strong id="name">{{ name }}</strong><br>
+			<em id="career">{{ career }}</em><br>
 			<i class="fas fa-map-marker-alt"></i>
-			{{ location }}
+			<span id="location">{{ location }}</span>
 		</div>`,
 	photo: `
 		<div>
-			<img :id="id" :src="src" :alt="alt">
+			<img id="photo" :src="src" :alt="alt">
 		</div>`
 };
 
@@ -57,7 +54,6 @@ const DATA = {
 	career: 'Software developer',
 	location: 'Edmonton, Alberta',
 	photo: {
-		id: 'profile-picture',
 		src: 'https://space.jmoore.dev/images/profile-normal-small.jpg',
 		alt: 'Profile picture of Joshua Moore.'
 	},
@@ -76,7 +72,7 @@ Vue.component('profile', {
 });
 
 Vue.component('photo', {
-	props: ['id', 'src', 'alt'],
+	props: ['src', 'alt'],
 	template: TEMPLATES.photo
 });
 

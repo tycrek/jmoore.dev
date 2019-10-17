@@ -1,0 +1,30 @@
+/* SASS colors */
+$sass-orange: hsl(27.1, 100%, 46.9%);
+$sass-black: hsl(0, 0%, 0%);
+$sass-white: hsl(0, 0%, 100%);
+$sass-grey: hsl(0, 0%, 50%);
+$sass-light-grey: hsl(0, 0%, 75%);
+
+/* Theme colors */
+$theme-primary-color: $sass-orange;
+$card-border-color: $sass-grey;
+$divider-color: $sass-light-grey;
+
+/* Font */
+$font-stack: (
+  'Source Sans Pro',
+  'Arial',
+  'Helvetica',
+  sans-serif,
+);
+
+/* Responsive breakpoints */
+$breakpoints: (
+  'medium': (min-width: 800px),
+  'large': (min-width: 1000px),
+  'huge': (min-width: 1200px),
+  'medium-old': (max-width: 800px),
+);
+
+/* Non-breaking space code */
+$nbsp: '\00a0';
