@@ -16,6 +16,7 @@ app.use(helmet({
 	referrerPolicy: true
 }));
 
+// Preset error response just in case
 app.use((_req, res, next) => {
 	res.type('text');
 	res.status(500);
@@ -25,10 +26,7 @@ app.use((_req, res, next) => {
 // Express routes
 app.get('/', (_req, res) => {
 	readFile('client/index.html')
-		.then((html) => {
-			res.status(200).type('html');
-			return html;
-		})
+		.then((html) => (res.status(200).type('html'), html))
 		.catch((err) => err)
 		.then((data) => res.send(data));
 });
