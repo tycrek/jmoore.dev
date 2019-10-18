@@ -14,6 +14,7 @@ Source code for my personal website
   - [fs-extra](https://github.com/jprichardson/node-fs-extra)
   - [node-sass](https://github.com/sass/node-sass)
 - [Apache Web Server](https://httpd.apache.org/) (for Node.js reverse proxy)
+- [Let's Encrypt](https://letsencrypt.org/) (HTTPS certificates)
 
 **Frontend:**
 
