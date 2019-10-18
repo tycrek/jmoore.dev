@@ -22,6 +22,6 @@
   text-align: left;
 
   &::before {
-    content: $nbsp;
+    content: $nbsp + $nbsp;
   }
 }
