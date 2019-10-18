@@ -12,7 +12,7 @@ module.exports = router;
 
 // Index route
 router.get('/', (_req, res) => {
-	readFile('client/index.html')
+	readFile('html/index.html')
 		.then((html) => (res.status(200).type('html'), html))
 		.catch((err) => err)
 		.then((data) => res.send(data));
@@ -20,7 +20,7 @@ router.get('/', (_req, res) => {
 
 // JavaScript route
 router.get('/js', (_req, res) => {
-	readFile('client/jmoore.js')
+	readFile('javascript/jmoore.js')
 		.then((js) => (res.status(200).type('js'), js))
 		.catch((err) => err)
 		.then((data) => res.send(data));
