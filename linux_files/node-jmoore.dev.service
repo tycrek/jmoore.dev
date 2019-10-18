@@ -1,10 +1,10 @@
 [Unit]
-Description=Run Node.js (jmoore.dev website) as daemon
+Description=Run jmoore.dev website as Node.js daemon
 After=network.target auditd.service
 
 [Service]
-WorkingDirectory=/home/nodejs/jmdev2/
-ExecStart=/usr/bin/node /home/nodejs/jmdev2/index.js
+WorkingDirectory=/home/nodejs/jmoore.dev/
+ExecStart=/usr/bin/node /home/nodejs/jmoore.dev/index.js
 User=nodejs
 Group=nodejs
 
