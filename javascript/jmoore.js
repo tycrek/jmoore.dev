@@ -21,7 +21,7 @@ const SOCIALS = [
 		id: 3
 	},
 	{
-		address: 'https://instagram.com/tycrek',
+		address: 'https://www.instagram.com/joshua.moore.dev/',
 		icon: 'fab fa-instagram',
 		title: 'Instagram',
 		id: 4
