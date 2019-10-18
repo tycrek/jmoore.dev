@@ -10,6 +10,8 @@ var router = express.Router();
 // Export router so index.js can access it
 module.exports = router;
 
+/* Core routes */
+
 // Index route
 router.get('/', (_req, res) => {
 	readFile('html/index.html')
@@ -33,6 +35,18 @@ router.get('/css', (_req, res) => {
 		.catch((err) => err)
 		.then((data) => res.send(data));
 });
+
+/* Other routes */
+
+// Bus
+router.get('/bus', (_req, res) => {
+	readFile('html/bus.html')
+		.then((data) => (res.status(200).type('html'), data))
+		.catch((err) => err)
+		.then((data) => res.send(data));
+});
+
+/* Error responses */
 
 // 404 response
 router.use((_req, res, _next) => {
