@@ -14,7 +14,7 @@ module.exports = router;
 
 // Index route
 router.get('/', (_req, res) => {
-	readFile('client/html/index.html')
+	readFile('../client/html/index.html')
 		.then((html) => (res.status(200).type('html'), html))
 		.catch((err) => err)
 		.then((data) => res.send(data));
@@ -22,7 +22,7 @@ router.get('/', (_req, res) => {
 
 // JavaScript route
 router.get('/js', (_req, res) => {
-	readFile('client/javascript/jmoore.js')
+	readFile('../client/javascript/jmoore.js')
 		.then((js) => (res.status(200).type('js'), js))
 		.catch((err) => err)
 		.then((data) => res.send(data));
@@ -40,7 +40,7 @@ router.get('/css', (_req, res) => {
 
 // Bus
 router.get('/bus', (_req, res) => {
-	readFile('client/html/bus.html')
+	readFile('../client/html/bus.html')
 		.then((data) => (res.status(200).type('html'), data))
 		.catch((err) => err)
 		.then((data) => res.send(data));
@@ -75,7 +75,7 @@ function readFile(filename) {
 function renderSass() {
 	return new Promise((resolve, reject) => {
 		sass.render({
-			file: path.join(__dirname, 'client/sass/main.scss'),
+			file: path.join(__dirname, '../client/sass/main.scss'),
 			outputStyle: "compressed"
 		}, (err, result) => {
 			if (err) reject(err);

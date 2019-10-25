@@ -2,10 +2,10 @@
   "name": "jmoore.dev",
   "version": "1.0.0",
   "description": "Personal website",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
