@@ -7,36 +7,36 @@ const sass = require('node-sass');
 module.exports = router;
 
 // Index route
-router.get('/', (_req, res) => {
+router.get('/', (_req, res, next) => {
 	readFile('../client/html/index.html')
 		.then((html) => (res.status(200).type('html'), html))
-		.catch((err) => err)
+		.catch((err) => next(err))
 		.then((data) => res.send(data));
 });
 
 // JavaScript route
-router.get('/js', (_req, res) => {
+router.get('/js', (_req, res, next) => {
 	readFile('../client/javascript/jmoore.js')
 		.then((js) => (res.status(200).type('js'), js))
-		.catch((err) => err)
+		.catch((err) => next(err))
 		.then((data) => res.send(data));
 });
 
 // CSS route
-router.get('/css', (_req, res) => {
+router.get('/css', (_req, res, next) => {
 	renderSass()
 		.then((css) => (res.status(200).type('css'), css))
-		.catch((err) => err)
+		.catch((err) => next(err))
 		.then((data) => res.send(data));
 });
 
 /* Other routes */
 
 // Bus
-router.get('/bus', (_req, res) => {
+router.get('/bus', (_req, res, next) => {
 	readFile('../client/html/bus.html')
 		.then((data) => (res.status(200).type('html'), data))
-		.catch((err) => err)
+		.catch((err) => next(err))
 		.then((data) => res.send(data));
 });
 
