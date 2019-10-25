@@ -9,7 +9,7 @@ var helmet = require('helmet');
 var app = express();
 app.use(compress());
 app.use(helmet());
-app.use(express.static('static'));
+app.use(express.static('client/static'));
 app.use(require('./router'));
 
 // Run Express app
