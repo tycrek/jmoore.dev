@@ -40,6 +40,11 @@ router.get('/bus', (_req, res, next) => {
 		.then((data) => res.send(data));
 });
 
+// pug testing
+router.get('/pug', (req, res) => {
+	res.render('pug', { message: 'Hello Pug!' });
+});
+
 /* Error responses */
 
 // 404 response

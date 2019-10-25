@@ -11,6 +11,8 @@ app.use(compress());
 app.use(helmet());
 app.use(express.static('client/static'));
 app.use(require('./router'));
+app.set('views', './server/views');
+app.set('view engine', 'pug');
 
 // Run Express app
 app.listen(PORT, () => console.log(`Server hosted on port: ${PORT}`));
