@@ -1,16 +1,10 @@
 // NPM Module imports
-var express = require('express');
-var fs = require('fs-extra');
-var path = require('path');
-var sass = require('node-sass');
+const router = require('express').Router();
+const fs = require('fs-extra');
+const path = require('path');
+const sass = require('node-sass');
 
-// Set up the router
-var router = express.Router();
-
-// Export router so index.js can access it
 module.exports = router;
-
-/* Core routes */
 
 // Index route
 router.get('/', (_req, res) => {
