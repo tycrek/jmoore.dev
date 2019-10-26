@@ -1,0 +1,8 @@
+mixin socialLink(data)
+	a.social-item(
+		href=data.address
+		target="_blank"
+		rel="noopener noreferrer"
+	)
+		i(class=data.icon)
+		span.social-title #{data.title}

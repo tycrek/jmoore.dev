@@ -3,6 +3,7 @@ const router = require('express').Router();
 const fs = require('fs-extra');
 const path = require('path');
 const sass = require('node-sass');
+const pug = require('pug');
 
 module.exports = router;
 
@@ -42,7 +43,10 @@ router.get('/bus', (_req, res, next) => {
 
 // pug testing
 router.get('/pug', (req, res) => {
-	res.render('pug', { message: 'Hello Pug!' });
+	res.render('main', {
+		title: 'Route 401 - MacEwan (Pug)',
+		body: includePage(req.path)
+	});
 });
 
 /* Error responses */
@@ -81,4 +85,8 @@ function renderSass() {
 			else resolve(result.css.toString());
 		});
 	});
+}
+
+function includePage(name) {
+	return pug.compileFile(`client/views/pages${name}.pug`)();
 }
