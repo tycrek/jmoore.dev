@@ -4,12 +4,12 @@ const router = require('express').Router();
 const sass = require('node-sass');
 const pug = require('pug');
 
-router.get('/css', (_req, res) => renderSass(res));
 router.get('/', (_req, res) => renderPug(res, 'index'));
-router.get('/bus', (_req, res) => renderPug(res, 'bus'));
-// 404 response
+router.get('/css', (_req, res) => renderSass(res));
+router.get(CONFIG.routes, (req, res) => renderPug(res, req.path.split('/')[1]));
+
+// 404 & 500 codes
 router.use((_req, res) => res.status(404).send(CONFIG.http_404));
-// 500 response
 router.use((err, _req, res, _next) => (console.error(err.stack), res.status(500).send(CONFIG.http_500)));
 
 module.exports = router;
