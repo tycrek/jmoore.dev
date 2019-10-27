@@ -1,0 +1,25 @@
+include ../global
+head
+	meta(charset='utf-8')
+
+	title= title
+
+	+meta('viewport')
+	+meta('description')
+	+meta('keywords')
+	+meta('author')
+
+	+link('author')
+	+link('icon')
+
+	+meta('google')
+
+	+link('apple-touch-icon')
+	+meta('apple-mobile-web-app-capable')
+	+meta('apple-mobile-web-app-status-bar-style')
+
+	//- Styles
+	+link('stylesheet')
+
+	//- Scripts
+	script&attributes(head.script.fontAwesome)
