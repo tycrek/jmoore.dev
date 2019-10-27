@@ -7,26 +7,17 @@ const pug = require('pug');
 router.get('/css', (_req, res) => renderSass(res));
 router.get('/', (_req, res) => renderPug(res, 'index'));
 router.get('/bus', (_req, res) => renderPug(res, 'bus'));
-
 // 404 response
-router.use((_req, res, _next) => {
-	res.status(404).type('text');
-	res.send('404 - This is not the page you are looking for');
-});
-
+router.use((_req, res) => res.status(404).send(CONFIG.http_404));
 // 500 response
-router.use((err, _req, res, _next) => {
-	console.error(err.stack);
-	res.status(500).type('text');
-	res.send('500 - The server is on fire');
-});
+router.use((err, _req, res, _next) => (console.error(err.stack), res.status(500).send(CONFIG.http_500)));
 
 module.exports = router;
 
 function renderPug(res, page) {
 	let title = 'Test'; //TODO: Fix titles
 	let body = pug.compileFile(CONFIG.path(`../client/views/pages/${page}.pug`))();
-	let locals = { title: test, body: body };
+	let locals = { title: title, body: body };
 	res.render('main', locals);
 }
 
