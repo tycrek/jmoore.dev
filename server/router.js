@@ -19,8 +19,7 @@ function errorHandler(err, _req, res, _next) {
 }
 
 function renderPug(res, page) {
-	let body = pug.compileFile(CONFIG.path(`../client/views/pages/${page}.pug`))();
-	res.render('main', { title: CONFIG.titles[page], body: body });
+	res.render(CONFIG.path(`../client/views/pages/${page}.pug`), { title: CONFIG.titles[page] });
 }
 
 function renderSass(res, next) {

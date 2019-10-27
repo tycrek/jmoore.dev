@@ -1,5 +1,10 @@
 //- Changes should NOT be made to this file!
+
+include includes/_variables
+include includes/_mixins
+
 doctype html
 html
 	include includes/head
-	body!=body
+	body
+		block content
