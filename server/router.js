@@ -19,10 +19,8 @@ function errorHandler(err, _req, res, _next) {
 }
 
 function renderPug(res, page) {
-	let title = 'Test'; //TODO: Fix titles
 	let body = pug.compileFile(CONFIG.path(`../client/views/pages/${page}.pug`))();
-	let locals = { title: title, body: body };
-	res.render('main', locals);
+	res.render('main', { title: CONFIG.titles[page], body: body });
 }
 
 function renderSass(res, next) {
