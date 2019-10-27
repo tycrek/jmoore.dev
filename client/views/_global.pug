@@ -1,2 +1,10 @@
-include includes/_mixins
+//-
+	_global.pug is only meant for loading things
+	in includes/ so that other files don't need
+	to specify what they need to include. Instead,
+	they can include _global since the same is
+	easy to remember and it essentially does the
+	same thing.
+
 include includes/_variables
+include includes/_mixins
