@@ -1,11 +1,12 @@
+const CONFIG = require('./config');
+
 const router = require('express').Router();
-const path = require('path');
 const sass = require('node-sass');
 const pug = require('pug');
 
 router.get('/css', (_req, res) => renderSass(res));
-router.get('/', (_req, res) => render(res, 'index'));
-router.get('/bus', (_req, res) => render(res, 'bus'));
+router.get('/', (_req, res) => renderPug(res, 'index'));
+router.get('/bus', (_req, res) => renderPug(res, 'bus'));
 
 // 404 response
 router.use((_req, res, _next) => {
@@ -22,17 +23,17 @@ router.use((err, _req, res, _next) => {
 
 module.exports = router;
 
-function render(res, page) {
-	return res.render('main', {
-		title: 'Test',
-		body: pug.compileFile(`client/views/pages/${page}.pug`)()
-	});
+function renderPug(res, page) {
+	let title = 'Test'; //TODO: Fix titles
+	let body = pug.compileFile(CONFIG.path(`../client/views/pages/${page}.pug`))();
+	let locals = { title: test, body: body };
+	res.render('main', locals);
 }
 
 function renderSass(res) {
 	sass.render({
-		file: path.join(__dirname, '../client/sass/main.scss'),
-		outputStyle: "compressed"
+		file: CONFIG.path('../client/sass/main.scss'),
+		outputStyle: 'compressed'
 	}, (err, result) => {
 		if (err) throw new err;
 		else res.type('css').send(result.css.toString());
