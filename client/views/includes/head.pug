@@ -4,34 +4,22 @@ head
 
 	title= title
 
-	//- Standard meta
 	+meta('viewport')
 	+meta('description')
 	+meta('keywords')
 	+meta('author')
 
-	link(rel="me" href="mailto:josh.moore@jmoore.dev")
+	+link('author')
+	+link('icon')
 
-	//- Standard favicon
-	link(rel="icon" type="image/x-icon" href="https://space.jmoore.dev/images/favicon.ico")
-	//- Recommended favicon format
-	link(rel="icon" type="image/png" href="https://space.jmoore.dev/images/favicon.png")
-
-	//- Meta for Google
 	+meta('google')
 
-	//- Meta for Apple
-	link(rel="apple-touch-icon" href="https://space.jmoore.dev/images/apple-touch-icon.png")
+	+link('apple-touch-icon')
 	+meta('apple-mobile-web-app-capable')
 	+meta('apple-mobile-web-app-status-bar-style')
 
 	//- Styles
-	link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap")
-	link(rel="stylesheet" href="css" type="text/css")
+	+link('stylesheet')
 
 	//- Scripts
-	script(
-		src="https://kit.fontawesome.com/f2f926ac2d.js"
-		crossorigin="anonymous"
-		integrity="sha384-7uTRzazbrutfIzOojrJw4QL+wCBwLn03McGtkCd53kDbTPTqB20x+Ah36TGTcRHB"
-	)
+	script&attributes(head.script.fontAwesome)

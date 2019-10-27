@@ -1,6 +1,15 @@
 mixin meta(name)
-	- content = head.meta[name]
+	- var content = head.meta[name];
 	meta(name=name content=content)
+
+mixin link(name)
+	- var data = head.link[name];
+
+	if Array.isArray(data)
+		each val in data
+			link(rel=name)&attributes(val)
+	else
+		link(rel=name href=data)
 
 mixin socialLink(data)
 	a.social-item(
