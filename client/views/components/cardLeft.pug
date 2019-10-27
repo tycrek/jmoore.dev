@@ -1,13 +1,11 @@
 div
-	img#photo(
-		src='https://space.jmoore.dev/images/profile-normal-small.jpg'
-		alt='Profile picture of Joshua Moore.'
-	)
+	img#photo(src=DATA.photo.src alt=DATA.photo.alt)
 div
-	strong#name Joshua Moore
+	strong#name #{DATA.name}
 	br
-	em#career Software developer
+	em#career #{DATA.career}
 	br
 	i.fas.fa-map-marker-alt
+	//- Adds a space between the icon and location
 	=" "
-	span#location Edmonton, Alberta
+	span#location #{DATA.location}
