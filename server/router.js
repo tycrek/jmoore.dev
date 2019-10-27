@@ -1,4 +1,3 @@
-// NPM Module imports
 const router = require('express').Router();
 const path = require('path');
 const sass = require('node-sass');
@@ -39,15 +38,3 @@ function renderSass(res) {
 		else res.type('css').send(result.css.toString());
 	});
 }
-
-// Old code! Only here for reference; it will be removed in a future update
-/*
-router.get('*', (req, res) => {
-	let path = req.path;
-	if (path === '/') path = '/index';
-
-	res.render('main', {
-		title: 'Joshua Moore - Developer',
-		body: includePage(path)
-	});
-});*/
