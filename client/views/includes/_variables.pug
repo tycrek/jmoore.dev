@@ -25,7 +25,7 @@
 			id: 4
 		}
 	];
-
+-
 	const DATA = {
 		name: 'Joshua Moore',
 		career: 'Software developer',
@@ -34,6 +34,17 @@
 			src: 'https://space.jmoore.dev/images/profile-normal-small.jpg',
 			alt: 'Profile picture of Joshua Moore.'
 		},
-		socials: SOCIALS,
 		bus: 'https://space.jmoore.dev/images/bus-401.png'
 	};
+-
+	const head = {
+		meta: {
+			viewport: 'width=device-width, initial-scale=1.0,viewport-fit=cover',
+			description: 'Personal website of Joshua Moore, software developer in Edmonton, Alberta',
+			keywords: 'joshua,moore,josh,programmer,developer,edmonton,alberta,software,dev',
+			author: DATA.name,
+			google: 'nositelinkssearchbox notranslate',
+			'apple-mobile-web-app-capable': 'yes',
+			'apple-mobile-web-app-status-bar-style': 'black'
+		}
+	}

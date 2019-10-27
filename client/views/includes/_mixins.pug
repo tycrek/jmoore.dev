@@ -1,5 +1,6 @@
-mixin meta(data)
-	meta(name=data.name content=data.content)
+mixin meta(name)
+	- content = head.meta[name]
+	meta(name=name content=content)
 
 mixin socialLink(data)
 	a.social-item(
