@@ -20,10 +20,8 @@
 
 // Displays the divider between the card sides
 #card-index-right {
-  border-top: 2px solid $divider-color;
-
+  @include mobileSeparator;
   @include respond-to('medium') {
-    border-top: unset;
     border-left: 2px solid $divider-color;
   }
 }

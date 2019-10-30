@@ -37,3 +37,12 @@
     box-shadow: 2px 2px 2px 2px $card-border-color;
   }
 }
+
+/// Adds a separator on mobile
+@mixin mobileSeparator {
+  border-top: 2px solid $divider-color;
+
+  @include respond-to('medium') {
+    border-top: unset;
+  }
+}
