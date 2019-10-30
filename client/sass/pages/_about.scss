@@ -9,4 +9,10 @@
 
 #about-img {
   width: 100%;
+  // Remove in production
+  border: 1px solid black;
+}
+
+#education-body, #jobs-body {
+  padding-left: 32px;
 }
