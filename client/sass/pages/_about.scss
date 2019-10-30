@@ -1,8 +1,18 @@
 .about-card {
   @include mobileSeparator;
   @include shadowBorder;
+
+  //margin: 0 16px 0 16px;
 }
 
 #about-1 {
   border-top: unset;
+}
+
+#about-img {
+  width: 100%;
+}
+
+.row {
+  padding: 0 16px 0 16px;
 }
