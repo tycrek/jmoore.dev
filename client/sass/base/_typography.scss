@@ -1,3 +1,11 @@
 body {
   font-family: $font-stack;
 }
+
+.span-h1 { font-size: 2em; }
+.span-h2 { font-size: 1.5em; }
+.span-h3 { font-size: 1.17em; }
+.span-h4 { font-size: 1em; }
+.span-h5 { font-size: 0.83em; }
+.span-h6 { font-size: 0.67em; }
+[class*="span-h"] { font-weight: bold; }
