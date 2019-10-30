@@ -30,3 +30,10 @@
     clear: both;
   }
 }
+
+/// Adds a nice drop shadow to divs on desktop
+@mixin shadowBorder {
+  @include respond-to('medium') {
+    box-shadow: 2px 2px 2px 2px $card-border-color;
+  }
+}
