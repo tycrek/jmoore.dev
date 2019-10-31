@@ -45,32 +45,4 @@ block content
 				+busRow('5:45 PM', '6:12 PM', '6:40 PM')
 				+busRow('6:15 PM', '6:42 PM', '7:10 PM')
 				+busRow('6:45 PM', '7:12 PM', '7:40 PM')
-	script.
-		let format = 'hh:mm A';
-		$('td').each(function(i) {
-			let time = moment($(this).text(), format);
-			if (time.isBefore() || !time.isValid()) $(this).addClass('old-bus');
-
-			let station = $(this).hasClass('stop-1') ? $('#ordzetc-time') : $(this).hasClass('stop-2') ? $('#macewan-time') : null;
-			if (station && time.isAfter() && station.text() === '') {
-				station.html(`Departing ${station.attr('name')} <b>${time.fromNow()}</b> <i>(${time.format(format)})</i>`);
-				$(this).addClass('next-bus');
-			}
-		});
-	// Clock
-	script.
-		let colon = true;
-		let clock = $('#clock')
-
-		updateClock();
-		setInterval(updateClock, 500);
-
-		function updateClock() {
-			let now = moment().format(format);
-			colon = !colon;
-			if (colon) {
-				//now = now.replace(':','&nbsp;');
-				//TODO: Fix colon spacing
-			}
-			clock.html(now);
-		}
+	script(src='/javascript/bus.js' type="text/javascript")
