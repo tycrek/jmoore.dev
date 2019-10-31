@@ -23,6 +23,12 @@
     padding: 2px 2px 2px 2px;
   }
 
+  .next-bus {
+    color: whitesmoke;
+    background-color: #8BC34A;
+    font-weight: bold;
+  }
+
   .bus-row:nth-child(even) { background-color: gainsboro; }
   .bus-row:nth-child(odd) { background-color: whitesmoke; }
 }

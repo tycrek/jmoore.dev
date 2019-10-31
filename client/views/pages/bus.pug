@@ -1,15 +1,18 @@
 extends ../main
 
 mixin busRow(...times)
+	- var c = times[2] === '- - - - -' ? 'stop-0' : 'stop-2';
 	tr.bus-row
 		td.stop-1= times[0]
-		td.stop-2= times[1]
+		td(class=c)= times[1]
 		td.stop-3= times[2]
 
 block content
 	.col-12
 		#bus-column
 			h2 Route 401 - MacEwan
+			p#ordzetc-time(name='Ordze')=''
+			p#macewan-time(name='MacEwan')=''
 			table#bus-table
 				tr#bus-header
 					th Ordze
@@ -42,10 +45,14 @@ block content
 				+busRow('6:15 PM', '6:42 PM', '7:10 PM')
 				+busRow('6:45 PM', '7:12 PM', '7:40 PM')
 	script.
+		let format = 'hh:mm A';
 		$('td').each(function(i) {
-			let iformat = 'hh:mm A';
-			let time = $(this).text();
-			let fromNow = moment(time, iformat).fromNow();
-			let old = moment(time, iformat).isBefore();
-			if (old) $(this).addClass('old-bus');
+			let time = moment($(this).text(), format);
+			if (time.isBefore() || !time.isValid()) $(this).addClass('old-bus');
+
+			let station = $(this).hasClass('stop-1') ? $('#ordzetc-time') : $(this).hasClass('stop-2') ? $('#macewan-time') : null;
+			if (station && time.isAfter() && station.text() === '') {
+				station.html(`Departing ${station.attr('name')} <b>${time.fromNow()}</b> <i>(${time.format(format)})</i>`);
+				$(this).addClass('next-bus');
+			}
 		});
