@@ -3,12 +3,6 @@ block content
 	.col-12
 		#bus-column
 			h2 Route 401 - MacEwan
-			//-
-				var day = moment('9:30 AM', 'hh:mm A').fromNow();
-			script.
-				$('td').each((i) => {
-					console.log()
-				});
 			table#bus-table
 				tr#bus-header
 					th Ordze
@@ -118,3 +112,11 @@ block content
 					td 6:45 PM
 					td 7:12 PM
 					td 7:40 PM
+	script.
+		$('td').each(function(i) {
+			let iformat = 'hh:mm A';
+			let time = $(this).text();
+			let fromNow = moment(time, iformat).fromNow();
+			let old = moment(time, iformat).isBefore();
+			if (old) $(this).addClass('old-bus');
+		});
