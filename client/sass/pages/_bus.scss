@@ -23,6 +23,6 @@
     padding: 2px 2px 2px 2px;
   }
 
-  tr:nth-child(even) { background-color: gainsboro; }
-  tr:nth-child(odd) { background-color: whitesmoke; }
+  .bus-row:nth-child(even) { background-color: gainsboro; }
+  .bus-row:nth-child(odd) { background-color: whitesmoke; }
 }
