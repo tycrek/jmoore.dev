@@ -20,10 +20,7 @@ function errorHandler(err, _req, res, _next) {
 
 function renderPug(res, page) {
 	let file = CONFIG.path(`../client/views/pages/${page}.pug`);
-	let options = {
-		title: CONFIG.titles[page],
-		moment: require('moment'),
-	};
+	let options = { title: CONFIG.titles[page] };
 	res.render(file, options);
 }
 
