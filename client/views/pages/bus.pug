@@ -10,6 +10,7 @@ mixin busRow(...times)
 block content
 	.col-12
 		#bus-column
+			h1#clock - - -
 			h2 Route 401 - MacEwan
 			p#ordzetc-time(name='Ordze')=''
 			p#macewan-time(name='MacEwan')=''
@@ -56,3 +57,20 @@ block content
 				$(this).addClass('next-bus');
 			}
 		});
+	// Clock
+	script.
+		let colon = true;
+		let clock = $('#clock')
+
+		updateClock();
+		setInterval(updateClock, 500);
+
+		function updateClock() {
+			let now = moment().format(format);
+			colon = !colon;
+			if (colon) {
+				//now = now.replace(':','&nbsp;');
+				//TODO: Fix colon spacing
+			}
+			clock.html(now);
+		}
