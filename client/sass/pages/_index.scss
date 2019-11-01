@@ -25,7 +25,7 @@
 
 // Displays the divider between the card sides
 .index.card#right {
-  @include mobileSeparator;
+  @include mobileBorder('desktop');
   @include device('desktop') {
     border-left: 2px solid $divider-color;
   }

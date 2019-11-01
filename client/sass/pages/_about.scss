@@ -9,7 +9,7 @@
   &.card {
     padding: 16px;
     width: 100%;
-    @include mobileSeparator;
+    @include mobileBorder('tablet');
     @include shadowBorder;
   }
 
