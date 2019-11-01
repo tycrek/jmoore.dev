@@ -1,6 +1,5 @@
 .about {
   &.card-column {
-    display: flex;
     padding: 32px;
     padding-top: 0;
     padding-bottom: 0;
@@ -29,7 +28,6 @@
 
   @include respond-to('medium') {
     &#row {
-      display: flex;
       padding-top: 32px;
     }
   }
