@@ -1,6 +1,28 @@
 extends ../main
 block content
-	.about#row
+	.col-4.col-s-6.card-column.about
+		.about.card#about-1
+			include ../components/about/main
+		br
+		.about.card.tablet#about-2
+			include ../components/about/education
+
+	.col-4.card-column.about#desktop
+		.about.card#about-2
+			include ../components/about/education
+		br
+		.about.card#about-3
+			include ../components/about/jobs
+
+	.col-4.col-s-6.card-column.about
+		.about.card.tablet#about-3
+			include ../components/about/jobs
+		br.about.tablet
+		.about.card#about-4
+			include ../components/about/skills
+
+
+//-
 		.col-4.card-column.about
 			.about.card#about-1
 				include ../components/about/main

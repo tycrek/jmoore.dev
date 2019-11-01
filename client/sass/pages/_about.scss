@@ -1,8 +1,9 @@
 .about {
   &.card-column {
-    padding: 32px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 32px 0 32px;
+    @include device('tablet') {
+      padding: 32px
+    }
   }
 
   &.card {
@@ -25,7 +26,7 @@
     padding-left: 16px;
   }
 
-  @include respond-to('medium') {
+  @include device('tablet') {
     &#row {
       padding-top: 32px;
     }
@@ -35,3 +36,12 @@
 #about-1 {
   border-top: unset;
 }
+
+// Responsively update the grid system (JANKY AF)
+.about#desktop { display: none; }
+.about.tablet { display: block; }
+@include device('tablet') {
+  .about#desktop { display: block; }
+  .about.tablet { display: none; }
+}
+br.about.tablet { display: inline; }
