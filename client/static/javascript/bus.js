@@ -39,9 +39,6 @@ function updateTable() {
 function updateClock() {
 	let now = moment().format(format);
 	colon = !colon;
-	if (colon) {
-		//now = now.replace(':','&nbsp;');
-		//TODO: Fix colon spacing
-	}
+	if (colon) { now = now.replace(':', '&nbsp;'); }
 	clock.html(now);
 }
