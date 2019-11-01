@@ -1,19 +1,35 @@
+mixin education(edu)
+	span.span-h3=edu.school
+	.about.education#body
+		ul
+			li=edu.city
+			li=edu.degree
+			li=edu.start
+			li=edu.end
+mixin job(job)
+	span.span-h3=job.company
+	.about.jobs#body
+		ul
+			li=job.title
+			li=job.city
+			li=job.when
+
 .about.education
 	.about.education#header
 		//-i.far.fa-school.fa-2x
 		//-=" "
-		span.span-h1 Education
+		span.span-h2 Education
 	.about.education#body
-	//- Need to add:
-		- NAIT
-		- MacEwan University
+		br
+		+education(About.edu.macewan)
+		+education(About.edu.nait)
 
 .about.jobs
 	.about.jobs#header
 		//-i.far.fa-briefcase.fa-2x
 		//-=" "
-		span.span-h1 Work Experience
+		span.span-h2 Work Experience
 	.about.jobs#body
-		//- Need to add:
-			- University of Alberta - Ross & Verna Tate High School Internship Program
-			- PCL Industrial
+		br
+		+job(About.jobs.pcl)
+		+job(About.jobs.uofa)
