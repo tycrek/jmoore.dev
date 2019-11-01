@@ -2,7 +2,7 @@
   padding: 0 32px 0 32px;
 
   @include shadowBorder;
-  @include respond-to('medium') {
+  @include device('tablet') {
     margin-top: 15vh;
   }
 }
@@ -12,7 +12,7 @@
   display: block;
   text-align: center;
 
-  @include respond-to('medium') {
+  @include device('tablet') {
     display: flex;
   }
 }
@@ -20,7 +20,7 @@
 // Displays the divider between the card sides
 #card-index-right {
   @include mobileSeparator;
-  @include respond-to('medium') {
+  @include device('tablet') {
     border-left: 2px solid $divider-color;
   }
 }
