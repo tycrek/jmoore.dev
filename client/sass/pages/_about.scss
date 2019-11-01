@@ -15,10 +15,12 @@
   }
 
   &#img {
-    width: 100%;
+    width: 80%;
+    margin-top: 1em;
     margin-bottom: 16px;
     // Remove in production
-    border: 1px solid black;
+    //border: 1px solid black;
+    @include shadowBorderForce;
   }
 
   &#body {
