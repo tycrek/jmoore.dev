@@ -1,4 +1,6 @@
 extends ../main
 block content
-	.col-12
-		img(src=DATA.bus width="100%")
+	.col-12.bus#column
+		include ../components/busHeader
+		include ../components/busTable
+	script(src='/javascript/bus.js' type="text/javascript")
