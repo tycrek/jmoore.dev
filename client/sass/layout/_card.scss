@@ -1,7 +1,9 @@
 .card-column {
   float: left;
   padding: 16px;
+}
 
+#card-index-left, #card-index-right {
   @include respond-to('medium') {
     padding: 48px;
   }
