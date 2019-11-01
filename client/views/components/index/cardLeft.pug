@@ -1,0 +1,11 @@
+div
+	img.index.profile#photo(src=DATA.photo.src alt=DATA.photo.alt)
+div
+	strong.index.profile#name #{DATA.name}
+	br
+	em.index.profile#career #{DATA.career}
+	br
+	i.fas.fa-map-marker-alt
+	//- Adds a space between the icon and location
+	=" "
+	span.index.profile#location #{DATA.location}

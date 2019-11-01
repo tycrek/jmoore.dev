@@ -1,18 +1,49 @@
-.about-card {
-  @include mobileSeparator;
-  @include shadowBorder;
+.about {
+  &.card-column {
+    padding: 0 32px 0 32px;
+    @include device('tablet') {
+      padding: 32px
+    }
+  }
+
+  &.card {
+    padding: 16px;
+    width: 100%;
+    @include mobileBorder('tablet');
+    @include shadowBorder;
+  }
+
+  &#body {
+    padding-left: 16px;
+  }
+
+  @include device('tablet') {
+    &#row {
+      padding-top: 32px;
+    }
+  }
 }
 
 #about-1 {
   border-top: unset;
 }
 
-#about-img {
-  width: 100%;
-  // Remove in production
-  border: 1px solid black;
+// Responsively update the grid system (JANKY AF)
+.about#desktop { display: none; }
+.about.tablet { display: block; }
+br.about.tablet { display: none; }
+@include device('tablet') {
+  br.about.tablet { display: inline; }
+}
+@include device('desktop') {
+  .about#desktop { display: block; }
+  .about.tablet, br#last { display: none; }
 }
 
-#education-body, #jobs-body, #skills-body {
-  padding-left: 32px;
+.about#img {
+  border-radius: 8px;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  width: 80%;
+  @include shadowBorderForce;
 }

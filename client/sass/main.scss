@@ -24,11 +24,11 @@
 @import 'layout/card';
 @import 'layout/social-container';
 
-@import 'components/photo';
-@import 'components/profile';
-@import 'components/social-item';
-@import 'components/card-index-';
+@import 'components/index/photo';
+@import 'components/index/profile';
+@import 'components/index/social-item';
 
 @import 'pages/about';
 @import 'pages/bus';
+@import 'pages/index';
 //@import 'themes/';

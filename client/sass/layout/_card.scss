@@ -1,8 +1,4 @@
 .card-column {
   float: left;
   padding: 16px;
-
-  @include respond-to('medium') {
-    padding: 48px;
-  }
 }

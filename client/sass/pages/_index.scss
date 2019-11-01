@@ -1,0 +1,32 @@
+.index#main {
+  padding: 0 32px 0 32px;
+
+  @include device('desktop') {
+    @include shadowBorder;
+    margin-top: 15vh;
+  }
+}
+
+.index.row {
+  align-items: center;
+  display: block;
+  text-align: center;
+
+  @include device('desktop') {
+    display: flex;
+  }
+}
+
+.index.card {
+  @include device('desktop') {
+    padding: 48px;
+  }
+}
+
+// Displays the divider between the card sides
+.index.card#right {
+  @include mobileBorder('desktop');
+  @include device('desktop') {
+    border-left: 2px solid $divider-color;
+  }
+}
