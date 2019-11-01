@@ -1,15 +1,15 @@
 mixin busRow(...times)
 	- var c = times[2] === '- - - - -' ? 'stop-0' : 'stop-2';
-	tr.bus-row
-		td.stop-1= times[0]
-		td(class=c)= times[1]
-		td.stop-3= times[2]
+	tr.bus.row
+		td.bus.cell.stop-1= times[0]
+		td.bus.cell(class=c)= times[1]
+		td.bus.cell.stop-3= times[2]
 
-table#bus-table
-	tr#bus-header
-		th Ordze
-		th MacEwan
-		th Ordze
+table.bus#table
+	tr.bus.row#header
+		th.bus.cell Ordze
+		th.bus.cell MacEwan
+		th.bus.cell Ordze
 	+busRow('5:45 AM', '6:12 AM', '6:40 AM')
 	+busRow('6:15 AM', '6:42 AM', '7:10 AM')
 	+busRow('6:45 AM', '7:12 AM', '7:40 AM')
