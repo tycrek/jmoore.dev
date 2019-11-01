@@ -1,17 +1,63 @@
-#bus-column {
-  margin-top: 32px;
-  text-align: center;
-  width: 100%;
-  table, th, td {
+.bus {
+  &.row:nth-child(even) { background-color: gainsboro; }
+  &.row:nth-child(odd) { background-color: whitesmoke; }
+  &.cell {
     border: 1px solid black;
     border-collapse: collapse;
+    padding: 10px 24px 10px 24px;
+  }
+
+  &#column {
+    margin-bottom: 32px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &#title {
+    &::before {
+      content: $nbsp + $nbsp;
+    }
+  }
+
+  &#table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &#header {
+    font-size: 1.25em;
   }
 }
 
-#bus-table {
-  margin-left: auto;
-  margin-right: auto;
-  tr:nth-child(even) { background-color: gainsboro; }
-  tr:nth-child(odd) { background-color: whitesmoke; }
-  th, td { padding: 10px 24px 10px 24px; }
+.old-bus {
+  color: grey;
+  background-color: darkgrey;
+  font-style: italic;
+  padding: 2px 2px 2px 2px;
+}
+
+.next-bus {
+  color: whitesmoke;
+  background-color: #8BC34A;
+  font-weight: bold;
+}
+
+.clock {
+  &.cell {
+    min-width: 0.4em;
+  }
+
+  &#table {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+  }
+
+  &#ampm::before {
+    content: $nbsp;
+  }
 }

@@ -6,8 +6,8 @@ const app = express();
 app.use(require('compression')());
 app.use(require('helmet')());
 app.use(require('serve-favicon')(CONFIG.path('../client/static/favicon.ico')));
-app.use(require('./router'));
 app.use(express.static(CONFIG.path('../client/static')));
+app.use(require('./router'));
 
 app.set('views', CONFIG.path('../client/views'));
 app.set('view engine', 'pug');

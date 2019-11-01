@@ -19,7 +19,9 @@ function errorHandler(err, _req, res, _next) {
 }
 
 function renderPug(res, page) {
-	res.render(CONFIG.path(`../client/views/pages/${page}.pug`), { title: CONFIG.titles[page] });
+	let file = CONFIG.path(`../client/views/pages/${page}.pug`);
+	let options = { title: CONFIG.titles[page] };
+	res.render(file, options);
 }
 
 function renderSass(res, next) {
