@@ -33,7 +33,7 @@
 
 /// Adds a nice drop shadow to divs on desktop
 @mixin shadowBorder {
-  @include respond-to('medium') {
+  @include respond-to('phone') {
     box-shadow: 2px 2px 2px 2px $card-border-color;
   }
 }
@@ -47,7 +47,7 @@
 @mixin mobileSeparator {
   border-top: 2px solid $divider-color;
 
-  @include respond-to('medium') {
+  @include respond-to('phone') {
     border-top: unset;
   }
 }
