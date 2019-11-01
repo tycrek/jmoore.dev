@@ -2,10 +2,9 @@ mixin education(edu)
 	span.span-h3=edu.school
 	.about.education#body
 		ul
-			li=edu.city
 			li=edu.degree
-			li=edu.start
-			li=edu.end
+			li=edu.city
+			li #{edu.start} to #{edu.end}
 mixin job(job)
 	span.span-h3=job.company
 	.about.jobs#body
@@ -23,7 +22,7 @@ mixin job(job)
 		br
 		+education(About.edu.macewan)
 		+education(About.edu.nait)
-
+br
 .about.jobs
 	.about.jobs#header
 		//-i.far.fa-briefcase.fa-2x
