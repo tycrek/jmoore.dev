@@ -15,12 +15,8 @@
   width: 100%;
 }
 
-// Respond-to isn't the greatest name:
-// It should really read as "respond
-// when viewport greater than x"
-
 // Tablet
-@include respond-to('phone') {
+@include device('tablet') {
   .col-s-1 { width: 8.33%; }
   .col-s-2 { width: 16.66%; }
   .col-s-3 { width: 25%; }
@@ -36,7 +32,7 @@
 }
 
 // Desktop
-@include respond-to('tablet') {
+@include device('desktop') {
   .col-1 { width: 8.33%; }
   .col-2 { width: 16.66%; }
   .col-3 { width: 25%; }

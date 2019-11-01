@@ -19,6 +19,11 @@
     @error 'No value found for `#{$breakpoint}`.';
   }
 }
+@mixin device($device) {
+  @include respond-to($device) {
+    @content;
+  }
+}
 
 /// Helper to clear inner floats
 /// @author Nicolas Gallagher
