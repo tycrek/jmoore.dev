@@ -1,0 +1,18 @@
+.about-card {
+  @include mobileSeparator;
+  @include shadowBorder;
+}
+
+#about-1 {
+  border-top: unset;
+}
+
+#about-img {
+  width: 100%;
+  // Remove in production
+  border: 1px solid black;
+}
+
+#education-body, #jobs-body, #skills-body {
+  padding-left: 32px;
+}
