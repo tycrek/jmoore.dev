@@ -2,9 +2,6 @@ extends ../main
 block content
 	.col-12
 		#bus-column
-			h1#clock 12:00 AM
-			h2 Route 401 - MacEwan
-			p#ordzetc-time(name='Ordze')=''
-			p#macewan-time(name='MacEwan')=''
+			include ../components/busHeader
 			include ../components/busTable
 	script(src='/javascript/bus.js' type="text/javascript")
