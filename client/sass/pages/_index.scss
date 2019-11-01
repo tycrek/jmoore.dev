@@ -1,26 +1,32 @@
-#card-index {
+.index#main {
   padding: 0 32px 0 32px;
 
-  @include shadowBorder;
-  @include device('tablet') {
+  @include device('desktop') {
+    @include shadowBorder;
     margin-top: 15vh;
   }
 }
 
-#card-index-row {
+.index.row {
   align-items: center;
   display: block;
   text-align: center;
 
-  @include device('tablet') {
+  @include device('desktop') {
     display: flex;
   }
 }
 
+.index.card {
+  @include device('desktop') {
+    padding: 48px;
+  }
+}
+
 // Displays the divider between the card sides
-#card-index-right {
+.index.card#right {
   @include mobileSeparator;
-  @include device('tablet') {
+  @include device('desktop') {
     border-left: 2px solid $divider-color;
   }
 }

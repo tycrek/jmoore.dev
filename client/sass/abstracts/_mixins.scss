@@ -51,7 +51,7 @@
 /// Adds a separator on mobile
 @mixin mobileSeparator {
   border-top: 2px solid $divider-color;
-  @include device('tablet') {
+  @include device('desktop') {
     border-top: unset;
   }
 }

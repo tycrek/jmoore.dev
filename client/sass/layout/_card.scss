@@ -2,9 +2,3 @@
   float: left;
   padding: 16px;
 }
-
-#card-index-left, #card-index-right {
-  @include device('tablet') {
-    padding: 48px;
-  }
-}
