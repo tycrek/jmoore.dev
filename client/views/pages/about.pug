@@ -3,33 +3,20 @@ block content
 	.col-4.col-tab-6.card-column.about
 		.about.card#about-1
 			include ../components/about/main
-		br
+		br.about.tablet
 		.about.card.tablet#about-2
 			include ../components/about/education
 
 	.col-4.card-column.about#desktop
 		.about.card#about-2
 			include ../components/about/education
-		br
+		br.about.tablet
 		.about.card#about-3
 			include ../components/about/jobs
 
 	.col-4.col-tab-6.card-column.about
 		.about.card.tablet#about-3
 			include ../components/about/jobs
-		br.about.tablet
+		br.about.tablet#last
 		.about.card#about-4
 			include ../components/about/skills
-
-
-//-
-		.col-4.card-column.about
-			.about.card#about-1
-				include ../components/about/main
-		.col-4.card-column.about
-			.about.card#about-2
-				include ../components/about/education
-				include ../components/about/jobs
-		.col-4.card-column.about
-			.about.card#about-3
-				include ../components/about/skills

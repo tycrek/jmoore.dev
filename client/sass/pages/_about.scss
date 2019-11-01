@@ -13,15 +13,6 @@
     @include shadowBorder;
   }
 
-  &#img {
-    width: 80%;
-    margin-top: 1em;
-    margin-bottom: 16px;
-    // Remove in production
-    //border: 1px solid black;
-    @include shadowBorderForce;
-  }
-
   &#body {
     padding-left: 16px;
   }
@@ -40,8 +31,20 @@
 // Responsively update the grid system (JANKY AF)
 .about#desktop { display: none; }
 .about.tablet { display: block; }
+br.about.tablet { display: none; }
 @include device('tablet') {
-  .about#desktop { display: block; }
-  .about.tablet { display: none; }
+  br.about.tablet { display: inline; }
 }
-br.about.tablet { display: inline; }
+@include device('desktop') {
+  .about#desktop { display: block; }
+  .about.tablet, br#last { display: none; }
+}
+
+.about#img {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  // Remove in production
+  //border: 1px solid black;
+  @include shadowBorderForce;
+}
