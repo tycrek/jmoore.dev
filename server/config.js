@@ -8,6 +8,6 @@ module.exports = {
 		index: 'Joshua Moore - Developer',
 		bus: 'Route 401 - MacEwan',
 		about: 'About Me',
-		green: 'Environment (coming soon!)'
+		green: 'Environment (Coming soon!)'
 	}
 };
