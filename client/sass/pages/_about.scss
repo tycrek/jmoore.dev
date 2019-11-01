@@ -2,6 +2,8 @@
   &.card-column {
     display: flex;
     padding: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   &.card {
@@ -14,6 +16,7 @@
 
   &#img {
     width: 100%;
+    margin-bottom: 16px;
     // Remove in production
     border: 1px solid black;
   }
