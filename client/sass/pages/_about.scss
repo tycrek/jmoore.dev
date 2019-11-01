@@ -11,6 +11,16 @@
 
   }
 
+  &#img {
+    width: 100%;
+    // Remove in production
+    border: 1px solid black;
+  }
+
+  &#body {
+    padding-left: 32px;
+  }
+
   @include respond-to('medium') {
     &#row {
       display: flex;
@@ -20,14 +30,4 @@
 
 #about-1 {
   border-top: unset;
-}
-
-.about#img {
-  width: 100%;
-  // Remove in production
-  border: 1px solid black;
-}
-
-#education-body, #jobs-body, #skills-body {
-  padding-left: 32px;
 }
