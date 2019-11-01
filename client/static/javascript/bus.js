@@ -1,4 +1,3 @@
-let clock = $('#clock');
 let stations = [$('#ordzetc-time'), $('#macewan-time')];
 let format = 'h:mm A';
 let colon = true;
@@ -37,8 +36,10 @@ function updateTable() {
 }
 
 function updateClock() {
-	let now = moment().format(format);
+	let now = moment().format(format).split(':');
+	$('.clock#hour').html(now[0]);
+	$('.clock#minute').html(now[1].split(' ')[0]);
+	$('.clock#ampm').html(now[1].split(' ')[1]);
+	$('.clock#blink').html(colon ? ':' : '&nbsp;');
 	colon = !colon;
-	if (colon) { now = now.replace(':', '&nbsp;'); }
-	clock.html(now);
 }
