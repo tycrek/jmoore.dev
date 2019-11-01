@@ -7,7 +7,7 @@ module.exports = {
 	titles: {
 		index: 'Joshua Moore - Developer',
 		bus: 'Route 401 - MacEwan',
-		about: 'About Me',
+		about: 'Joshua Moore - About Me',
 		green: 'Environment (Coming soon!)'
 	}
 };
