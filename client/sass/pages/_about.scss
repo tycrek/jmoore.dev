@@ -1,6 +1,21 @@
-.about-card {
-  @include mobileSeparator;
-  @include shadowBorder;
+.about {
+  &.card-column {
+    display: flex;
+  }
+
+  &.card {
+    padding: 16px;
+    width: 100%;
+    @include mobileSeparator;
+    @include shadowBorder;
+
+  }
+
+  @include respond-to('medium') {
+    &#row {
+      display: flex;
+    }
+  }
 }
 
 #about-1 {
