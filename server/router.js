@@ -1,6 +1,4 @@
 const CONFIG = require('./config');
-
-const pug = require('pug');
 const sass = require('node-sass');
 const router = require('express').Router();
 module.exports = router;
