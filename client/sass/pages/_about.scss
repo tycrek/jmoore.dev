@@ -28,6 +28,7 @@
   @include respond-to('medium') {
     &#row {
       display: flex;
+      padding-top: 32px;
     }
   }
 }
