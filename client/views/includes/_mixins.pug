@@ -13,12 +13,9 @@ mixin link(name)
 
 mixin socialLink(data)
 	td
-		a.social.item(
-			href=data.address
-			target="_blank"
-			rel="noopener noreferrer"
-		)
-			i.fa-3x(class=data.icon)
+		a.social.item(href=data.address target="_blank" rel="noopener noreferrer")
+			+icon(data.icon, data.style, 'fa-3x')
 
-mixin iconSpace
-	!="&nbsp;&nbsp;"
+mixin icon(icon, style='far', size='')
+	- var iClass = `${style} ${icon} ${size}`;
+	i(class=iClass)
