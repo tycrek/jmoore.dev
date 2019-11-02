@@ -4,12 +4,17 @@
     margin-top: 48px;
     padding-top: 48px;
     padding-bottom: 48px;
+    width: 700px;
     @include shadowBorder;
   }
 }
 
 .index.row {
-  margin: 1em;
+  padding: 1.5em 0 1.5em 0;
+  margin: 0 2em 0 2em;
+  @include device('desktop') {
+    margin: 0 5em 0 5em;
+  }
 }
 
 /* Profile */
@@ -21,8 +26,13 @@
   }
 }
 
+#row {
+  border-bottom: 2px solid $divider-color;
+}
+
 /* Social */
 .social#container {
+  padding-top: 1.5em;
   @include device('desktop') {
     padding-left: 5em;
     padding-right: 5em;
@@ -32,6 +42,9 @@
 .social#table {
   table-layout: fixed;
   width: 100%;
+  #row1 td {
+    padding-bottom: 2em;
+  }
 }
 
 .social.item {
