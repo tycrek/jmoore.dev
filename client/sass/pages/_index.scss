@@ -50,11 +50,4 @@
 .social.item {
   color: $theme-primary-color;
   text-decoration: none;
-
-  // Add a "hidden" underline to prevent shifting on hover
-  // Display an underline when the mouse hovers the element
-  border-bottom: 2px solid $sass-white;
-  &:hover {
-    border-bottom: 2px solid $theme-primary-color;
-  }
 }
