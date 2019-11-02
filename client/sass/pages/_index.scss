@@ -1,32 +1,60 @@
 .index#main {
-  padding: 0 32px 0 32px;
-
+  text-align: center;
   @include device('desktop') {
+    margin-top: 48px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    width: 700px;
     @include shadowBorder;
-    margin-top: 15vh;
   }
 }
 
 .index.row {
-  align-items: center;
-  display: block;
-  text-align: center;
-
+  padding: 1.5em 0 1.5em 0;
+  margin: 0 2em 0 2em;
   @include device('desktop') {
-    display: flex;
+    margin: 0 5em 0 5em;
   }
 }
 
-.index.card {
-  @include device('desktop') {
-    padding: 48px;
+/* Profile */
+.profile {
+  font-size: 1.5em;
+  &#name {
+    font-size: 2.5em;
+    display: block;
   }
 }
 
-// Displays the divider between the card sides
-.index.card#right {
-  @include mobileBorder('desktop');
+#row {
+  border-bottom: 2px solid $divider-color;
+}
+
+/* Social */
+.social#container {
+  padding-top: 1.5em;
   @include device('desktop') {
-    border-left: 2px solid $divider-color;
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+}
+
+.social#table {
+  table-layout: fixed;
+  width: 100%;
+  #row1 td {
+    padding-bottom: 2em;
+  }
+}
+
+.social.item {
+  color: $theme-primary-color;
+  text-decoration: none;
+
+  // Add a "hidden" underline to prevent shifting on hover
+  // Display an underline when the mouse hovers the element
+  border-bottom: 2px solid $sass-white;
+  &:hover {
+    border-bottom: 2px solid $theme-primary-color;
   }
 }
