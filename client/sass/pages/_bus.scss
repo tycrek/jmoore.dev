@@ -13,12 +13,6 @@
     width: 100%;
   }
 
-  &#title {
-    &::before {
-      content: $nbsp + $nbsp;
-    }
-  }
-
   &#table {
     border-collapse: collapse;
     margin-left: auto;
@@ -30,7 +24,7 @@
   }
 }
 
-.old-bus {
+.bus.cell.old-bus {
   color: grey;
   background-color: darkgrey;
   font-style: italic;
