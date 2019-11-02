@@ -1,3 +1,5 @@
-.index#social-container
-	for social in SOCIALS
-		+socialLink(social)
+.index.social#container
+	table.index.social#table
+		tr
+			for social in SOCIALS
+				+socialLink(social)

@@ -12,13 +12,13 @@ mixin link(name)
 		link(rel=name href=data)
 
 mixin socialLink(data)
-	a.social-item(
-		href=data.address
-		target="_blank"
-		rel="noopener noreferrer"
-	)
-		i(class=data.icon)
-		span.social-title #{data.title}
+	td
+		a.social.item(
+			href=data.address
+			target="_blank"
+			rel="noopener noreferrer"
+		)
+			i.fa-3x(class=data.icon)
 
 mixin iconSpace
 	!="&nbsp;&nbsp;"
