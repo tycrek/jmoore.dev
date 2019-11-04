@@ -1,5 +1,5 @@
 mixin busRow(...times)
-	- var c = times[2] === '- - - - -' ? 'stop-0' : 'stop-2';
+	- var c = times[2] === '- - - -' ? 'stop-0' : 'stop-2';
 	tr.bus.row
 		td.bus.cell.stop-1= times[0]
 		td.bus.cell(class=c)= times[1]
