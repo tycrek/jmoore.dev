@@ -1,10 +1,13 @@
 const CONFIG = require('./config');
 const sass = require('node-sass');
+const fs = require('fs-extra');
 const router = require('express').Router();
 module.exports = router;
 
+router.get('/', (_req, res) => res.render('index', { title: CONFIG.titles.index }));
 router.get('/css', (_req, res, next) => renderSass(res, next));
-router.get('*', (req, res) => renderPug(res, req.url));
+router.get('*', (req, res, next) => renderPug(res, req.url, next));
+
 
 // 404 & 500 codes
 router.use((_req, res) => res.status(404).send(CONFIG.http_404));
@@ -15,13 +18,20 @@ function errorHandler(err, _req, res, _next) {
 	res.status(500).send(CONFIG.http_500);
 }
 
-function renderPug(res, page) {
-	if (page === '/') res.render('index', { title: CONFIG.titles.index });
-	else if (!page.endsWith('/')) res.redirect(301, `${page}/`);
-	else {
-		page = page.substring(1, page.length - 1);
-		res.render(page, { title: CONFIG.titles[page] });
-	}
+function renderPug(res, page, next) {
+	// Redirect to trailing slash if necessary
+	if (!page.endsWith('/')) return res.redirect(301, `${page}/`);
+
+	// Strip away leading and tailing slashes for filesystem operations
+	page = page.substring(1, page.length - 1);
+
+	// Get the full path of the file
+	let path = CONFIG.path(`../client/views/pages/${page}.pug`);
+
+	// Check if the file exists (required because router catches *)
+	fs.pathExists(path).then(exists => {
+		exists ? res.render(page, { title: CONFIG.titles[page] }) : next();
+	});
 }
 
 function renderSass(res, next) {
