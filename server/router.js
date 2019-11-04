@@ -30,7 +30,11 @@ function renderPug(res, page, next) {
 
 	// Check if the file exists (required because router catches *)
 	fs.pathExists(path).then(exists => {
-		exists ? res.render(page, { title: CONFIG.titles[page] }) : next();
+		let options = {
+			title: CONFIG.titles[page],
+			data: require('./data')(page)
+		};
+		exists ? res.render(page, options) : next();
 	});
 }
 
