@@ -3,7 +3,6 @@ const sass = require('node-sass');
 const router = require('express').Router();
 module.exports = router;
 
-router.get('/', (_req, res) => renderPug(res, 'index'));
 router.get('/css', (_req, res, next) => renderSass(res, next));
 router.get(CONFIG.routes, (req, res) => renderPug(res, req.path));
 
@@ -18,9 +17,8 @@ function errorHandler(err, _req, res, _next) {
 
 function renderPug(res, page) {
 	if (page.endsWith('/')) page = page.substring(0, page.length - 1);
-	let file = CONFIG.path(`../client/views/pages/${page}.pug`);
 	let options = { title: CONFIG.titles[page] };
-	res.render(file, options);
+	res.render(page.substring(1), options);
 }
 
 function renderSass(res, next) {
