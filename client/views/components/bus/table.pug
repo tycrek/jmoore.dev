@@ -1,5 +1,5 @@
 mixin busRow(...times)
-	- var c = times[2] === '- - - - -' ? 'stop-0' : 'stop-2';
+	- var c = times[2] === '- - - -' ? 'stop-0' : 'stop-2';
 	tr.bus.row
 		td.bus.cell.stop-1= times[0]
 		td.bus.cell(class=c)= times[1]
@@ -7,32 +7,8 @@ mixin busRow(...times)
 
 table.bus#table
 	tr.bus.row#header
-		th.bus.cell Ordze
-		th.bus.cell MacEwan
-		th.bus.cell Ordze
-	+busRow('5:45 AM', '6:12 AM', '6:40 AM')
-	+busRow('6:15 AM', '6:42 AM', '7:10 AM')
-	+busRow('6:45 AM', '7:12 AM', '7:40 AM')
-	+busRow('7:15 AM', '7:42 AM', '8:10 AM')
-	+busRow('7:45 AM', '8:12 AM', '8:40 AM')
-	+busRow('8:15 AM', '8:42 AM', '9:10 AM')
-	+busRow('8:45 AM', '9:12 AM', '9:40 AM')
-	+busRow('9:15 AM', '9:42 AM', '10:10 AM')
-	+busRow('10:15 AM', '10:42 AM', '11:10 AM')
-	+busRow('11:15 AM', '11:42 AM', '12:10 PM')
-	+busRow('12:15 PM', '12:42 PM', '1:10 PM')
-	+busRow('1:15 PM', '1:42 PM', '2:10 PM')
-	+busRow('2:15 PM', '2:42 PM', '3:10 PM')
-	+busRow('- - - - -', '3:37 PM', '4:10 PM')
-	+busRow('3:15 PM', '3:42 PM', '- - - - -')
-	+busRow('- - - - -', '4:05 PM', '4:40 PM')
-	+busRow('3:45 PM', '4:12 PM', '- - - - -')
-	+busRow('- - - - -', '4:35 PM', '5:10 PM')
-	+busRow('4:15 PM', '4:42 PM', '- - - - -')
-	+busRow('- - - - -', '5:05 PM', '5:40 PM')
-	+busRow('4:45 PM', '5:15 PM', '- - - - -')
-	+busRow('- - - - -', '5:40 PM', '6:10 PM')
-	+busRow('5:15 PM', '5:45 PM', '- - - - -')
-	+busRow('5:45 PM', '6:12 PM', '6:40 PM')
-	+busRow('6:15 PM', '6:42 PM', '7:10 PM')
-	+busRow('6:45 PM', '7:12 PM', '7:40 PM')
+		th.bus.cell= data.station1
+		th.bus.cell= data.station2
+		th.bus.cell= data.station1
+	for row in data.schedule
+		+busRow(row[0], row[1], row[2])

@@ -1,4 +1,4 @@
-let stations = [$('.bus.status#ordze'), $('.bus.status#macewan')];
+let stations = [$('.bus.status.status1'), $('.bus.status.status2')];
 let format = 'h:mm A';
 let colon = true;
 
