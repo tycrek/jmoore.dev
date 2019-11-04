@@ -1,14 +1,25 @@
 const CONFIG = require('./config');
-const sass = require('node-sass');
 const fs = require('fs-extra');
+const sass = require('node-sass');
+const minify = require('@node-minify/core');
+const uglify = require('@node-minify/uglify-es');
 const router = require('express').Router();
 const Data = require('./data');
 module.exports = router;
 
-// CSS (Sass)
+// Compile and compress Sass
 router.get('/css', (_req, res, next) => {
 	let options = { file: CONFIG.path('../client/sass/main.scss'), outputStyle: 'compressed' };
 	sass.render(options, (err, result) => err ? next(err) : res.type('css').send(result.css));
+});
+
+// Compress all JavaScript files using Uglify-ES
+router.get('*.js', (req, res, next) => {
+	fs.readFile(CONFIG.path(`../client/javascript${req.url}`))
+		.then(bytes => bytes.toString())
+		.then(javascript => minify({ compressor: uglify, content: javascript }))
+		.then(minified => res.type('js').send(minified))
+		.catch(err => next(err));
 });
 
 // All other routes
