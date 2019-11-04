@@ -35,7 +35,7 @@ function renderPug(res, page, next) {
 		require('./data')(page)
 			.then(data => {
 				let options = {
-					title: CONFIG.titles[page],
+					title: data && data.title ? data.title : CONFIG.titles[page],
 					data: data
 				};
 				res.render(page, options);
