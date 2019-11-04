@@ -5,7 +5,7 @@ module.exports = router;
 
 router.get('/', (_req, res) => renderPug(res, 'index'));
 router.get('/css', (_req, res, next) => renderSass(res, next));
-router.get(CONFIG.routes, (req, res) => renderPug(res, req.path.split('/')[1]));
+router.get(CONFIG.routes, (req, res) => renderPug(res, req.path));
 
 // 404 & 500 codes
 router.use((_req, res) => res.status(404).send(CONFIG.http_404));
@@ -17,6 +17,7 @@ function errorHandler(err, _req, res, _next) {
 }
 
 function renderPug(res, page) {
+	if (page.endsWith('/')) page = page.substring(0, page.length - 1);
 	let file = CONFIG.path(`../client/views/pages/${page}.pug`);
 	let options = { title: CONFIG.titles[page] };
 	res.render(file, options);
