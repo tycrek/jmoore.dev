@@ -3,9 +3,8 @@ const sass = require('node-sass');
 const router = require('express').Router();
 module.exports = router;
 
-router.get('/', (_req, res) => renderPug(res, 'index'));
 router.get('/css', (_req, res, next) => renderSass(res, next));
-router.get(CONFIG.routes, (req, res) => renderPug(res, req.path.split('/')[1]));
+router.get('*', (req, res) => renderPug(res, req.url));
 
 // 404 & 500 codes
 router.use((_req, res) => res.status(404).send(CONFIG.http_404));
@@ -17,9 +16,9 @@ function errorHandler(err, _req, res, _next) {
 }
 
 function renderPug(res, page) {
-	let file = CONFIG.path(`../client/views/pages/${page}.pug`);
-	let options = { title: CONFIG.titles[page] };
-	res.render(file, options);
+	if (page === '/') res.render('index');
+	else if (!page.endsWith('/')) res.redirect(301, `${page}/`);
+	else res.render(page.substring(1, page.length - 1));
 }
 
 function renderSass(res, next) {
