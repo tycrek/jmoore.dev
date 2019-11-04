@@ -1,0 +1,53 @@
+{
+	"img": "https://space.jmoore.dev/images/joshua-moore-1.jpg",
+	"img2": "http://microbiology.washington.edu/sites/all/themes/micro/images/silhouette.png",
+	"edu": {
+		"nait": {
+			"school": "Northern Alberta Institute of Technology",
+			"city": "Edmonton, Alberta",
+			"start": "September 2018",
+			"end": "December 2018",
+			"degree": "PC Service & Support Certificate"
+		},
+		"macewan": {
+			"school": "MacEwan University",
+			"city": "Edmonton, Alberta",
+			"start": "September 2019",
+			"end": "April 2023 (estimated)",
+			"degree": "B.Sc. Computer Science"
+		}
+	},
+	"jobs": {
+		"uofa": {
+			"company": "University of Alberta",
+			"city": "Edmonton, Alberta",
+			"title": "Ross and Verna Tate High School Internship Program",
+			"when": "Summer 2017"
+		},
+		"pcl": {
+			"company": "PCL Industrial Management Inc.",
+			"city": "Edmonton, Alberta",
+			"title": "Business Technology Student",
+			"when": "January 2019 - August 2019"
+		}
+	},
+	"skills": {
+		"programming": [
+			"Java",
+			"Python",
+			"JavaScript",
+			"HTML5 & Pug",
+			"CSS3 & Sass",
+			"Node.js"
+		],
+		"it": [
+			"PC & smartphone troubleshooting & repair",
+			"Windows, Android, & iOS troubleshooting"
+		],
+		"admin": [
+			"Ubuntu server",
+			"Network setup & security",
+			"Domain name management"
+		]
+	}
+}

@@ -1,9 +1,8 @@
-table.clock#table
-	tr.clock.row
-		th.clock.cell#hour 12
-		th.clock.cell#blink :
-		th.clock.cell#minute 00
-		th.clock.cell#ampm AM
+table.clock#table: tr.clock.row
+	th.clock.cell#hour 12
+	th.clock.cell#blink :
+	th.clock.cell#minute 00
+	th.clock.cell#ampm AM
 if data
 	h2.bus#title= data.title
 	p.bus.status.status1(id=data.station1.toLowerCase() name=data.station1)

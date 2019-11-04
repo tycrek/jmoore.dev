@@ -2,48 +2,40 @@ const CONFIG = require('./config');
 const sass = require('node-sass');
 const fs = require('fs-extra');
 const router = require('express').Router();
+const Data = require('./data');
 module.exports = router;
 
-router.get('/', (_req, res) => res.render('index', { title: CONFIG.titles.index }));
-router.get('/css', (_req, res, next) => renderSass(res, next));
-router.get('*', (req, res, next) => renderPug(res, req.url, next));
-
-
-// 404 & 500 codes
-router.use((_req, res) => res.status(404).send(CONFIG.http_404));
-router.use(errorHandler);
-
-function errorHandler(err, _req, res, _next) {
-	console.error(err.stack);
-	res.status(500).send(CONFIG.http_500);
-}
-
-function renderPug(res, page, next) {
-	// Redirect to trailing slash if necessary
-	if (!page.endsWith('/')) return res.redirect(301, `${page}/`);
-
-	// Strip away leading and tailing slashes for filesystem operations
-	page = page.substring(1, page.length - 1);
-
-	// Get the full path of the file
-	let path = CONFIG.path(`../client/views/pages/${page}.pug`);
-
-	// Check if the file exists (required because router catches *)
-	fs.pathExists(path).then(exists => {
-		if (!exists) return next();
-
-		require('./data')(page)
-			.then(data => {
-				let options = {
-					title: data && data.title ? data.title : CONFIG.titles[page],
-					data: data
-				};
-				res.render(page, options);
-			});
-	});
-}
-
-function renderSass(res, next) {
+// CSS (Sass)
+router.get('/css', (_req, res, next) => {
 	let options = { file: CONFIG.path('../client/sass/main.scss'), outputStyle: 'compressed' };
 	sass.render(options, (err, result) => err ? next(err) : res.type('css').send(result.css));
-}
+});
+
+// All other routes
+router.get('*', (req, res, next) => {
+	let url = req.url;
+
+	if (url === '/') return res.render('index', { title: Data.main.titles.index, main: Data.main });
+	if (!url.endsWith('/')) return res.redirect(301, `${url}/`);
+
+	let page = url.substring(1, url.length - 1);
+
+	fs.pathExists(CONFIG.path(`../client/views/pages/${page}.pug`))
+		.then(exists => { if (exists) return Data.getData(page); else throw next(); })
+		.then(data => ({
+			title: data && data.title ? data.title : Data.main.titles[page],
+			main: Data.main,
+			data: data
+		}))
+		.then(options => res.render(page, options))
+		.catch(() => next());
+});
+
+// HTTP 404
+router.use((_req, res) => res.status(404).send(CONFIG.http_404));
+
+// HTTP 500
+router.use((err, _req, res, _next) => {
+	console.error(err.stack);
+	res.status(500).send(CONFIG.http_500);
+});
