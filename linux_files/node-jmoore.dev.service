@@ -3,10 +3,27 @@ Description=Run jmoore.dev website as Node.js daemon
 After=network.target auditd.service
 
 [Service]
+Type=simple
 WorkingDirectory=/home/nodejs/jmoore.dev/
-ExecStart=/usr/bin/node /home/nodejs/jmoore.dev/index.js
+ExecStart=/usr/local/bin/npm start
+
+# Local system user for running Node.js
 User=nodejs
 Group=nodejs
+
+# Environment variables
+Environment=NODE_ENV=production
+
+# Allow many incoming connections
+LimitNOFILE=infinity
+
+# Allow core dumps for debugging
+LimitCORE=infinity
+
+StandardInput=null
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

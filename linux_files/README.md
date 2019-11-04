@@ -16,5 +16,3 @@ These files are meant for running as a proxied service on an Ubuntu machine (cur
   - `APACHE_CERT` is a Let's Encrypt `fullchain.pem`
   - `APACHE_KEY` is a Let's Encrypt `privkey.pem`
 - Apache should be listening on ports 80 and 443 and allowed through `ufw`
-
-**update-jmoore.dev.sh** is a Bash script for quickly updating from Git. Must be run as `sudo`.
