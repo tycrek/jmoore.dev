@@ -1,16 +1,13 @@
 mixin job(job)
 	span.span-h3=job.company
-	.about.jobs#body
-		ul
-			li=job.title
-			li=job.city
-			li=job.when
+	.about.jobs#body: ul
+		li=job.title
+		li=job.city
+		li=job.when
 .about.jobs
 	.about.jobs#header
-		//-i.far.fa-briefcase.fa-2x
-		//-=" "
 		span.span-h2 Work Experience
 	.about.jobs#body
 		br
-		+job(About.jobs.pcl)
-		+job(About.jobs.uofa)
+		+job(data.jobs.pcl)
+		+job(data.jobs.uofa)

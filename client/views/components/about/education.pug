@@ -1,16 +1,13 @@
 mixin education(edu)
 	span.span-h3=edu.school
-	.about.education#body
-		ul
-			li=edu.degree
-			li=edu.city
-			li #{edu.start} to #{edu.end}
+	.about.education#body: ul
+		li=edu.degree
+		li=edu.city
+		li #{edu.start} to #{edu.end}
 .about.education
 	.about.education#header
-		//-i.far.fa-school.fa-2x
-		//-=" "
 		span.span-h2 Education
 	.about.education#body
 		br
-		+education(About.edu.macewan)
-		+education(About.edu.nait)
+		+education(data.edu.macewan)
+		+education(data.edu.nait)
