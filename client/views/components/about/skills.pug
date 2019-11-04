@@ -1,26 +1,15 @@
 .about.skills#header
-	//-i.far.fa-cogs.fa-lg
-	//-+iconSpace
 	span.span-h2 Technical Skills
 .about.skills#body
 	br
-	//-i.far.fa-code.fa-lg
-	//-+iconSpace
 	span.span-h3 Programming
-	ul
-		each val in data.skills.programming
-			li= val
+	ul: each val in data.skills.programming
+		li= val
 
-	//-i.far.fa-tools.fa-lg
-	//-+iconSpace
 	span.span-h3 Information Technology
-	ul
-		each val in data.skills.it
-			li= val
+	ul: each val in data.skills.it
+		li= val
 
-	//-i.far.fa-server.fa-lg
-	//-+iconSpace
 	span.span-h3 System &amp; Network Administration
-	ul
-		each val in data.skills.admin
-			li= val
+	ul: each val in data.skills.admin
+		li= val

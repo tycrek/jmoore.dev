@@ -4,7 +4,6 @@ mixin meta(name)
 
 mixin link(name)
 	- var link = main.head.link[name];
-
 	if Array.isArray(link)
 		each val in link
 			link(rel=name)&attributes(val)
@@ -12,9 +11,11 @@ mixin link(name)
 		link(rel=name href=link)
 
 mixin socialLink(link)
-	td
-		a.social.item(href=link.address target="_blank" rel="noopener noreferrer")
-			+icon(link.icon, link.style, 'fa-3x')
+	td: a.social.item(
+		href=link.address
+		target='_blank'
+		rel='noopener noreferrer'
+	): +icon(link.icon, link.style, 'fa-3x')
 
 mixin icon(icon, style='far', size='')
 	- var iClass = `${style} ${icon} ${size}`;
