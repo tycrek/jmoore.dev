@@ -5,7 +5,8 @@ module.exports = {
 	http_500: '<title>500 - Internal server error</title>500 - Internal server error',
 	titles: {
 		index: 'Joshua Moore - Developer',
-		bus: 'Route 401 - MacEwan',
+		bus: 'Bus Schedules',
+		'bus/401': 'Route 401 (Ordze - MacEwan)',
 		about: 'Joshua Moore - About Me',
 		green: 'Environment (Coming soon!)'
 	}

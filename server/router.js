@@ -16,9 +16,12 @@ function errorHandler(err, _req, res, _next) {
 }
 
 function renderPug(res, page) {
-	if (page === '/') res.render('index');
+	if (page === '/') res.render('index', { title: CONFIG.titles.index });
 	else if (!page.endsWith('/')) res.redirect(301, `${page}/`);
-	else res.render(page.substring(1, page.length - 1));
+	else {
+		page = page.substring(1, page.length - 1);
+		res.render(page, { title: CONFIG.titles[page] });
+	}
 }
 
 function renderSass(res, next) {
