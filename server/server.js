@@ -2,6 +2,7 @@ const CONFIG = require('./config');
 const express = require('express');
 const app = express();
 
+app.enable('strict routing');
 app.use(require('compression')());
 app.use(require('helmet')());
 app.use(require('serve-favicon')(CONFIG.path('../client/static/favicon.ico')));
