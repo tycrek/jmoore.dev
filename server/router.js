@@ -2,9 +2,10 @@ const CONFIG = require('./config');
 const sass = require('node-sass');
 const fs = require('fs-extra');
 const router = require('express').Router();
+const Data = require('./data');
 module.exports = router;
 
-router.get('/', (_req, res) => res.render('index', { title: CONFIG.titles.index }));
+router.get('/', (_req, res) => res.render('index', { title: Data.main.titles.index, main: Data.main }));
 router.get('/css', (_req, res, next) => renderSass(res, next));
 router.get('*', (req, res, next) => renderPug(res, req.url, next));
 
@@ -32,14 +33,14 @@ function renderPug(res, page, next) {
 	fs.pathExists(path).then(exists => {
 		if (!exists) return next();
 
-		require('./data')(page)
-			.then(data => {
-				let options = {
-					title: data && data.title ? data.title : CONFIG.titles[page],
-					data: data
-				};
-				res.render(page, options);
-			});
+		Data.getData(page).then(data => {
+			let options = {
+				title: data && data.title ? data.title : Data.main.titles[page],
+				main: Data.main,
+				data: data
+			};
+			res.render(page, options);
+		});
 	});
 }
 
