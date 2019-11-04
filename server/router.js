@@ -4,7 +4,7 @@ const router = require('express').Router();
 module.exports = router;
 
 router.get('/css', (_req, res, next) => renderSass(res, next));
-router.get(CONFIG.routes, (req, res) => renderPug(res, req.path));
+router.get('*', (req, res) => renderPug(res, req.url));
 
 // 404 & 500 codes
 router.use((_req, res) => res.status(404).send(CONFIG.http_404));
