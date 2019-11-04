@@ -4,6 +4,6 @@ table.clock#table
 		th.clock.cell#blink :
 		th.clock.cell#minute 00
 		th.clock.cell#ampm AM
-h2.bus#title Route 401 - MacEwan
-p.bus.status#ordze(name='Ordze')
-p.bus.status#macewan(name='MacEwan')
+h2.bus#title= data.title
+p.bus.status(id=data.station1.toLowerCase() name=data.station1)
+p.bus.status(id=data.station2.toLowerCase() name=data.station2)
