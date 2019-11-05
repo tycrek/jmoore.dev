@@ -1,6 +1,12 @@
+const path = require('path');
+
 module.exports = {
-	path: file => require('path').join(__dirname, file),
+	path: file => path.join(__dirname, file),
 	port: 8235,
 	http_404: '<title>404 - Page not found</title><center><br><br><h1>404 - Page not found</h1></center>',
-	http_500: '<title>500 - Internal server error</title><center><br><br><h1>500 - Internal server error</h1></center>'
+	http_500: '<title>500 - Internal server error</title><center><br><br><h1>500 - Internal server error</h1></center>',
+	sass: {
+		file: path.join(__dirname, '../client/sass/main.scss'),
+		outputStyle: 'compressed'
+	}
 };

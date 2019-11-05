@@ -9,8 +9,7 @@ module.exports = router;
 
 // Compile and compress Sass
 router.get('/css', (_req, res, next) => {
-	let options = { file: CONFIG.path('../client/sass/main.scss'), outputStyle: 'compressed' };
-	sass.render(options, (err, result) => err ? next(err) : res.type('css').send(result.css));
+	sass.render(CONFIG.sass, (err, result) => err ? next(err) : res.type('css').send(result.css));
 });
 
 // Compress all JavaScript files using Uglify-ES
