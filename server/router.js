@@ -9,8 +9,9 @@ module.exports = router;
 
 // Compile and compress Sass
 router.get('/css', (_req, res, next) => {
-	let options = { file: CONFIG.path('../client/sass/main.scss'), outputStyle: 'compressed' };
-	sass.render(options, (err, result) => err ? next(err) : res.type('css').send(result.css));
+	sass.render(CONFIG.sass, (err, result) => {
+		err ? next(err) : res.type('css').send(result.css);
+	});
 });
 
 // Compress all JavaScript files using Uglify-ES
@@ -32,14 +33,17 @@ router.get('*', (req, res, next) => {
 	let page = url.substring(1, url.length - 1);
 
 	fs.pathExists(CONFIG.path(`../client/views/pages/${page}.pug`))
-		.then(exists => { if (exists) return Data.getData(page); else throw next(); })
+		.then(exists => {
+			if (exists) return Data.getData(page);
+			else throw Error(`Pug path for '${page}' does not exist`);
+		})
 		.then(data => ({
 			title: data && data.title ? data.title : Data.main.titles[page],
 			main: Data.main,
 			data: data
 		}))
 		.then(options => res.render(page, options))
-		.catch(() => next());
+		.catch(_err => next());
 });
 
 // HTTP 404
