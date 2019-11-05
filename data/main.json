@@ -13,11 +13,11 @@
 			"author": "mailto:josh.moore@jmoore.dev",
 			"icon": [
 				{
-					"href": "https://space.jmoore.dev/images/favicon.ico",
+					"href": "/images/icons/favicon.ico",
 					"type": "image/x-icon"
 				},
 				{
-					"href": "https://space.jmoore.dev/images/favicon.png",
+					"href": "/images/icons/favicon.png",
 					"type": "image/png"
 				}
 			],
@@ -31,7 +31,7 @@
 					"type": "text/css"
 				}
 			],
-			"apple-touch-icon": "https://space.jmoore.dev/images/apple-touch-icon.png"
+			"apple-touch-icon": "/images/icons/apple-touch-icon.png"
 		},
 		"script": {
 			"fontAwesome": {
@@ -56,10 +56,9 @@
 		"career": "Software developer",
 		"location": "Edmonton, Alberta",
 		"photo": {
-			"src": "https://space.jmoore.dev/images/profile-normal-small.jpg",
+			"src": "/images/profile/profile-normal-small.jpg",
 			"alt": "Profile picture of Joshua Moore."
-		},
-		"bus": "https://space.jmoore.dev/images/bus-401.png"
+		}
 	},
 	"titles": {
 		"index": "Joshua Moore - Developer",
