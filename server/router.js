@@ -5,6 +5,7 @@ const minify = require('@node-minify/core');
 const uglify = require('@node-minify/uglify-es');
 const router = require('express').Router();
 const Data = require('./data');
+const log = require('./log');
 module.exports = router;
 
 // Compile and compress Sass
@@ -51,6 +52,6 @@ router.use((_req, res) => res.status(404).send(CONFIG.http_404));
 
 // HTTP 500
 router.use((err, _req, res, _next) => {
-	console.error(err.stack);
+	log.error(err.stack);
 	res.status(500).send(CONFIG.http_500);
 });
