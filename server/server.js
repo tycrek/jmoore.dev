@@ -10,7 +10,8 @@ app.use(require('helmet')());
 app.use(require('express-pino-logger')({ logger: log }));
 app.use(require('serve-favicon')(CONFIG.path('../client/static/favicon.ico')));
 
-app.use(express.static(CONFIG.path('../client/static')));
+app.use(express.static(CONFIG.static));
+app.use('/images', express.static(CONFIG.images));
 app.use(require('./router'));
 
 app.set('views', CONFIG.path('../client/views/pages'));
