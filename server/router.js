@@ -39,7 +39,7 @@ router.get('*', (req, res, next) => {
 			main: mainData,
 			data: pageData
 		}))
-		.then(options => res.render(page, options))
+		.then(data => res.render(page, data))
 		.catch(_err => next());
 });
 
