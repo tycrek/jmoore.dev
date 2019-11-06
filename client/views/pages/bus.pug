@@ -1,15 +1,23 @@
 extends ../main
 block content
 	mixin busItem(route)
-		a(href=route.number): h3= route.title
+		a(href=route.number): h2= route.title
+	mixin transitLink(link)
+		a(target='_blank' href=link.href): h3= link.text
 
 	.col-12.bus#column
 		include ../components/bus/header
 		block bus
 			center
-				h2 Bus Schedules
+				h1 Bus Schedules
 				for route in data.routes
 					+busItem(route)
+				br
+				+transitLink(data.transit.homepage)
+				+transitLink(data.transit.detours)
+				+transitLink(data.transit.app_android)
+				+transitLink(data.transit.app_ios)
+
 
 
 	script(src='/bus.js' type="text/javascript")

@@ -1,4 +1,22 @@
 {
+	"transit": {
+		"homepage": {
+			"text": "Strathcona County Transit Homepage",
+			"href": "https://www.strathcona.ca/council-county/administration/departments/transit/"
+		},
+		"detours": {
+			"text": "Detours & Disruptions",
+			"href": "https://www.strathcona.ca/transportation-roads/transportation/schedules-routes/detours-and-stop-closures/"
+		},
+		"app_android": {
+			"text": "Transit App (Android)",
+			"href": "https://play.google.com/store/apps/details?id=com.thetransitapp.droid"
+		},
+		"app_ios": {
+			"text": "Transit App (iOS)",
+			"href": "https://apps.apple.com/ca/app/transit-bus-train-times/id498151501"
+		}
+	},
 	"routes": [
 		{
 			"number": "401",
