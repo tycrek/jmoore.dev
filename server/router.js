@@ -1,11 +1,10 @@
-const { path, http, sass } = require('./utils');
+const { sass, http, log, path } = require('./utils');
 const fs = require('fs-extra');
 const Sass = require('node-sass');
 const minify = require('@node-minify/core');
 const uglify = require('@node-minify/uglify-es');
 const router = require('express').Router();
 const Data = require('./data');
-const log = require('./log');
 module.exports = router;
 
 // Compile and compress Sass

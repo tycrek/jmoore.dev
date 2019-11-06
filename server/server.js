@@ -1,5 +1,4 @@
-const { port, path, static, images } = require('./utils');
-const log = require('./log');
+const { CONFIG, log } = require('./utils');
 const cluster = require('cluster');
 const express = require('express');
 const app = express();
@@ -9,13 +8,13 @@ app.enable('strict routing');
 app.use(require('compression')());
 app.use(require('helmet')());
 app.use(require('express-pino-logger')({ logger: log }));
-app.use(require('serve-favicon')(path('../client/static/favicon.ico')));
+app.use(require('serve-favicon')(CONFIG.icon));
 
-app.use(express.static(static));
-app.use('/images', express.static(images));
+app.use(express.static(CONFIG.static));
+app.use('/images', express.static(CONFIG.images));
 app.use(require('./router'));
 
-app.set('views', path('../client/views/pages'));
+app.set('views', CONFIG.views);
 app.set('view engine', 'pug');
 
 cluster.isMaster ? masterThread() : workerThread();
@@ -37,7 +36,7 @@ function masterThread() {
 }
 
 function workerThread() {
-	app.listen(port, () => {
-		log.info(`Server hosted (0.0.0.0:${port}) [${cluster.worker.id}]`);
+	app.listen(CONFIG.port, () => {
+		log.info(`Server hosted (0.0.0.0:${CONFIG.port}) [${cluster.worker.id}]`);
 	});
 }
