@@ -1,10 +1,9 @@
-const { sass, http, log, path } = require('./utils');
+const { sass, http, log, path, getData } = require('./utils');
 const fs = require('fs-extra');
 const Sass = require('node-sass');
 const minify = require('@node-minify/core');
 const uglify = require('@node-minify/uglify-es');
 const router = require('express').Router();
-const Data = require('./data');
 module.exports = router;
 
 // Compile and compress Sass
@@ -25,24 +24,23 @@ router.get('*.js', (req, res, next) => {
 
 // All other routes
 router.get('*', (req, res, next) => {
-	let url = req.url;
+	let url = req.url, mainData, page;
+	if (url !== '/' && !url.endsWith('/')) return res.redirect(301, `${url}/`);
 
-	if (url === '/') return res.render('index', { title: Data.main.titles.index, main: Data.main });
-	if (!url.endsWith('/')) return res.redirect(301, `${url}/`);
-
-	let page = url.substring(1, url.length - 1);
-
-	fs.pathExists(path(`../client/views/pages/${page}.pug`))
+	getData()
+		.then(data => mainData = data)
+		.then(() => page = url === '/' ? 'index' : url.substring(1, url.length - 1))
+		.then(() => fs.pathExists(path(`../client/views/pages/${page}.pug`)))
 		.then(exists => {
-			if (exists) return Data.getData(page);
-			else throw Error(`Pug path for '${page}' does not exist`);
+			if (!exists) throw Error(`Pug path for '${page}' does not exist`);
+			else return getData(page);
 		})
-		.then(data => ({
-			title: data && data.title ? data.title : Data.main.titles[page],
-			main: Data.main,
-			data: data
+		.then(pageData => ({
+			title: pageData && pageData.title ? pageData.title : mainData.titles[page],
+			main: mainData,
+			data: pageData
 		}))
-		.then(options => res.render(page, options))
+		.then(data => res.render(page, data))
 		.catch(_err => next());
 });
 
