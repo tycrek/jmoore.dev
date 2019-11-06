@@ -66,6 +66,12 @@
 		"bus": "Bus Schedules",
 		"green": "Environment (Coming soon!)"
 	},
+	"descriptions": {
+		"index": "Personal website of Joshua Moore, software developer in Edmonton, Alberta",
+		"about": "Work experience, education, and technical skills of Joshua Moore",
+		"bus": "Strathcona County bus schedules for university commutes (U of A, MacEwan, & NAIT)",
+		"green": "Environment (Coming soon!)"
+	},
 	"socials": {
 		"email": {
 			"address": "mailto:josh.moore@jmoore.dev",
