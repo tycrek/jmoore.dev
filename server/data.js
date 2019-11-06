@@ -1,4 +1,4 @@
-const { path } = require('./config');
+const { path } = require('./utils');
 const fs = require('fs-extra');
 
 exports.getData = page => {

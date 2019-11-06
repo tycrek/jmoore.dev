@@ -1,4 +1,4 @@
-const { port, path, static, images } = require('./config');
+const { port, path, static, images } = require('./utils');
 const log = require('./log');
 const cluster = require('cluster');
 const express = require('express');

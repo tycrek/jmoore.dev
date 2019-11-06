@@ -1,4 +1,4 @@
-const { path, http, sass } = require('./config');
+const { path, http, sass } = require('./utils');
 const fs = require('fs-extra');
 const Sass = require('node-sass');
 const minify = require('@node-minify/core');
