@@ -27,7 +27,8 @@ router.get('*', (req, res, next) => {
 	let url = req.url, mainData, page;
 	if (url !== '/' && !url.endsWith('/')) return res.redirect(301, `${url}/`);
 
-	getData().then(data => mainData = data)
+	getData()
+		.then(data => mainData = data)
 		.then(() => page = url === '/' ? 'index' : url.substring(1, url.length - 1))
 		.then(() => fs.pathExists(path(`../client/views/pages/${page}.pug`)))
 		.then(exists => {
