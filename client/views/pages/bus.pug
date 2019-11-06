@@ -1,7 +1,15 @@
 extends ../main
 block content
+	mixin busItem(route)
+		a(href=route.number): h3= route.title
+
 	.col-12.bus#column
 		include ../components/bus/header
 		block bus
-			center: h2 No bus route selected!
+			center
+				h2 Bus Schedules
+				for route in data.routes
+					+busItem(route)
+
+
 	script(src='/bus.js' type="text/javascript")
