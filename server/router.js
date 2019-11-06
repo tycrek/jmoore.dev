@@ -36,7 +36,8 @@ router.get('*', (req, res, next) => {
 			else return getData(page);
 		})
 		.then(pageData => ({
-			title: pageData && pageData.title ? pageData.title : mainData.titles[page],
+			headTitle: pageData && pageData.title ? pageData.title : mainData.titles[page],
+			headDescription: pageData && pageData.description ? pageData.description : mainData.descriptions[page],
 			main: mainData,
 			data: pageData
 		}))
