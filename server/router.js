@@ -36,12 +36,17 @@ router.get('*', (req, res, next) => {
 			else return getData(page);
 		})
 		.then(pageData => ({
-			title: pageData && pageData.title ? pageData.title : mainData.titles[page],
+			headTitle: headData(pageData, 'title'),
+			headDescription: headData(pageData, 'description'),
 			main: mainData,
 			data: pageData
 		}))
 		.then(data => res.render(page, data))
 		.catch(_err => next());
+
+	function headData(data, meta) {
+		return data && data[meta] ? data[meta] : mainData[`${meta}s`][page];
+	}
 });
 
 // HTTP 404
