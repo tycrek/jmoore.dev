@@ -1,11 +1,11 @@
-const CONFIG = require('./config');
+const { path } = require('./config');
 const fs = require('fs-extra');
 
 exports.getData = page => {
 	return new Promise((resolve, reject) => {
-		let path = CONFIG.path(`../data/${page}.json`);
-		fs.pathExists(path)
-			.then(exists => exists ? fs.readJson(path) : resolve())
+		let filepath = path(`../data/${page}.json`);
+		fs.pathExists(filepath)
+			.then(exists => exists ? fs.readJson(filepath) : resolve())
 			.then(json => resolve(json))
 			.catch(err => reject(err));
 	});
