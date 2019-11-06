@@ -1,5 +1,6 @@
 const CONFIG = require('./config');
 const log = require('./log');
+const cluster = require('cluster');
 const express = require('express');
 const app = express();
 
@@ -17,6 +18,26 @@ app.use(require('./router'));
 app.set('views', CONFIG.path('../client/views/pages'));
 app.set('view engine', 'pug');
 
-app.listen(CONFIG.port, () => {
-	log.info(`Server hosted on port: ${CONFIG.port}`);
-});
+cluster.isMaster ? masterThread() : workerThread();
+
+function masterThread() {
+	let cpus = require('os').cpus().length;
+	log.info(`Forking ${cpus} worker threads`);
+
+	for (let cpu = 0; cpu < cpus; cpu++) cluster.fork();
+
+	cluster.on('online', (worker) => {
+		log.info(`Worker online [${worker.id}]`);
+	});
+
+	cluster.on('exit', (worker, code, signal) => {
+		log.warn(`Worker exited, reason: ${signal || code} [${worker.id}]`);
+		cluster.fork();
+	});
+}
+
+function workerThread() {
+	app.listen(CONFIG.port, () => {
+		log.info(`Server hosted (0.0.0.0:${CONFIG.port}) [${cluster.worker.id}]`);
+	});
+}
