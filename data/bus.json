@@ -1,0 +1,12 @@
+{
+	"routes": [
+		{
+			"number": "401",
+			"title": "Route 401 (Ordze - MacEwan University)"
+		},
+		{
+			"number": "404",
+			"title": "Route 404 (Ordze - University of Alberta)"
+		}
+	]
+}
