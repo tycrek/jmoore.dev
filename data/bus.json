@@ -15,6 +15,11 @@
 		"app_ios": {
 			"text": "Transit App (iOS)",
 			"href": "https://apps.apple.com/ca/app/transit-bus-train-times/id498151501"
+		},
+		"map": {
+			"img": "/images/transit-2019fall_commuter_map_web-1.jpg",
+			"href": "https://www.strathcona.ca/files/files/transit-2019fall_commuter_map_web.pdf",
+			"text": "Download commuter map as PDF"
 		}
 	},
 	"routes": [
