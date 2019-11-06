@@ -30,6 +30,34 @@
 		{
 			"number": "404",
 			"title": "Route 404 (Ordze - University of Alberta)"
+		},
+		{
+			"number": "411",
+			"title": "Route 411 (Bethel - MacEwan University)"
+		},
+		{
+			"number": "411/saturday",
+			"title": "Route 411 Saturday (Bethel - MacEwan University)"
+		},
+		{
+			"number": "411/sunday",
+			"title": "Route 411 Sunday (Bethel - MacEwan University)"
+		},
+		{
+			"number": "414",
+			"title": "Route 414 (Bethel - University of Alberta)"
+		},
+		{
+			"number": "https://www.strathcona.ca/files/files/transit-2019fall_403_web.pdf",
+			"title": "Route 403 (Ordze - MacEwan) (PDF)"
+		},
+		{
+			"number": "413/nait",
+			"title": "Route 413 (Bethel - NAIT)"
+		},
+		{
+			"number": "413/macewan",
+			"title": "Route 413 (Bethel - MacEwan)"
 		}
 	]
 }

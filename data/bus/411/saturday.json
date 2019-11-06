@@ -1,0 +1,94 @@
+{
+	"title": "Route 411 Saturday (Bethel - MacEwan University)",
+	"description": "Strathcona County bus schedule for Route 411 on Saturdays, Bethel Transit Terminal to MacEwan University",
+	"pdf": "https://www.strathcona.ca/files/files/transit-2019fall_411_web.pdf",
+	"station1": "Bethel",
+	"station2": "MacEwan",
+	"schedule": [
+		[
+			"7:15 AM",
+			"7:43 AM",
+			"8:10 AM"
+		],
+		[
+			"8:15 AM",
+			"8:43 AM",
+			"9:10 AM"
+		],
+		[
+			"9:15 AM",
+			"9:43 AM",
+			"10:10 AM"
+		],
+		[
+			"10:15 AM",
+			"10:43 AM",
+			"11:10 AM"
+		],
+		[
+			"11:15 AM",
+			"11:43 AM",
+			"12:10 PM"
+		],
+		[
+			"12:15 PM",
+			"12:43 PM",
+			"1:10 PM"
+		],
+		[
+			"1:15 PM",
+			"1:43 PM",
+			"2:10 PM"
+		],
+		[
+			"2:15 PM",
+			"2:43 PM",
+			"3:10 PM"
+		],
+		[
+			"3:15 PM",
+			"3:43 PM",
+			"4:10 PM"
+		],
+		[
+			"4:15 PM",
+			"4:43 PM",
+			"5:10 PM"
+		],
+		[
+			"5:15 PM",
+			"5:43 PM",
+			"6:10 PM"
+		],
+		[
+			"6:15 PM",
+			"6:43 PM",
+			"7:10 PM"
+		],
+		[
+			"7:15 PM",
+			"7:43 PM",
+			"8:10 PM"
+		],
+		[
+			"8:15 PM",
+			"8:43 PM",
+			"9:10 PM"
+		],
+		[
+			"9:15 PM",
+			"9:43 PM",
+			"10:10 PM"
+		],
+		[
+			"10:15 PM",
+			"10:43 PM",
+			"11:10 PM"
+		],
+		[
+			"11:15 PM",
+			"11:43 PM",
+			"12:10 AM"
+		]
+	]
+}
