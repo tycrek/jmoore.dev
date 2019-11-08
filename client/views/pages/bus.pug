@@ -1,7 +1,7 @@
 extends ../main
 block content
-	mixin busItem(route)
-		a(href=route.number): h2= route.title
+	mixin schoolBus(school)
+		a(href=school.href): h2=school.title
 	mixin transitLink(link)
 		a(target='_blank' href=link.href): h3= link.text
 
@@ -10,8 +10,8 @@ block content
 		block bus
 			center
 				h1 Bus Schedules
-				for route in data.routes
-					+busItem(route)
+				for school in data.schools
+					+schoolBus(school)
 				br
 				+transitLink(data.transit.homepage)
 				+transitLink(data.transit.detours)
