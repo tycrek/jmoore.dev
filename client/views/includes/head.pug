@@ -1,7 +1,8 @@
 head
 	meta(charset='utf-8')
 
-	title= headTitle
+	if title
+		title= headTitle
 	meta(name='description' content=headDescription)
 
 	+meta('viewport')
