@@ -50,6 +50,10 @@
 		{
 			"number": "https://www.strathcona.ca/files/files/transit-2019fall_403_web.pdf",
 			"title": "Route 403 (Ordze - MacEwan) (PDF)"
+		},
+		{
+			"number": "413/nait",
+			"title": "Route 413 (Bethel - NAIT)"
 		}
 	]
 }
