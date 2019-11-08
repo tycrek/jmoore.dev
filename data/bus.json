@@ -46,6 +46,10 @@
 		{
 			"number": "414",
 			"title": "Route 414 (Bethel - University of Alberta)"
+		},
+		{
+			"number": "https://www.strathcona.ca/files/files/transit-2019fall_403_web.pdf",
+			"title": "Route 403 (Ordze - MacEwan) (PDF)"
 		}
 	]
 }
