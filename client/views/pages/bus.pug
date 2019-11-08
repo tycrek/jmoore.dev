@@ -11,11 +11,21 @@ block content
 			th.clock.cell#blink :
 			th.clock.cell#minute 00
 			th.clock.cell#ampm AM
-		if data && data.school
-			h2.bus#title= data.title
-			p.bus.status.status1(id=data.station1.toLowerCase() name=data.station1)
-			p.bus.status.status2(id=data.station2.toLowerCase() name=data.station2)
+		if data && data.route
+			-
+				var number = route.split(' ')[0];
+				var stationCode = number.split('')[1];
+				var station = stationCode == 0 ? 'Ordze' : 'Bethel';
+
+				let school = 'U of A';
+				if (data.route.includes('NAIT')) school = 'NAIT';
+				if (data.route.includes('day' || data.route.includes('MacEwan'))) school = 'MacEwan';
+			h2.bus#title Route #{data.route} (#{station} to #{school})
+			p.bus.status.status1(id=station.toLowerCase() name=station)
+			p.bus.status.status2(id=school.toLowerCase() name=school)
 			p: a(target="_blank" href=data.pdf download) Download Strathcona County PDF
+
+
 		block bus
 			center
 				h1 Bus Schedules

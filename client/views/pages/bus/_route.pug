@@ -9,8 +9,8 @@ block bus
 
 	table.bus#table
 		tr.bus.row#header
-			th.bus.cell= data.station1
-			th.bus.cell= data.station2
-			th.bus.cell= data.station1
+			th.bus.cell= station
+			th.bus.cell= school
+			th.bus.cell= station
 		for row in data.schedule
 			+busRow(row[0], row[1], row[2])
