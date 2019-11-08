@@ -54,6 +54,10 @@
 		{
 			"number": "413/nait",
 			"title": "Route 413 (Bethel - NAIT)"
+		},
+		{
+			"number": "413/macewan",
+			"title": "Route 413 (Bethel - MacEwan)"
 		}
 	]
 }

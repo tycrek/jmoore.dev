@@ -1,0 +1,84 @@
+{
+	"title": "Route 413 (Bethel - MacEwan)",
+	"description": "Strathcona County bus schedule for Route 413, Bethel Transit Center to MacEwan",
+	"pdf": "https://www.strathcona.ca/files/files/transit-2019fall413_web.pdf",
+	"station1": "Bethel",
+	"station2": "MacEwan",
+	"schedule": [
+		[
+			"6:45 AM",
+			"7:20 AM",
+			"7:55 AM"
+		],
+		[
+			"7:00 AM",
+			"7:25 AM",
+			"- - - -"
+		],
+		[
+			"7:15 AM",
+			"7:40 AM",
+			"- - - -"
+		],
+		[
+			"7:30 AM",
+			"7:55 AM",
+			"- - - -"
+		],
+		[
+			"7:45 AM",
+			"8:10 AM",
+			"- - - -"
+		],
+		[
+			"8:00 AM",
+			"8:25 AM",
+			"- - - -"
+		],
+		[
+			"8:15 AM",
+			"8:40 AM",
+			"- - - -"
+		],
+		[
+			"8:45 AM",
+			"9:10 AM",
+			"- - - -"
+		],
+		[
+			"11:15 AM",
+			"12:36 PM",
+			"1:10 PM"
+		],
+		[
+			"- - - -",
+			"4:02 PM",
+			"4:40 PM"
+		],
+		[
+			"- - - -",
+			"4:32 PM",
+			"5:10 PM"
+		],
+		[
+			"- - - -",
+			"4:47 PM",
+			"5:25 PM"
+		],
+		[
+			"- - - -",
+			"5:02 PM",
+			"5:40 PM"
+		],
+		[
+			"4:45 PM",
+			"5:17 PM",
+			"5:55 PM"
+		],
+		[
+			"5:00 PM",
+			"5:32 PM",
+			"6:10 PM"
+		]
+	]
+}
