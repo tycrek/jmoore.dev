@@ -1,9 +1,6 @@
 {
-	"title": "Route 414 (Bethel - University of Alberta)",
-	"description": "Strathcona County bus schedule for Route 414, Bethel Transit Terminal to University of Alberta",
+	"route": "414",
 	"pdf": "https://www.strathcona.ca/files/files/transit-2019fall_414_web.pdf",
-	"station1": "Bethel",
-	"station2": "U of A",
 	"schedule": [
 		[
 			"6:00 AM",

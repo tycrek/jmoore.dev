@@ -1,17 +1,36 @@
 extends ../main
 block content
-	mixin busItem(route)
-		a(href=route.number): h2= route.title
+	mixin schoolBus(school)
+		a(href=school.href): h2=school.title
 	mixin transitLink(link)
 		a(target='_blank' href=link.href): h3= link.text
 
 	.col-12.bus#column
-		include ../components/bus/header
+		table.clock#table: tr.clock.row
+			th.clock.cell#hour 12
+			th.clock.cell#blink :
+			th.clock.cell#minute 00
+			th.clock.cell#ampm AM
+		if data && data.route
+			-
+				var number = route.split(' ')[0];
+				var stationCode = number.split('')[1];
+				var station = stationCode == 0 ? 'Ordze' : 'Bethel';
+
+				let school = 'U of A';
+				if (data.route.includes('NAIT')) school = 'NAIT';
+				if (data.route.includes('day' || data.route.includes('MacEwan'))) school = 'MacEwan';
+			h2.bus#title Route #{data.route} (#{station} to #{school})
+			p.bus.status.status1(id=station.toLowerCase() name=station)
+			p.bus.status.status2(id=school.toLowerCase() name=school)
+			p: a(target="_blank" href=data.pdf download) Download Strathcona County PDF
+
+
 		block bus
 			center
 				h1 Bus Schedules
-				for route in data.routes
-					+busItem(route)
+				for school in data.schools
+					+schoolBus(school)
 				br
 				+transitLink(data.transit.homepage)
 				+transitLink(data.transit.detours)
@@ -20,7 +39,5 @@ block content
 				br
 				+transitLink(data.transit.map)
 				img(src=data.transit.map.img style='width: 80%; border: 1px solid black')
-
-
 
 	script(src='/bus.js' type="text/javascript")
