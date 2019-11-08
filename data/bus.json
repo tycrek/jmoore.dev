@@ -34,6 +34,14 @@
 		{
 			"number": "411",
 			"title": "Route 411 (Bethel - MacEwan University)"
+		},
+		{
+			"number": "411/saturday",
+			"title": "Route 411 Saturday (Bethel - MacEwan University)"
+		},
+		{
+			"number": "411/sunday",
+			"title": "Route 411 Sunday (Bethel - MacEwan University)"
 		}
 	]
 }
