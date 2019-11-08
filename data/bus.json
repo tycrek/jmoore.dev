@@ -21,19 +21,5 @@
 			"href": "https://www.strathcona.ca/files/files/transit-2019fall_commuter_map_web.pdf",
 			"text": "Download commuter map as PDF"
 		}
-	},
-	"schools": [
-		{
-			"href": "uofa",
-			"title": "U of A"
-		},
-		{
-			"href": "macewan",
-			"title": "MacEwan"
-		},
-		{
-			"href": "nait",
-			"title": "NAIT"
-		}
-	]
+	}
 }

@@ -17,8 +17,10 @@ block content
 				var station = stationCode == 0 ? 'Ordze' : 'Bethel';
 				var school = 'U of A';
 				if (route.includes('NAIT')) school = 'NAIT';
-				if (route.includes('day' || route.includes('MacEwan'))) school = 'MacEwan';
-			h2.bus#title Route #{data.route} (#{station} to #{school})
+				if (route.includes('day') || route.includes('MacEwan') || number.split('')[2] == 1) school = 'MacEwan';
+				headTitle = `Route ${data.route} (${station} to ${school})`;
+			title= headTitle
+			h2.bus#title= headTitle
 			p.bus.status.status1(id=station.toLowerCase() name=station)
 			p.bus.status.status2(id=school.toLowerCase() name=school)
 			p: a(target="_blank" href=data.pdf download) Download Strathcona County PDF
@@ -27,8 +29,9 @@ block content
 		block bus
 			center
 				h1 Bus Schedules
-				for school in data.schools
-					a(href=school.href): h2=school.title
+				a(href='uofa'): h2= 'U of A'
+				a(href='macewan'): h2= 'MacEwan'
+				a(href='nait/413'): h2= 'NAIT'
 				br
 				+transitLink(data.transit.homepage)
 				+transitLink(data.transit.detours)
