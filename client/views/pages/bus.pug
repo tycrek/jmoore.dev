@@ -27,8 +27,9 @@ block content
 		block bus
 			center
 				h1 Bus Schedules
-				for school in data.schools
-					a(href=school.href): h2=school.title
+				a(href='uofa'): h2= 'U of A'
+				a(href='macewan'): h2= 'MacEwan'
+				a(href='nait/413'): h2= 'NAIT'
 				br
 				+transitLink(data.transit.homepage)
 				+transitLink(data.transit.detours)
