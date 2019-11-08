@@ -42,6 +42,10 @@
 		{
 			"number": "411/sunday",
 			"title": "Route 411 Sunday (Bethel - MacEwan University)"
+		},
+		{
+			"number": "414",
+			"title": "Route 414 (Bethel - University of Alberta)"
 		}
 	]
 }
