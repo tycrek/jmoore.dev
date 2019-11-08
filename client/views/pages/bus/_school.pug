@@ -8,7 +8,6 @@ block bus
 			var station = stationCode == 0 ? 'Ordze' : 'Bethel';
 			var text = `Route ${route} (${station})`;
 			if (text.includes('_')) text = text.replace('_', ' ').replace('s', 'S');
-		if route === '403'
-			+transitLink({href: data._403, text: text})
-		else
-			+transitLink({href: route.replace('_', '/'), text: text})
+
+			var href = route === '403' ? data._403 : route.replace('_', '/');
+		a(href=href): h3= text
