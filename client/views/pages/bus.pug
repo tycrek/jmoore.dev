@@ -1,7 +1,5 @@
 extends ../main
 block content
-	mixin schoolBus(school)
-		a(href=school.href): h2=school.title
 	mixin transitLink(link)
 		a(target='_blank' href=link.href): h3= link.text
 
@@ -13,13 +11,13 @@ block content
 			th.clock.cell#ampm AM
 		if data && data.route
 			-
+				let route = data.route;
 				var number = route.split(' ')[0];
 				var stationCode = number.split('')[1];
 				var station = stationCode == 0 ? 'Ordze' : 'Bethel';
-
-				let school = 'U of A';
-				if (data.route.includes('NAIT')) school = 'NAIT';
-				if (data.route.includes('day' || data.route.includes('MacEwan'))) school = 'MacEwan';
+				var school = 'U of A';
+				if (route.includes('NAIT')) school = 'NAIT';
+				if (route.includes('day' || route.includes('MacEwan'))) school = 'MacEwan';
 			h2.bus#title Route #{data.route} (#{station} to #{school})
 			p.bus.status.status1(id=station.toLowerCase() name=station)
 			p.bus.status.status2(id=school.toLowerCase() name=school)
@@ -30,7 +28,7 @@ block content
 			center
 				h1 Bus Schedules
 				for school in data.schools
-					+schoolBus(school)
+					a(href=school.href): h2=school.title
 				br
 				+transitLink(data.transit.homepage)
 				+transitLink(data.transit.detours)

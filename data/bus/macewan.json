@@ -1,0 +1,12 @@
+{
+	"school": "MacEwan University",
+	"routes": [
+		"401",
+		"403",
+		"411",
+		"411_saturday",
+		"411_sunday",
+		"413"
+	],
+	"_403": "https://www.strathcona.ca/files/files/transit-2019fall_403_web.pdf"
+}
