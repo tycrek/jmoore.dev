@@ -1,3 +1,14 @@
 extends ../bus
 block bus
-	p= data.title
+	h2= data.school
+	each route in data.routes
+		-
+			var number = route.split(' ')[0];
+			var stationCode = number.split('')[1];
+			var station = stationCode == 0 ? 'Ordze' : 'Bethel';
+			var text = `Route ${route} (${station})`;
+			if (text.includes('_')) text = text.replace('_', ' ').replace('s', 'S');
+		if route === '403'
+			+transitLink({href: data._403, text: text})
+		else
+			+transitLink({href: route.replace('_', '/'), text: text})
