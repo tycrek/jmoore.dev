@@ -1,9 +1,6 @@
 {
 	"route": "413 NAIT",
-	"description": "Strathcona County bus schedule for Route 413, Bethel Transit Center to NAIT",
 	"pdf": "https://www.strathcona.ca/files/files/transit-2019fall413_web.pdf",
-	"station1": "Bethel",
-	"station2": "NAIT",
 	"schedule": [
 		[
 			"7:00 AM",

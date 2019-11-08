@@ -1,9 +1,6 @@
 {
 	"route": "401",
-	"description": "Strathcona County bus schedule for Route 401, Ordze Transit Center to MacEwan University",
 	"pdf": "https://www.strathcona.ca/files/files/transit-2019fall_401_web.pdf",
-	"station1": "Ordze",
-	"station2": "MacEwan",
 	"schedule": [
 		[
 			"5:45 AM",

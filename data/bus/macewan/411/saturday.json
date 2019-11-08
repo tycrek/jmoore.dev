@@ -1,9 +1,6 @@
 {
 	"route": "411 Saturday",
-	"description": "Strathcona County bus schedule for Route 411 on Saturdays, Bethel Transit Terminal to MacEwan University",
 	"pdf": "https://www.strathcona.ca/files/files/transit-2019fall_411_web.pdf",
-	"station1": "Bethel",
-	"station2": "MacEwan",
 	"schedule": [
 		[
 			"7:15 AM",

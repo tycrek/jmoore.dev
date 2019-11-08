@@ -1,9 +1,6 @@
 {
 	"route": "404",
-	"description": "Strathcona County bus schedule for Route 401, Ordze Transit Center to University of Alberta",
 	"pdf": "https://www.strathcona.ca/files/files/transit-2019fall_404_web.pdf",
-	"station1": "Ordze",
-	"station2": "U of A",
 	"schedule": [
 		[
 			"6:15 AM",
