@@ -7,7 +7,9 @@
 			"author": "Joshua Moore",
 			"google": "nositelinkssearchbox notranslate",
 			"apple-mobile-web-app-capable": "yes",
-			"apple-mobile-web-app-status-bar-style": "black"
+			"apple-mobile-web-app-status-bar-style": "black",
+			"apple-mobile-web-app-title": "Josh Moore - PWA",
+			"theme-color": "#2F3BA2"
 		},
 		"link": {
 			"author": "mailto:josh.moore@jmoore.dev",
@@ -31,7 +33,8 @@
 					"type": "text/css"
 				}
 			],
-			"apple-touch-icon": "/images/icons/apple-touch-icon.png"
+			"apple-touch-icon": "/images/icons/apple-touch-icon.png",
+			"manifest": "/manifest.json"
 		},
 		"script": {
 			"fontAwesome": {
