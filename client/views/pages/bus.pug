@@ -9,6 +9,8 @@ block content
 			th.clock.cell#blink :
 			th.clock.cell#minute 00
 			th.clock.cell#ampm AM
+		h3.weekend#sat(hidden) For Saturday service, please take the #[a(href='/bus/macewan/411/saturday') 411].
+		h3.weekend#sun(hidden) For Sunday service, please take the #[a(href='/bus/macewan/411/sunday') 411].
 		if data && data.route
 			-
 				let route = data.route;
