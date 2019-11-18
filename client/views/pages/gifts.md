@@ -15,10 +15,12 @@
 - Netgear Powerline 1200 (PLP1200-100PAS) - [London Drugs][8] or [Amazon][9]
 
 ### Gift cards
-- Memory Express
-- Amazon
-- DAVIDsTEA
+- [Memory Express][12]
+- [Amazon][14]
+- [DAVIDsTEA][13]
 - Gas station (Shell, Esso, etc.)
+- [Nintendo Switch eStore][10]
+- [Steam][11]
 
 [1]: https://swordshield.pokemon.com/en-us/
 [2]: https://www.lttstore.com/
@@ -29,3 +31,8 @@
 [7]: https://www.smartthings.com/
 [8]: https://www.londondrugs.com/netgear-powerline-1200-mbps-1-gigabit-port---plp1200-100pas/L0581121.html
 [9]: https://www.amazon.ca/NETGEAR-Powerline-Extra-Outlet-PLP1200/dp/B00S6DBGIS
+[10]: https://www.nintendo.com/giftcards/
+[11]: https://store.steampowered.com/digitalgiftcards/
+[12]: https://www.memoryexpress.com/Category/GiftCards
+[13]: https://www.davidstea.com/ca_en/gift-cards.html
+[14]: https://www.amazon.ca/b?node=9230166011
