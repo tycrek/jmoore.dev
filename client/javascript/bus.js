@@ -4,6 +4,7 @@ let colon = true;
 
 updateClock();
 updateTable();
+weekend();
 
 setInterval(updateClock, 500);
 setInterval(updateTable, 30000);
@@ -42,4 +43,10 @@ function updateClock() {
 	$('.clock#ampm').html(now[1].split(' ')[1]);
 	$('.clock#blink').html(colon ? ':' : '&nbsp;');
 	colon = !colon;
+}
+
+function weekend() {
+	let day = moment().day();
+	if (day === 6) $('.weekend#sat').show();
+	if (day === 0) $('.weekend#sun').show();
 }
