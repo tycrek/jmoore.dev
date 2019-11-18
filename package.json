@@ -26,6 +26,7 @@
     "express-pino-logger": "^4.0.0",
     "fs-extra": "^8.1.0",
     "helmet": "^3.21.1",
+    "jstransformer-markdown-it": "^2.1.0",
     "node-sass": "^4.12.0",
     "pino": "^5.13.5",
     "pino-pretty": "^3.3.0",
