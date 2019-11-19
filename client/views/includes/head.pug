@@ -19,8 +19,8 @@ head
 	+meta('apple-mobile-web-app-status-bar-style')
 	+meta('apple-mobile-web-app-title')
 
-	if data && data.manifest
-		link(rel='manifest' href=data.manifest)
+	block manifest
+
 	+meta('theme-color')
 
 	//- Styles
