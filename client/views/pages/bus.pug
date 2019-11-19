@@ -1,5 +1,6 @@
 extends ../main
 block content
+	+link('manifest')
 	mixin transitLink(link)
 		a(target='_blank' href=link.href): h3= link.text
 
