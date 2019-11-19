@@ -36,7 +36,7 @@ router.get('*', (req, res, next) => {
 			else return getData(page);
 		})
 		.then(pageData => ({
-			headTitle: headData(pageData, 'title') || page[0].toUpperCase() + page.substring(1),
+			headTitle: headData(pageData, 'title'),
 			headDescription: headData(pageData, 'description'),
 			main: mainData,
 			data: pageData
