@@ -21,5 +21,6 @@
 			"href": "https://www.strathcona.ca/files/files/transit-2019fall_commuter_map_web.pdf",
 			"text": "Download commuter map as PDF"
 		}
-	}
+	},
+	"manifest": "/bus.manifest.json"
 }
