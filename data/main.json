@@ -34,7 +34,7 @@
 				}
 			],
 			"apple-touch-icon": "/images/icons/apple-touch-icon.png",
-			"manifest": "/manifest.json"
+			"bus-manifest": "/bus.manifest.json"
 		},
 		"script": {
 			"fontAwesome": {
