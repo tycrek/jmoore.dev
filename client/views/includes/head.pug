@@ -20,7 +20,7 @@ head
 	+meta('apple-mobile-web-app-title')
 
 	if data && data.manifest
-		+link('manifest')
+		link(rel='manifest' href=data.manifest)
 	+meta('theme-color')
 
 	//- Styles
