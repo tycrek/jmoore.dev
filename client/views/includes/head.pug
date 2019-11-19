@@ -19,7 +19,8 @@ head
 	+meta('apple-mobile-web-app-status-bar-style')
 	+meta('apple-mobile-web-app-title')
 
-	//+link('manifest')
+	if data && data.manifest
+		+link('manifest')
 	+meta('theme-color')
 
 	//- Styles
