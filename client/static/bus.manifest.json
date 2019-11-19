@@ -1,0 +1,20 @@
+{
+	"short_name": "Bus",
+	"name": "Bus Schedules",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "/images/icons/icons8-bus-16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/images/icons/icons8-bus-80.png",
+			"sizes": "80x80",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/bus/",
+	"background_color": "#8BC34A",
+	"theme_color": "#8BC34A"
+}
