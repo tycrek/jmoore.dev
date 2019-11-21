@@ -18,6 +18,7 @@
   - Raspberry Pi 15W Power Supply, US, Black
   - Aluminum Heatsink for Raspberry Pi B+/2/3 (2-Pack)
   - Micro-HDMI to Standard HDMI (A/M), 1m cable
+- [USB-C duo wall adapter (Anker on Amazon)][16]
 
 ### Gift cards
 - [Memory Express][12]
@@ -42,3 +43,4 @@
 [13]: https://www.davidstea.com/ca_en/gift-cards.html
 [14]: https://www.amazon.ca/b?node=9230166011
 [15]: https://www.buyapi.ca/product/raspberry-pi-4-model-b-4gb/
+[16]: https://www.amazon.ca/Anker-PowerIQ-PowerPort-Foldable-Delivery/dp/B07RGPVNWM
