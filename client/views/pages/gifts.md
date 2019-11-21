@@ -13,6 +13,11 @@
   - Outlets
   - Light bulbs ("works with SmartThings")
 - Netgear Powerline 1200 (PLP1200-100PAS) - [London Drugs][8] or [Amazon][9]
+- [Raspberry Pi 4 Model B (4GB)][15] w/ "Essential Extras":
+  - HighPi Raspberry Pi Case for Pi4
+  - Raspberry Pi 15W Power Supply, US, Black
+  - Aluminum Heatsink for Raspberry Pi B+/2/3 (2-Pack)
+  - Micro-HDMI to Standard HDMI (A/M), 1m cable
 
 ### Gift cards
 - [Memory Express][12]
@@ -36,3 +41,4 @@
 [12]: https://www.memoryexpress.com/Category/GiftCards
 [13]: https://www.davidstea.com/ca_en/gift-cards.html
 [14]: https://www.amazon.ca/b?node=9230166011
+[15]: https://www.buyapi.ca/product/raspberry-pi-4-model-b-4gb/
