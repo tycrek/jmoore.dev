@@ -52,7 +52,6 @@ function weekend() {
 }
 
 function backButton() {
-	alert('foo');
 	$('.clock').hide();
 	try {
 		let path = window.location.pathname;
