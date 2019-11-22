@@ -52,12 +52,10 @@ function weekend() {
 }
 
 function backButton() {
-	//history.back();
 	let path = window.location.pathname;
 	path = path.substring(1, path.length - 1);
-	let count = (path.match(/\//g) || []).length;
 	let previous = path.split('/');
 	previous.pop();
 	let next = `/${previous.join('/')}/`;
-	window.location = next;
+	window.location.href = next;
 }
