@@ -56,6 +56,5 @@ function backButton() {
 	path = path.substring(1, path.length - 1);
 	let previous = path.split('/');
 	previous.pop();
-	let next = `/${previous.join('/')}/`;
-	window.location.href = next;
+	window.location.href = `/${previous.join('/')}/`;
 }
