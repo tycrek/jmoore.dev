@@ -52,6 +52,7 @@ function weekend() {
 }
 
 function backButton() {
+	alert('foo');
 	try {
 		let path = window.location.pathname;
 		path = path.substring(1, path.length - 1);
