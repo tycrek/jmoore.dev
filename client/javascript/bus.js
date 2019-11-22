@@ -50,3 +50,12 @@ function weekend() {
 	if (day === 6) $('.weekend#sat').show();
 	if (day === 0) $('.weekend#sun').show();
 }
+
+function backButton() {
+	let path = window.location.pathname;
+	path = path.substring(1, path.length - 1);
+	let previous = path.split('/');
+	previous.pop();
+	let next = `/${previous.join('/')}/`;
+	window.location.href = next;
+}
