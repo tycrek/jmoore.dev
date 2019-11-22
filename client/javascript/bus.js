@@ -60,7 +60,7 @@ function backButton() {
 		let previous = path.split('/');
 		previous.pop();
 		let next = `/${previous.join('/')}/`;
-		window.location.href = next;
+		window.open(next);
 	} catch (err) {
 		alert(err);
 	}
