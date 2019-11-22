@@ -52,15 +52,10 @@ function weekend() {
 }
 
 function backButton() {
-	$('.clock').hide();
-	try {
-		let path = window.location.pathname;
-		path = path.substring(1, path.length - 1);
-		let previous = path.split('/');
-		previous.pop();
-		let next = `/${previous.join('/')}/`;
-		window.open(next);
-	} catch (err) {
-		alert(err);
-	}
+	let path = window.location.pathname;
+	path = path.substring(1, path.length - 1);
+	let previous = path.split('/');
+	previous.pop();
+	let next = `/${previous.join('/')}/`;
+	window.location.href = next;
 }
