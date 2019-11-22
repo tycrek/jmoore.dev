@@ -52,10 +52,14 @@ function weekend() {
 }
 
 function backButton() {
-	let path = window.location.pathname;
-	path = path.substring(1, path.length - 1);
-	let previous = path.split('/');
-	previous.pop();
-	let next = `/${previous.join('/')}/`;
-	window.location.href = next;
+	try {
+		let path = window.location.pathname;
+		path = path.substring(1, path.length - 1);
+		let previous = path.split('/');
+		previous.pop();
+		let next = `/${previous.join('/')}/`;
+		window.location.href = next;
+	} catch (err) {
+		alert(err);
+	}
 }
