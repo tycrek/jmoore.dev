@@ -13,7 +13,6 @@
 */
 
 @import 'abstracts/variables';
-@import 'abstracts/functions';
 @import 'abstracts/mixins';
 
 @import 'vendors/normalize';
@@ -22,8 +21,6 @@
 @import 'base/typography';
 
 @import 'layout/card';
-
-@import 'components/index/photo';
 
 @import 'pages/about';
 @import 'pages/bus';
