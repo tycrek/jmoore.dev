@@ -40,12 +40,17 @@ block content
 				+transitLink({ href: 'macewan', text: 'MacEwan' })
 				+transitLink({ href: 'nait/413', text: 'NAIT' })
 				br
-				+transitLink(data.transit.homepage, true)
-				+transitLink(data.transit.detours, true)
-				+transitLink(data.transit.app_android, true)
-				+transitLink(data.transit.app_ios, true)
+				table(style="table-layout: fixed;")
+					tr
+						td: center: +transitLink(data.transit.homepage, true)
+						td: center: +transitLink(data.transit.app_android, true)
+					tr
+						td: center: +transitLink(data.transit.detours, true)
+						td: center: +transitLink(data.transit.app_ios, true)
+
 				br
 				+transitLink(data.transit.map, true)
+
 				img(src=data.transit.map.img style='width: 80%; border: 1px solid black')
 
 		block manifest

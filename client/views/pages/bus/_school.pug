@@ -1,7 +1,7 @@
 extends ../bus
 block bus
 	center
-		h2= data.school
+		h1= data.school
 		each route in data.routes
 			-
 				var number = route.split(' ')[0];
@@ -12,3 +12,4 @@ block bus
 
 				var href = route === '403' ? data._403 : route.replace('_', '/');
 			+transitLink({ href: href, text: text })
+			br
