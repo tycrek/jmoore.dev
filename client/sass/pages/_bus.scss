@@ -35,6 +35,21 @@
   color: whitesmoke;
   background-color: #8BC34A;
   font-weight: bold;
+  text-shadow: 1px 1px 1px $sass-dark-grey;
+}
+
+.primary {
+  &#table {
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+  }
+
+  .transit-link {
+    display: inline-block;
+    padding: 4px 8px 4px 8px;
+  }
 }
 
 .clock {
@@ -45,7 +60,7 @@
   &#table {
     font-size: 2em;
     font-weight: bold;
-    margin-top: 16px;
+    //margin-top: 16px;
     margin-left: auto;
     margin-right: auto;
     table-layout: fixed;
@@ -53,5 +68,33 @@
 
   &#ampm::before {
     content: $nbsp;
+  }
+}
+
+.transit-link {
+  background-color: $sass-bus-green;
+  &:hover {
+    background-color: darken($sass-bus-green, 5%);
+  }
+
+  box-shadow: 0 3px darken($sass-bus-green, 20%);
+  &:active {
+    box-shadow: inset 0 3px darken($sass-bus-green, 20%);
+  }
+
+  border: 1px solid darken($sass-bus-green, 20%);
+  border-radius: 8px;
+
+  text-shadow: 1px 1px 1px $sass-dark-grey;
+  padding: 8px;
+  color: $sass-white;
+  text-decoration: none;
+
+  display: table-cell;
+  font-size: 1.5em;
+  font-weight: bold;
+
+  &.small {
+    font-size: 1.25em;
   }
 }
