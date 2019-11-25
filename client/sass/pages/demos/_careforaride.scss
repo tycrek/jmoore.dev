@@ -1,0 +1,52 @@
+$cfar-pink: #c4316b;
+$cfar-blue: #e6f4f8;
+
+.col-12.cfar {
+  @include device('desktop') {
+    padding: 0 15% 0 15%;
+  }
+}
+#careforaride {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 4px 2px $sass-dark-grey;
+}
+
+.cfar#body {
+  background-color: darken($cfar-blue, 5%);
+}
+.cfar#header, .cfar#content {
+  background-color: $cfar-blue;
+}
+.cfar#navigation {
+  color: $cfar-pink;
+  text-align: center;
+  @include device('desktop') {
+    text-align: left;
+    text-indent: 16px;
+  }
+}
+
+.cfar#header {
+  border-bottom: 16px solid $cfar-pink;
+
+  text-align: center;
+  padding: 0 48px 0 48px;
+  @include device('desktop') {
+    //.title { float: center; }
+    //.phone { float: right; }
+    //.cfar.phone, .cfar.title { display: inline-block; }
+  }
+  .cfar.title { font-size: 3em; }
+  .cfar.phone { font-size: 2em; font-style: italic; }
+}
+
+
+.cfar#content {
+  padding: 8px 16px 8px 16px;
+}
+
+.cfar.photo#index {
+  max-width: 80%;
+  border: 1px solid $sass-dark-grey;
+  border-radius: 24px;
+}
