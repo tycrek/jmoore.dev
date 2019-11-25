@@ -29,6 +29,10 @@
 					"type": "text/css"
 				},
 				{
+					"href": "https://fonts.googleapis.com/css?family=Patua+One&display=swap",
+					"type": "text/css"
+				},
+				{
 					"href": "/css",
 					"type": "text/css"
 				}

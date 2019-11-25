@@ -16,7 +16,7 @@
 @import 'abstracts/mixins';
 
 @import 'vendors/normalize';
-@import 'vendors/links';
+//@import 'vendors/links';
 
 @import 'base/responsive';
 @import 'base/typography';
@@ -26,4 +26,5 @@
 @import 'pages/about';
 @import 'pages/bus';
 @import 'pages/index';
+@import 'pages/demos/careforaride';
 //@import 'themes/';

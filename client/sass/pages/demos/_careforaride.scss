@@ -1,0 +1,42 @@
+$cfar-pink: #c4316b;
+$cfar-blue: #e6f4f8;
+
+.cfar#landing {
+  background: url('https://www.careforaride.com/wp-content/uploads/2018/06/Car_front.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: $sass-white;
+  font-family: 'Patua One', sans-serif;
+
+  height: 100vh;
+
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+
+  #header {
+    //background: #455A64;
+    background: rgba(0,0,0,0.5);
+    padding: 16px 0 16px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .title { font-size: 4em; }
+    #navigation { padding-top: 1em; }
+  }
+
+  #banner {
+    padding-top: 50vh;
+    .title { font-size: 4em; }
+    .phone { font-size: 3em; }
+    @include device('desktop') { padding-top: 40vh; }
+  }
+}
+
+.nav-link {
+  color: $sass-white;
+  font-size: 2em;
+  transition: color .4s;
+  &:link, &:visited { color: $sass-white; }
+  &:hover { color: $sass-light-grey; }
+  &:active { transition: color .3s; color: $cfar-blue; }
+}
