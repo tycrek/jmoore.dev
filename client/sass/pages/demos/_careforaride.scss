@@ -13,18 +13,22 @@ $cfar-blue: #e6f4f8;
   text-align: center;
 
   #header {
-    background: rgba(0,0,0,0.5);
+    background: #455A64;//rgba(0,0,0,0.5);
     padding: 16px 0 16px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
     .title { font-size: 4em; }
     #navigation { padding-top: 1em; }
   }
 
 
   #banner {
-    margin-top: 2em;
+    padding-top: 50vh;
     .title { font-size: 4em; }
     .phone { font-size: 3em; }
-    @include device('desktop') { margin-top: 15em; }
+    @include device('desktop') { padding-top: 40vh; }
   }
 }
 
