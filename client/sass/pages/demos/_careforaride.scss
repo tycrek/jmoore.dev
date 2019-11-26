@@ -1,52 +1,38 @@
 $cfar-pink: #c4316b;
 $cfar-blue: #e6f4f8;
 
-.col-12.cfar {
-  @include device('desktop') {
-    padding: 0 15% 0 15%;
-  }
-}
-#careforaride {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  box-shadow: 0 0 4px 2px $sass-dark-grey;
-}
+.cfar#landing {
+  background: url('https://www.careforaride.com/wp-content/uploads/2018/06/Car_front.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: $sass-white;
+  font-family: 'Patua One', sans-serif;
 
-.cfar#body {
-  background-color: darken($cfar-blue, 5%);
-}
-.cfar#header, .cfar#content {
-  background-color: $cfar-blue;
-}
-.cfar#navigation {
-  color: $cfar-pink;
+  height: 100vh;
+
+  text-shadow: 1px 1px 1px black;
   text-align: center;
-  @include device('desktop') {
-    text-align: left;
-    text-indent: 16px;
+
+  #header {
+    background: rgba(0,0,0,0.5);
+    padding: 16px 0 16px 0;
+    .title { font-size: 4em; }
+    #navigation { padding-top: 1em; }
+  }
+
+
+  #banner {
+    margin-top: 2em;
+    .title { font-size: 4em; }
+    .phone { font-size: 3em; }
+    @include device('desktop') { margin-top: 15em; }
   }
 }
 
-.cfar#header {
-  border-bottom: 16px solid $cfar-pink;
-
-  text-align: center;
-  padding: 0 48px 0 48px;
-  @include device('desktop') {
-    //.title { float: center; }
-    //.phone { float: right; }
-    //.cfar.phone, .cfar.title { display: inline-block; }
-  }
-  .cfar.title { font-size: 3em; }
-  .cfar.phone { font-size: 2em; font-style: italic; }
-}
-
-
-.cfar#content {
-  padding: 8px 16px 8px 16px;
-}
-
-.cfar.photo#index {
-  max-width: 80%;
-  border: 1px solid $sass-dark-grey;
-  border-radius: 24px;
+.nav-link {
+  color: $sass-white;
+  font-size: 2em;
+  transition: color .4s;
+  &:link, &:visited { color: $sass-white; }
+  &:hover { color: $sass-light-grey; }
+  &:active { transition: color .3s; color: $cfar-blue; }
 }

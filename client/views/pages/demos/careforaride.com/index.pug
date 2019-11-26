@@ -1,17 +1,21 @@
 extends ../../../main
 block content
-	.col-12.cfar: #careforaride
-		.row.cfar#header
-			span.cfar.title Care For A Ride
-			br
-			span.cfar.phone (780) 417-2222
+	.col-12.cfar#careforaride
+		.cfar#landing
+			.row.cfar#header
+				.col-1 &nbsp;
+				.col-4: a.cfar.title.nav-link(href='') Care For A Ride
+				.col-7.row.cfar#navigation
+					.col-2: a.cfar.nav-link(href='rates') Rates
+					.col-2: a.cfar.nav-link(href='contact') Contact
+					.col-2: a.cfar.nav-link(href='reviews') Reviews
+					.col-2: a.cfar.nav-link(href='about') About
+					.col-2: a.cfar.nav-link(href='careers') Careers
+			.cfar#banner
+				.cfar.title Care For A Ride
+				.cfar.phone (780) 417-2222
+	//-
 		.row.cfar#body
-			.col-3.cfar#navigation
-				h3: a(href='') Home
-				h3: a(href='about') About
-				h3: a(href='contact') Contact
-			.col-9.cfar#content
-				h1 Welcome to Care For A Ride!
-				h3 Accompaniment and Transportation Services for Seniors and Those with Disabilities in the Edmonton and Surrounding area
-				center: img.cfar.photo#index(src='https://www.careforaride.com/wp-content/uploads/2018/06/Car_front.jpg')
-				p Our services are designed to help the seniors in our community get to where they need to go.  Our goal is to make sure their experience is safe, helpful and reliable every single time they are in our care.  Some of our clients use our services regularly, others use us to fill in when their own resources are not available.  Whatever the reason, we are there to help! We know that caring for our seniors is much more than just helping out, it’s about a special partnership in which each individual feels cared for and loved.  Care for a Ride is committed to helping our community seniors.  We always go the extra mile to help them with all the little things during their outing... things that make a difference in their lives.
+			.col-2 &nbsp;
+			.col-8 Hello there!
+			.col-2 &nbsp;
