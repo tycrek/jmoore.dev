@@ -35,6 +35,15 @@ router.get('*', (req, res, next) => {
 			if (!exists) throw Error(`Pug path for '${page}' does not exist`);
 			else return getData(page);
 		})
+		.catch(_err => fs.pathExists(path(`../client/views/pages/${page}/index.pug`)))
+		.then(exists => {
+			if (typeof (exists) !== 'boolean') return exists;
+			if (!exists) throw Error(`Pug path for '${page}' does not exist`);
+			else {
+				page += '/index';
+				return getData(page);
+			};
+		})
 		.then(pageData => ({
 			headTitle: headData(pageData, 'title'),
 			headDescription: headData(pageData, 'description'),
