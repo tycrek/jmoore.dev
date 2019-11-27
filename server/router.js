@@ -58,6 +58,18 @@ router.get('*', (req, res, next) => {
 	}
 });
 
+router.post('/upload', (req, res, next) => {
+	if (!req.files || Object.keys(req.files).length === 0) return res.status(400).send('No files were uploaded');
+
+	let file = req.files.file;
+	let savePath = path(`../client/uploads/${file.name}`);
+	fs.pathExists(savePath)
+		.then(exists => { if (exists) throw Error('File with same name already exists.'); })
+		.then(() => file.mv(savePath))
+		.then(() => res.send(`Uploaded to: <a href="/files/${file.name}" download>https://jmoore.dev/files/${file.name}</a>`))
+		.catch(err => res.type('html').send(err.message));
+});
+
 // HTTP 404
 router.use((_req, res) => res.status(404).send(http._404));
 
