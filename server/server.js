@@ -9,9 +9,12 @@ app.use(require('compression')());
 app.use(require('helmet')());
 app.use(require('express-pino-logger')({ logger: log }));
 app.use(require('serve-favicon')(CONFIG.icon));
+app.use(require('express-fileupload')(CONFIG.upload));
 
 app.use(express.static(CONFIG.static));
 app.use('/images', express.static(CONFIG.images));
+app.use('/files', express.static(CONFIG.upload.path));
+app.use('/upload', require('express-basic-auth')(CONFIG.upload.auth));
 app.use(require('./router'));
 
 app.set('views', CONFIG.views);

@@ -11,7 +11,17 @@ module.exports = {
 		icon: joinPath('../client/static/favicon.ico'),
 		static: joinPath('../client/static'),
 		images: joinPath('../client/images'),
-		views: joinPath('../client/views/pages')
+		views: joinPath('../client/views/pages'),
+		upload: {
+			path: joinPath('../client/upload'),
+			createParentPath: true,
+			abortOnLimit: true,
+			auth: {
+				// Change these values when deployed to server
+				users: { 'username': 'password' },
+				challenge: true
+			}
+		}
 	},
 	sass: {
 		file: joinPath('../client/sass/main.scss'),
