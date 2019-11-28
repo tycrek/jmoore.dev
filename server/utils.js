@@ -13,7 +13,7 @@ module.exports = {
 		images: joinPath('../client/images'),
 		views: joinPath('../client/views/pages'),
 		upload: {
-			path: joinPath('../client/upload'),
+			path: joinPath('../client/uploads'),
 			createParentPath: true,
 			abortOnLimit: true,
 			auth: {
