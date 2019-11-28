@@ -28,10 +28,7 @@ function masterThread() {
 
 	for (let cpu = 0; cpu < cpus; cpu++) cluster.fork();
 
-	cluster.on('online', (worker) => {
-		log.info(`Worker online [${worker.id}]`);
-	});
-
+	cluster.on('online', worker => log.info(`Worker online [${worker.id}]`));
 	cluster.on('exit', (worker, code, signal) => {
 		log.warn(`Worker exited, reason: ${signal || code} [${worker.id}]`);
 		cluster.fork();
@@ -39,7 +36,5 @@ function masterThread() {
 }
 
 function workerThread() {
-	app.listen(CONFIG.port, () => {
-		log.info(`Server hosted (0.0.0.0:${CONFIG.port}) [${cluster.worker.id}]`);
-	});
+	app.listen(CONFIG.port, () => log.info(`Server hosted (0.0.0.0:${CONFIG.port}) [${cluster.worker.id}]`));
 }
