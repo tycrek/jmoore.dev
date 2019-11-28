@@ -13,7 +13,7 @@ app.use(require('express-fileupload')(CONFIG.upload));
 
 app.use(express.static(CONFIG.static));
 app.use('/images', express.static(CONFIG.images));
-app.use('/files', [filesMiddle, express.static(CONFIG.upload.path)]);
+app.use('/files', [(req, res, next) => req.url.endsWith('/') && req.url !== '/' ? res.redirect(`/files${req.url.substring(0, req.url.length - 1)}`) : next(), express.static(CONFIG.upload.path)]);
 app.use('/upload', require('express-basic-auth')(CONFIG.upload.auth));
 app.use(require('./router'));
 
@@ -42,10 +42,4 @@ function workerThread() {
 	app.listen(CONFIG.port, () => {
 		log.info(`Server hosted (0.0.0.0:${CONFIG.port}) [${cluster.worker.id}]`);
 	});
-}
-
-function filesMiddle(req, res, next) {
-	let u = req.url;
-	if (u.endsWith('/') && u !== '/') res.redirect(`/files${u.substring(0, u.length - 1)}`);
-	else next();
 }
