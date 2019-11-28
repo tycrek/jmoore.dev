@@ -13,7 +13,7 @@ app.use(require('express-fileupload')(CONFIG.upload));
 
 app.use(express.static(CONFIG.static));
 app.use('/images', express.static(CONFIG.images));
-app.use('/files', express.static(CONFIG.upload.path));
+app.use('/files', [(req, res, next) => req.url.endsWith('/') && req.url !== '/' ? res.redirect(`/files${req.url.substring(0, req.url.length - 1)}`) : next(), express.static(CONFIG.upload.path)]);
 app.use('/upload', require('express-basic-auth')(CONFIG.upload.auth));
 app.use(require('./router'));
 
@@ -28,10 +28,7 @@ function masterThread() {
 
 	for (let cpu = 0; cpu < cpus; cpu++) cluster.fork();
 
-	cluster.on('online', (worker) => {
-		log.info(`Worker online [${worker.id}]`);
-	});
-
+	cluster.on('online', worker => log.info(`Worker online [${worker.id}]`));
 	cluster.on('exit', (worker, code, signal) => {
 		log.warn(`Worker exited, reason: ${signal || code} [${worker.id}]`);
 		cluster.fork();
@@ -39,7 +36,5 @@ function masterThread() {
 }
 
 function workerThread() {
-	app.listen(CONFIG.port, () => {
-		log.info(`Server hosted (0.0.0.0:${CONFIG.port}) [${cluster.worker.id}]`);
-	});
+	app.listen(CONFIG.port, () => log.info(`Server hosted (0.0.0.0:${CONFIG.port}) [${cluster.worker.id}]`));
 }
