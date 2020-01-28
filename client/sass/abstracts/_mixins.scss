@@ -54,3 +54,18 @@
     border-top: unset;
   }
 }
+
+@mixin mdswitch($display: unset) {
+  &.desktop {
+    display: none;
+    @include device('desktop') {
+      display: $display;
+    }
+  }
+  &.mobile {
+    display: $display;
+    @include device('desktop') {
+      display: none;
+    }
+  }
+}

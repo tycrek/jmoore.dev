@@ -1,19 +1,22 @@
-.desktop {
-  display: none;
-  @include device('desktop') {
-    display: unset;
-  }
-}
-.mobile {
-  @include device('desktop') {
-    display: none;
-  }
-}
-
+/* Sidebar */
 #sidebar {
   background-color: cornflowerblue;
+
+  @include device('desktop') {
+    height: 100vh;
+  }
 }
 
+span.sidebar.menu {
+  @include mdswitch(block);
+}
+
+/* Content */
 #new-content {
   background-color: cornsilk;
+
+  @include device('desktop') {
+    height: 100vh;
+    overflow-y: scroll;
+  }
 }
