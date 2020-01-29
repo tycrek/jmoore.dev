@@ -1,3 +1,6 @@
+mixin strongLink(link, text)
+	a(href=link) #[strong #{text}]
+
 doctype html
 html
 	//- HTML Head
@@ -7,6 +10,7 @@ html
 		title jmoore.dev
 		//-TODO: Dynamic description
 		meta(name='description', content='jmoore.dev')
+		//-TODO: remove when moving to production
 
 		//- Device/SEO meta
 		meta(name='viewport', content='width=device-width, initial-scale=1.0,viewport-fit=cover')
@@ -31,9 +35,23 @@ html
 
 	//- HTML Body
 	body: .row#redesign
-		//- All other pages should extend _main and include a content block
-		block content
-			center: h1 Coming soon!
+		.col-3.sidebar#sidebar
+			center
+				img(src='/images/profile/joshua-moore-fountain.jpg')
+				table#social: tr
+					th: a(href='https://github.com/tycrek' target='_blank'): i.fab.fa-github#social
+					th: a(href='mailto:josh.moore@jmoore.dev' target='_blank'): i.fas.fa-envelope#social
+					th: a(href='https://www.linkedin.com/in/jmooredev/' target='_blank'): i.fab.fa-linkedin#social
+					th: a(href='https://twitter.com/tycrek' target='_blank'): i.fab.fa-twitter#social
+			h2 Josh Moore
+			#menu
+				span.sidebar.menu.mobile Menu
+				span.sidebar.menu.desktop: +strongLink('/redesign', 'Home')
+				span.sidebar.menu.desktop: +strongLink('/redesign/projects', 'Projects')
+				span.sidebar.menu.desktop: +strongLink('/redesign/uses', 'Uses')
+		.col-9#new-content
+			block content
+				center: h1 Coming soon!
 		block scripts
 			link(rel='stylesheet', href='/css', type='text/css')
 			script(src='https://kit.fontawesome.com/f2f926ac2d.js', crossorigin='anonymous', integrity='sha384-7uTRzazbrutfIzOojrJw4QL+wCBwLn03McGtkCd53kDbTPTqB20x+Ah36TGTcRHB')

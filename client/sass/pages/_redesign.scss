@@ -5,16 +5,18 @@
   font-weight: normal;
   font-style: normal;
   font-size: 2em;
-  h1, h2, h3, h4, h5, h6, .sidebar {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Boon300';
   }
   #sidebar {
-    h2 { margin-bottom: 0.25em; }
+    font-family: 'Boon300';
+    h2 { margin-bottom: 0.25em; margin-top: 0.25em; }
     img {
       width: 100%;
       max-width: 256px;
       border-radius: 32px;
       border: 1px solid #EEE;
+      margin-bottom: 1em;
     }
     background-color: #757575;
     padding: 1em 1em 0 1em;
@@ -26,6 +28,24 @@
   }
   span.sidebar.menu {
     @include mdswitch(block);
+  }
+  #social {
+    color: #EEE;
+  }
+  table#social {
+    width: 100%;
+    table-layout: fixed;
+    tr { height: 2em;}
+    th {
+      line-height: 1.25em;
+      font-size: 1em;
+      padding: 1px;
+      transition: font-size 0.25s;
+      &:hover { font-size: 1.25em; }
+    }
+  }
+  #menu {
+    text-indent: 1em;
   }
   /* Content */
   #new-content {
@@ -49,4 +69,13 @@
   a:hover{color:#80DEEA;}
   a:active{transition:color .3s;color:#00838F;}
   a,.link{text-decoration:none;}
+
+  #uses {
+    @include device('desktop') {
+      padding-left: 2em;
+    }
+    .col-6 {
+      padding-right: 2em;
+    }
+  }
 }
