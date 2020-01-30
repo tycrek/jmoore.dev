@@ -54,3 +54,20 @@
     border-top: unset;
   }
 }
+
+/// Hide or unhide items based on the device (phone or desktop)
+/// Items must have either .desktop or .mobile classes
+@mixin mdswitch($display: unset) {
+  &.desktop {
+    display: none;
+    @include device('desktop') {
+      display: $display;
+    }
+  }
+  &.mobile {
+    display: $display;
+    @include device('desktop') {
+      display: none;
+    }
+  }
+}

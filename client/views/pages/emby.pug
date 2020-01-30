@@ -1,6 +1,4 @@
-extends ../main
+extends ../_main
 block content
 	title Emby
-	.col-tab-2 &nbsp;
-	.col-tab-8: include:markdown-it emby.md
-	.col-tab-2 &nbsp;
+	include:markdown-it(html) emby.md

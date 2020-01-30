@@ -1,0 +1,100 @@
+include ../../includes/_mixins
+mixin transitLink(link, blank)
+	a.transit-link(target=blank ? '_blank' : '', href=link.href)!= link.text
+	br
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		//-TODO: Dynamic title
+		title jmoore.dev
+		//-TODO: Dynamic description
+		meta(name='description', content='jmoore.dev')
+		//-TODO: remove when moving to production
+
+		//- Device/SEO meta
+		meta(name='viewport', content='width=device-width, initial-scale=1.0,viewport-fit=cover')
+		meta(name='keywords', content='joshua,moore,josh,programmer,developer,edmonton,alberta,software,dev')
+		meta(name='author', content='Joshua Moore')
+
+		//- Author Mailto & Icon
+		link(rel='author', href='mailto:josh.moore@jmoore.dev')
+		link(rel='icon', href='/images/icons/favicon.ico', type='image/x-icon')
+		link(rel='icon', href='/images/icons/favicon.png', type='image/png')
+
+		//- Google & Apple
+		meta(name='google', content='nositelinkssearchbox notranslate')
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style', content='black')
+		meta(name='apple-mobile-web-app-title', content='Josh Moore - PWA')
+		link(rel='apple-touch-icon', href='/images/icons/apple-touch-icon.png')
+
+		//- Progressive Web App
+		meta(name='theme-color', content='#8BC34A')
+		link(rel='manifest' href='/bus.manifest.json')
+	body: .row: .col-12.bus#column
+		table.primary#table: tr
+			th(style="padding-right: 48px;"): span.transit-link(onclick='backButton()') <i class="fas fa-arrow-left"></i>
+			th: table.clock#table: tr.clock.row
+				th.clock.cell#hour 12
+				th.clock.cell#blink :
+				th.clock.cell#minute 00
+				th.clock.cell#ampm AM
+		h3.weekend#sat(hidden) For Saturday service, please take the #[a(href='/bus/macewan/411/saturday') 411].
+		h3.weekend#sun(hidden) For Sunday service, please take the #[a(href='/bus/macewan/411/sunday') 411].
+		if data && data.route
+			-
+				let route = data.route;
+				var number = route.split(' ')[0];
+				var stationCode = number.split('')[1];
+				var station = stationCode == 0 ? 'Ordze' : 'Bethel';
+				var school = 'U of A';
+				if (route.includes('NAIT')) school = 'NAIT';
+				if (route.includes('day') || route.includes('MacEwan') || number.split('')[2] == 1) school = 'MacEwan';
+				headTitle = `Route ${data.route} (${station} to ${school})`;
+			title= headTitle
+			h2.bus#title= headTitle
+			p.bus.status.status1(id=station.toLowerCase() name=station)
+			p.bus.status.status2(id=school.toLowerCase() name=school)
+			center
+				a.transit-link.small(target="_blank" href=data.pdf download) <i class="fas fa-download"></i>&nbsp;&nbsp;Download Strathcona County PDF
+				br
+
+
+		block bus
+			center
+				h1 Bus Schedules
+				+transitLink({ href: 'uofa', text: 'U of A' })
+				+transitLink({ href: 'macewan', text: 'MacEwan' })
+				+transitLink({ href: 'nait/413', text: 'NAIT' })
+				br
+				table(style="table-layout: fixed;")
+					tr
+						td: center: +transitLink(data.transit.homepage, true)
+						td: center: +transitLink(data.transit.app_android, true)
+					tr
+						td: center: +transitLink(data.transit.detours, true)
+						td: center: +transitLink(data.transit.app_ios, true)
+
+				br
+				+transitLink(data.transit.map, true)
+
+				img(src=data.transit.map.img style='width: 80%; border: 1px solid black')
+
+		block scripts
+			link(rel='stylesheet', href='/css', type='text/css')
+			script(src='https://kit.fontawesome.com/f2f926ac2d.js', crossorigin='anonymous', integrity='sha384-7uTRzazbrutfIzOojrJw4QL+wCBwLn03McGtkCd53kDbTPTqB20x+Ah36TGTcRHB')
+			script(src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js', crossorigin='anonymous', integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=')
+			script(src='https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js', crossorigin='anonymous', integrity='sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=')
+			link(rel='stylesheet', media='screen', href='https://fontlibrary.org/face/thsarabun-new', type='text/css')
+			link(rel='stylesheet', media='screen', href='https://fontlibrary.org/face/boon', type='text/css')
+
+			script.
+				$('#mobile-menu').click((e) => {
+					$('#menu, .menu.desktop').slideToggle('fast');
+				});
+			script(src='/bus.js' type="text/javascript")
+
+			//-TODO: Remove Google fonts
+			link(rel='stylesheet', media='screen', type='text/css', href='https://fonts.googleapis.com/css?family=K2D:400,700&display=swap')
+			link(rel='stylesheet', media='screen', type='text/css', href='https://fonts.googleapis.com/css?family=Patua+One&display=swap')

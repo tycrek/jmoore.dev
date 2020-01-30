@@ -1,0 +1,66 @@
+mixin strongLink(link, text)
+	a(href=link) #[strong #{text}]
+
+doctype html
+html
+	//- HTML Head
+	head
+		meta(charset='utf-8')
+		//-TODO: Dynamic title
+		title jmoore.dev
+		//-TODO: Dynamic description
+		meta(name='description', content='jmoore.dev')
+		//-TODO: remove when moving to production
+
+		//- Device/SEO meta
+		meta(name='viewport', content='width=device-width, initial-scale=1.0,viewport-fit=cover')
+		meta(name='keywords', content='joshua,moore,josh,programmer,developer,edmonton,alberta,software,dev')
+		meta(name='author', content='Joshua Moore')
+
+		//- Author Mailto & Icon
+		link(rel='author', href='mailto:josh.moore@jmoore.dev')
+		link(rel='icon', href='/images/icons/favicon.ico', type='image/x-icon')
+		link(rel='icon', href='/images/icons/favicon.png', type='image/png')
+
+		//- Google & Apple
+		meta(name='google', content='nositelinkssearchbox notranslate')
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style', content='black')
+		meta(name='apple-mobile-web-app-title', content='Josh Moore - PWA')
+		link(rel='apple-touch-icon', href='/images/icons/apple-touch-icon.png')
+
+		//- Progressive Web App
+		meta(name='theme-color', content='#8BC34A')
+		block manifest
+
+	//- HTML Body
+	body.redesign: .row#redesign
+		.col-3.sidebar#sidebar
+			center
+				img(src='/images/profile/joshua-moore-fountain.jpg')
+				table#social: tr
+					th: a(href='https://github.com/tycrek' target='_blank'): i.fab.fa-github#social
+					th: a(href='mailto:josh.moore@jmoore.dev' target='_blank'): i.fas.fa-envelope#social
+					th: a(href='https://www.linkedin.com/in/jmooredev/' target='_blank'): i.fab.fa-linkedin#social
+					th: a(href='https://twitter.com/tycrek' target='_blank'): i.fab.fa-twitter#social
+			h2 Josh Moore
+			span.sidebar.menu.mobile#mobile-menu #[i.fas.fa-bars] Menu
+			#menu.desktop
+				span.sidebar.menu: +strongLink('/', 'Home')
+				span.sidebar.menu: +strongLink('/projects', 'Projects')
+				span.sidebar.menu: +strongLink('/uses', 'Uses')
+		.col-9#new-content
+			block content
+				center: h1 Coming soon!
+		block scripts
+			link(rel='stylesheet', href='/css', type='text/css')
+			script(src='https://kit.fontawesome.com/f2f926ac2d.js', crossorigin='anonymous', integrity='sha384-7uTRzazbrutfIzOojrJw4QL+wCBwLn03McGtkCd53kDbTPTqB20x+Ah36TGTcRHB')
+			script(src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js', crossorigin='anonymous', integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=')
+			script(src='https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js', crossorigin='anonymous', integrity='sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=')
+			link(rel='stylesheet', media='screen', href='https://fontlibrary.org/face/thsarabun-new', type='text/css')
+			link(rel='stylesheet', media='screen', href='https://fontlibrary.org/face/boon', type='text/css')
+
+			script.
+				$('#mobile-menu').click((e) => {
+					$('#menu, .menu.desktop').slideToggle('fast');
+				});

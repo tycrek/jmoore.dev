@@ -1,0 +1,36 @@
+extends ../_main
+block content
+	h2 Uses
+	p Here you will find a list of tools, software, and services that I use on a daily basis.
+	#uses
+		.col-6
+			h3 Development
+			ul
+				li #[+strongLink('https://vscodium.com/', 'VSCodium')] - A fork of VSCode without any Microsoft binaries or telemetry.
+				li #[+strongLink('https://nodejs.org/', 'Node.js')] - Server-side JavaScript engine. Great for webapps. It's what is powering this website!
+				li #[+strongLink('https://pugjs.org/', 'Pug')] - HTML template engine for Node.js. Makes it super easy to quickly write HTML.
+				li #[+strongLink('https://sass-lang.com/', 'Sass')] - A CSS extension that takes all the headaches away from writing stylesheets.
+				li #[+strongLink('https://fontawesome.com/', 'Font Awesome')] - Modern icons designed to work in nearly every browser. Very customizable with a huge icon set.
+		.col-6
+			h3 OS & Hardware
+			ul
+				li #[+strongLink('https://manjaro.org/', 'Manjaro')] - Arch-based Linux operating system. Highly customizable.
+				li #[+strongLink('https://github.com/Airblader/i3', 'i3-gaps')] - A fork of the #[a(href='https://i3wm.org/') i3 tiling window manager] for Linux. Perfect for power users and productivity.
+		.col-6
+			h3 Desktop apps
+			ul
+				li #[+strongLink('https://firefox.com', 'Firefox')] - Fast and secure browser from Mozilla.
+				li #[+strongLink('https://www.sublimetext.com/', 'Sublime Text')] - Lightweight text editor that can open nearly any format. Awesome for scripts with syntax highlighting for tons of languages.
+		.col-6
+			h3 Mobile apps
+			ul
+				li #[+strongLink('https://old.reddit.com/r/redditisfun/', 'RIF is fun for Reddit')] - Third-party Reddit app for Android.
+				li #[+strongLink('https://newpipe.schabi.org/', 'NewPipe')] - Open-source lightweight YouTube front-end for Android. Supports background playing, offline downloads, Picture in Picture, and more. Ad free!
+				li #[+strongLink('https://firefox.com/android', 'Firefox Android')] - Allows me to install all my desktop extensions on my phone, too.
+		.col-6
+			h3 Other
+			ul
+				li #[+strongLink('https://signal.org/', 'Signal')] - End-to-end encrypted messaging.
+				li #[+strongLink('https://www.tutanota.com/', 'Tutanota')] - Open-source highly secure encrypted email service. My personal email points to their servers!
+				li #[+strongLink('https://mullvad.net/', 'Mullvad')] - Open-source no-logs VPN service with servers worldwide. Implements both OpenVPN and the newer #[a(href='https://www.wireguard.com/') WireGuard] protocol.
+				li #[+strongLink('https://bitwarden.com/', 'Bitwarden')] - Open-source password manager. Also acts as a 2FA client and includes a password generator tool.
