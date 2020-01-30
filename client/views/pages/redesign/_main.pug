@@ -34,7 +34,7 @@ html
 		block manifest
 
 	//- HTML Body
-	body: .row#redesign
+	body.redesign: .row#redesign
 		.col-3.sidebar#sidebar
 			center
 				img(src='/images/profile/joshua-moore-fountain.jpg')
@@ -44,11 +44,11 @@ html
 					th: a(href='https://www.linkedin.com/in/jmooredev/' target='_blank'): i.fab.fa-linkedin#social
 					th: a(href='https://twitter.com/tycrek' target='_blank'): i.fab.fa-twitter#social
 			h2 Josh Moore
-			#menu
-				span.sidebar.menu.mobile Menu
-				span.sidebar.menu.desktop: +strongLink('/redesign', 'Home')
-				span.sidebar.menu.desktop: +strongLink('/redesign/projects', 'Projects')
-				span.sidebar.menu.desktop: +strongLink('/redesign/uses', 'Uses')
+			span.sidebar.menu.mobile#mobile-menu #[i.fas.fa-bars] Menu
+			#menu.desktop
+				span.sidebar.menu: +strongLink('/redesign', 'Home')
+				span.sidebar.menu: +strongLink('/redesign/projects', 'Projects')
+				span.sidebar.menu: +strongLink('/redesign/uses', 'Uses')
 		.col-9#new-content
 			block content
 				center: h1 Coming soon!
@@ -59,3 +59,8 @@ html
 			script(src='https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js', crossorigin='anonymous', integrity='sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=')
 			link(rel='stylesheet', media='screen', href='https://fontlibrary.org/face/thsarabun-new', type='text/css')
 			link(rel='stylesheet', media='screen', href='https://fontlibrary.org/face/boon', type='text/css')
+
+			script.
+				$('#mobile-menu').click((e) => {
+					$('#menu, .menu.desktop').slideToggle('fast');
+				});

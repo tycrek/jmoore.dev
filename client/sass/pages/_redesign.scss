@@ -1,4 +1,5 @@
 /* Sidebar */
+body.redesign, #redesign { @include device('desktop') { height: 100vh; } }
 #redesign {
   color: #EEEEEE;
   font-family: 'THSarabunNewRegular';
@@ -18,16 +19,32 @@
       border: 1px solid #EEE;
       margin-bottom: 1em;
     }
-    background-color: #757575;
+    //background-color: #757575;
+    background-color: #212121;
     padding: 1em 1em 0 1em;
     text-align: center;
     @include device('desktop') {
-      height: 100vh;
+      height: 100%;
       text-align: left;
     }
   }
-  span.sidebar.menu {
+  .desktop, .mobile {
     @include mdswitch(block);
+  }
+  span.sidebar.menu {
+    display: block;
+    &.mobile {
+      text-indent: 0;
+      @include mdswitch(block);
+      &:hover { cursor: pointer; }
+    }
+  }
+  #menu {
+    text-indent: 0;
+    @include device('desktop') {
+      text-indent: 1em;
+      display: block !important;
+    }
   }
   #social {
     color: #EEE;
@@ -44,9 +61,6 @@
       &:hover { font-size: 1.25em; }
     }
   }
-  #menu {
-    text-indent: 1em;
-  }
   /* Content */
   #new-content {
     background-color: #424242;
@@ -57,7 +71,7 @@
       border: 1px solid #EEE
     }
     @include device('desktop') {
-      height: 100vh;
+      height: 100%;
       overflow-y: scroll;
       padding: 2em 4em 0 4em;
     }
