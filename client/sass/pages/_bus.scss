@@ -1,3 +1,19 @@
+#bus {
+  font-family:
+    'K2D',
+    'Arial',
+    'Helvetica',
+    sans-serif,
+  ;
+  color: unset;
+  font-weight: unset;
+  font-style: unset;
+  font-size: unset;
+  a {
+    color: #FFF;
+  }
+}
+
 .bus {
   &.row:nth-child(even) { background-color: gainsboro; }
   &.row:nth-child(odd) { background-color: whitesmoke; }

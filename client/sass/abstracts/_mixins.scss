@@ -36,25 +36,6 @@
   }
 }
 
-/// Adds a nice drop shadow to divs on tablets and desktops
-@mixin shadowBorder {
-  @include device('tablet') {
-    box-shadow: 2px 2px 2px 2px $card-border-color;
-  }
-}
-
-/// Forced shadow border
-@mixin shadowBorderForce {
-  box-shadow: 2px 2px 2px 2px $card-border-color;
-}
-
-@mixin mobileBorder($device) {
-  border-top: 2px solid $divider-color;
-  @include device($device) {
-    border-top: unset;
-  }
-}
-
 /// Hide or unhide items based on the device (phone or desktop)
 /// Items must have either .desktop or .mobile classes
 @mixin mdswitch($display: unset) {

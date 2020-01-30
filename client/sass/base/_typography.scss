@@ -1,45 +1,37 @@
 body {
-  font-family: $font-stack;
-  color: hsl(0, 0, 15%);
+  color: #EEEEEE;
+  font-family: 'THSarabunNewRegular';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
 }
 
-#careforaride {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+h1, h2, h3, h4, h5, h6, #sidebar {
+  font-family: 'Boon300';
 }
 
-.span-h1 { font-size: 2em; }
-.span-h2 { font-size: 1.5em; }
-.span-h3 { font-size: 1.17em; }
-.span-h4 { font-size: 1em; }
-.span-h5 { font-size: 0.83em; }
-.span-h6 { font-size: 0.67em; }
-[class*="span-h"] { font-weight: bold; }
-
-.fa-address-card {
-  color: #00C853;
+.sidebar#icon {
+  color: #EEE;
 }
 
-.fa-envelope {
-  color: #FF6D00;
-}
-
-.fa-github {
-  color: #24292e;
-}
-
-.fa-linkedin {
-  color: #2867b2;
-}
-
-.fa-twitter {
-  color: #1da1f2;
-}
-
-.fa-instagram {
-  color: #e1306c;
-}
-
+/*
+  links.css - v0.0.1 - "Smarter defaults for links"
+   License MIT
+*/
 a {
+  transition: color .4s;
+  color: #00BCD4;
   outline: 0;
   text-decoration: none;
+}
+a:link, a:visited {
+  color: #00BCD4;
+}
+a:hover {
+  color: #80DEEA;
+}
+a:active {
+  transition: color .3s;
+  color: #00838F;
 }

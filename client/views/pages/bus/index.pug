@@ -1,4 +1,3 @@
-include ../../includes/_mixins
 mixin transitLink(link, blank)
 	a.transit-link(target=blank ? '_blank' : '', href=link.href)!= link.text
 	br
@@ -7,9 +6,11 @@ html
 	head
 		meta(charset='utf-8')
 		//-TODO: Dynamic title
-		title jmoore.dev
+		if headTitle
+			title= headTitle
 		//-TODO: Dynamic description
-		meta(name='description', content='jmoore.dev')
+		//meta(name='description', content='jmoore.dev')
+		meta(name='description' content=headDescription)
 		//-TODO: remove when moving to production
 
 		//- Device/SEO meta
@@ -32,7 +33,7 @@ html
 		//- Progressive Web App
 		meta(name='theme-color', content='#8BC34A')
 		link(rel='manifest' href='/bus.manifest.json')
-	body: .row: .col-12.bus#column
+	body#bus: .row: .col-12.bus#column
 		table.primary#table: tr
 			th(style="padding-right: 48px;"): span.transit-link(onclick='backButton()') <i class="fas fa-arrow-left"></i>
 			th: table.clock#table: tr.clock.row

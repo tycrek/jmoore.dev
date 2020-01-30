@@ -22,5 +22,7 @@
 			"text": "<i class=\"fas fa-map-marked-alt\"></i> Download commuter map as PDF"
 		}
 	},
-	"manifest": "/bus.manifest.json"
+	"manifest": "/bus.manifest.json",
+	"title": "Bus Schedules",
+	"description": "Strathcona County bus schedules for university commutes (U of A, MacEwan, & NAIT)"
 }

@@ -1,58 +1,88 @@
-.index#main {
+/* Sidebar */
+#sidebar {
+  background-color: #212121;
+  padding: 1em 1em 0.5em 1em;
   text-align: center;
   @include device('desktop') {
-    margin-top: 48px;
-    padding-top: 48px;
-    padding-bottom: 48px;
-    width: 700px;
-    @include shadowBorder;
+    height: 100%;
+    text-align: left;
   }
 }
-
-.index.row {
-  padding: 1.5em 0 1.5em 0;
-  margin: 0 2em 0 2em;
+img#profile {
+  width: 50%;
+  margin-bottom: .5em;
+  max-width: 256px;
+  border-radius: 32px;
+  border: 1px solid #EEE;
   @include device('desktop') {
-    margin: 0 5em 0 5em;
+    width: 100%;
+    margin-bottom: 1em;
   }
 }
-
-.profile {
-  font-size: 1.5em;
-  &#name {
-    font-size: 2.5em;
-    display: block;
-  }
-}
-
-.index.profile#photo {
+table.sidebar.social {
   width: 100%;
-  max-width: 300px;
-  border-radius: 150px;
-  margin-bottom: 1em;
-}
-
-#row {
-  border-bottom: 2px solid $divider-color;
-}
-
-.social#container {
-  padding-top: 1.5em;
-  @include device('desktop') {
-    padding-left: 5em;
-    padding-right: 5em;
-  }
-}
-
-.social#table {
   table-layout: fixed;
-  width: 100%;
-  #row1 td {
-    padding-bottom: 2em;
+}
+tr.sidebar.social {
+  height: 2em;
+}
+th.sidebar.social {
+  line-height: 1.25em;
+  font-size: 1em;
+  padding: 1px;
+  transition: font-size 0.25s;
+  &:hover {
+    font-size: 1.25em;
+  }
+}
+#sidebar-title {
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+.sidebar#menu {
+  text-indent: 0;
+  @include device('desktop') {
+    text-indent: 1em;
+    display: block !important; // TODO: Fix the important flag somehow
+  }
+}
+span.sidebar.menu {
+  display: block;
+  &.mobile {
+    @include mdswitch(block);
+    text-indent: 0;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
-.social.item {
-  outline: none;
-  text-decoration: none;
+/* Content */
+#content {
+  background-color: #424242;
+  padding: 1em 1em 0 1em;
+  @include device('desktop') {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 2em 4em 0 4em;
+  }
+}
+center.banner {
+  margin: -1em -1em 0 -1em;
+}
+img#banner {
+  width: 100%;
+  @include device('desktop') {
+    border-radius: 32px;
+    border: 1px solid #EEE
+  }
+}
+
+#uses {
+  @include device('desktop') {
+    padding-left: 2em;
+  }
+  .col-6 {
+    padding-right: 2em;
+  }
 }

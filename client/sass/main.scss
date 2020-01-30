@@ -18,15 +18,9 @@
 @import 'vendors/normalize';
 //@import 'vendors/links';
 
+@import 'base/base';
 @import 'base/responsive';
 @import 'base/typography';
 
-@import 'layout/card';
-
-@import 'pages/about';
-@import 'pages/bus';
 @import 'pages/index';
-@import 'pages/demos/careforaride';
-
-@import 'pages/redesign';
-//@import 'themes/';
+@import 'pages/bus';

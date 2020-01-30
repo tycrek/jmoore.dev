@@ -1,0 +1,21 @@
+center
+	img(src='/images/profile/joshua-moore-fountain.jpg')#profile
+	table.sidebar.social: tr.sidebar.social
+		th.sidebar.social
+			a(href='https://github.com/tycrek' target='_blank')
+				i.fab.fa-github.sidebar#icon
+		th.sidebar.social
+			a(href='mailto:josh.moore@jmoore.dev')
+				i.fas.fa-envelope.sidebar#icon
+		th.sidebar.social
+			a(href='https://www.linkedin.com/in/jmooredev/' target='_blank')
+				i.fab.fa-linkedin.sidebar#icon
+		th.sidebar.social
+			a(href='https://twitter.com/tycrek' target='_blank')
+				i.fab.fa-twitter.sidebar#icon
+h2#sidebar-title Josh Moore
+span.sidebar.menu.mobile#mobile-menu #[i.fas.fa-bars] Menu
+.desktop.sidebar#menu
+	span.sidebar.menu: +strongLink('/', 'Home')
+	span.sidebar.menu: +strongLink('/projects', 'Projects')
+	span.sidebar.menu: +strongLink('/uses', 'Uses')

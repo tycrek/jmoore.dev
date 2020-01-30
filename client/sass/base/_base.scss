@@ -1,0 +1,9 @@
+body, #primary-row {
+  @include device('desktop') {
+    height: 100vh;
+  }
+}
+
+.desktop, .mobile {
+  @include mdswitch(block);
+}
