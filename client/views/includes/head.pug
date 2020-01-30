@@ -1,24 +1,30 @@
-head
-	meta(charset='utf-8')
+meta(charset='utf-8')
+block title
+	title jmoore.dev
+//-TODO: Dynamic description
+meta(name='description', content='jmoore.dev')
 
+//- Device/SEO meta
+meta(name='viewport', content='width=device-width, initial-scale=1.0,viewport-fit=cover')
+meta(name='keywords', content='joshua,moore,josh,programmer,developer,edmonton,alberta,software,dev')
+meta(name='author', content='Joshua Moore')
+
+//- Author Mailto & Icon
+link(rel='author', href='mailto:josh.moore@jmoore.dev')
+link(rel='icon', href='/images/icons/favicon.ico', type='image/x-icon')
+link(rel='icon', href='/images/icons/favicon.png', type='image/png')
+
+//- Google & Apple
+meta(name='google', content='nositelinkssearchbox notranslate')
+meta(name='apple-mobile-web-app-capable', content='yes')
+meta(name='apple-mobile-web-app-status-bar-style', content='black')
+meta(name='apple-mobile-web-app-title', content='Josh Moore - PWA')
+link(rel='apple-touch-icon', href='/images/icons/apple-touch-icon.png')
+
+//- Progressive Web App
+meta(name='theme-color', content='#8BC34A')
+block manifest
+
+//-
 	if headTitle
 		title= headTitle
-	meta(name='description' content=headDescription)
-
-	+meta('viewport')
-	+meta('keywords')
-	+meta('author')
-
-	+link('author')
-	+link('icon')
-
-	+meta('google')
-
-	+link('apple-touch-icon')
-	+meta('apple-mobile-web-app-capable')
-	+meta('apple-mobile-web-app-status-bar-style')
-	+meta('apple-mobile-web-app-title')
-
-	block manifest
-
-	+meta('theme-color')

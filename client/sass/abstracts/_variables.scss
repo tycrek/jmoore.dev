@@ -8,19 +8,6 @@ $sass-dark-grey: hsl(0, 0%, 25%);
 
 $sass-bus-green: #8BC34A;
 
-/* Theme colors */
-$theme-primary-color: $sass-orange;
-$card-border-color: $sass-grey;
-$divider-color: $sass-light-grey;
-
-/* Font */
-$font-stack: (
-  'K2D',
-  'Arial',
-  'Helvetica',
-  sans-serif,
-);
-
 /* Responsive breakpoints */
 $tiny: (max-width: 600px);
 $small: (min-width: 600px);
