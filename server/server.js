@@ -11,6 +11,40 @@ app.use(require('express-pino-logger')({ logger: log }));
 app.use(require('serve-favicon')(CONFIG.icon));
 app.use(require('express-fileupload')(CONFIG.upload));
 
+app.use((_req, res, next) => {
+	let h2_push_urls = [
+		// Static
+		'/css',
+		'/bus.js',
+		'/images/joshua-moore-1.jpg',
+		'/images/jm-vancouver-bc.jpeg',
+		'/images/transit-2019fall_commuter_map_web-1.jpg',
+
+		// Site pages
+		'/uses/',
+		'/projects/',
+		'/emby/',
+
+		// Bus
+		'/bus/',
+		'/bus/macewan/',
+		'/bus/uofa/',
+		'/bus/nait/',
+		'/bus/nait/413/',
+		'/bus/uofa/414/',
+		'/bus/uofa/404/',
+		'/bus/macewan/401/',
+		'/bus/macewan/411/',
+		'/bus/macewan/413/',
+		'/bus/macewan/411/saturday/',
+		'/bus/macewan/411/sunday/',
+	], header;
+	h2_push_urls.forEach((path) => {
+		header += (`<${path}>; rel=preload, `);
+	});
+	res.header('Link', header);
+	next();
+});
 app.use(express.static(CONFIG.static));
 app.use('/images', express.static(CONFIG.images));
 app.use('/files', [(req, res, next) => req.url.endsWith('/') && req.url !== '/' ? res.redirect(`/files${req.url.substring(0, req.url.length - 1)}`) : next(), express.static(CONFIG.upload.path)]);
