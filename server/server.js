@@ -38,7 +38,7 @@ app.use((_req, res, next) => {
 		'/bus/macewan/413/',
 		'/bus/macewan/411/saturday/',
 		'/bus/macewan/411/sunday/',
-	], header;
+	], header = '';
 	h2_push_urls.forEach((path) => {
 		header += (`<${path}>; rel=preload, `);
 	});
