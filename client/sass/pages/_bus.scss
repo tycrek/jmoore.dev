@@ -15,6 +15,12 @@
 }
 
 .bus {
+  font-family:
+    'K2D',
+    'Arial',
+    'Helvetica',
+    sans-serif,
+  ;
   &.row:nth-child(even) { background-color: gainsboro; }
   &.row:nth-child(odd) { background-color: whitesmoke; }
   &.cell {

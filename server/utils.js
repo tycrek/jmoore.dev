@@ -12,16 +12,33 @@ module.exports = {
 		static: joinPath('../client/static'),
 		images: joinPath('../client/images'),
 		views: joinPath('../client/views/pages'),
-		upload: {
-			path: joinPath('../client/uploads'),
-			createParentPath: true,
-			abortOnLimit: true,
-			auth: {
-				// Change these values when deployed to server
-				users: { 'username': 'password' },
-				challenge: true
-			}
-		}
+		h2PushPaths: [ // These paths will be added to the Link header for HTTP/2 Push events
+			// Static
+			'/css',
+			'/bus.js',
+			'/images/joshua-moore-1.jpg',
+			'/images/jm-vancouver-bc.jpeg',
+			'/images/transit-2019fall_commuter_map_web-1.jpg',
+
+			// Site pages
+			'/uses/',
+			'/projects/',
+			'/emby/',
+
+			// Bus
+			'/bus/',
+			'/bus/macewan/',
+			'/bus/uofa/',
+			'/bus/nait/',
+			'/bus/nait/413/',
+			'/bus/uofa/414/',
+			'/bus/uofa/404/',
+			'/bus/macewan/401/',
+			'/bus/macewan/411/',
+			'/bus/macewan/413/',
+			'/bus/macewan/411/saturday/',
+			'/bus/macewan/411/sunday/',
+		]
 	},
 	sass: {
 		file: joinPath('../client/sass/main.scss'),

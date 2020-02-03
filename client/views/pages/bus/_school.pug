@@ -1,7 +1,7 @@
 extends index
 block bus
 	center
-		h1= data.school
+		h1.bus= data.school
 		each route in data.routes
 			-
 				var number = route.split(' ')[0];
