@@ -1,0 +1,21 @@
+extends ../_main
+block title
+	title Links
+block content
+	h2 Links
+	ul
+		li: a(href='/uses') List of software and tools I use
+		li: a(href='/nostalgia') Collection of videos from my childhood
+block append scripts
+	//- Links to any extra external or inline scripts/stylesheets.
+		Can use either block to replace all defaults (not recommended!)
+		Or can use append to add on to existing defaults (recommended).
+
+//- Checklist:
+	1. Properly extends _main?
+	2. Page has a Title?
+	3. Page has a manifest (if required)?
+	4. Page has content (leave blank for coming soon)?
+	5. Page has scripts/styles if needed?
+	6. Page has relevant Sass?
+	7. Page is working both mobile & desktop?
