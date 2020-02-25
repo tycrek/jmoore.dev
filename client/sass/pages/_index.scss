@@ -46,11 +46,25 @@ th.sidebar.social {
     display: block !important; // TODO: Fix the important flag somehow
   }
 }
+table.sidebar.menu {
+  table-layout: fixed;
+  text-align: left;
+  margin: 0 auto 0 auto;
+  @include device('desktop') {
+    margin: unset;
+  }
+}
+td.sidebar.menu.icon {
+  text-align: center;
+  padding: 0 16px 0 2px;
+}
 span.sidebar.menu {
   display: block;
   &.mobile {
     @include mdswitch(block);
     text-indent: 0;
+    padding-bottom: 0.25em;
+    font-weight: bold;
     &:hover {
       cursor: pointer;
     }
