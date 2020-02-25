@@ -1,4 +1,5 @@
 body, #primary-row {
+  background-color: #424242;
   @include device('desktop') {
     height: 100vh;
   }
