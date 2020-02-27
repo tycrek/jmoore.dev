@@ -27,6 +27,7 @@ app.use((_req, res, next) => {
 
 // Static Express routes (for JavaScript, images, robots.txt, manifests, etc.)
 app.use(express.static(CONFIG.static));
+app.use('/fonts', express.static(CONFIG.fonts));
 app.use('/images', express.static(CONFIG.images));
 
 // Route handler

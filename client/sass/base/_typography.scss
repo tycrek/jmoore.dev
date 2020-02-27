@@ -3,6 +3,7 @@
     Sansita:  https://fontlibrary.org/en/font/sansita  (SIL Open Font License)
     THSarabunNew:  https://fontlibrary.org/en/font/thsarabun-new  (GNU GPL)
 */
+/*
 @font-face {
   font-family: Sansita;
   src: url('/fonts/Sansita/Sansita-Regular.ttf') format('truetype');
@@ -21,14 +22,54 @@
   font-family: THSarabunNew;
   font-weight: bold;
   src: url('/fonts/THSarabunNew/THSarabunNew-Bold.ttf') format('truetype');
+}*/
+
+/* google-webfonts-helper.herokuapp.com */
+/* sarabun-regular - latin */
+@font-face {
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sarabun Regular'), local('Sarabun-Regular'),
+       url('/fonts/sarabun-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/sarabun-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* sarabun-700 - latin */
+@font-face {
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Sarabun Bold'), local('Sarabun-Bold'),
+       url('/fonts/sarabun-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/sarabun-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* sansita-regular - latin */
+@font-face {
+  font-family: 'Sansita';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sansita Regular'), local('Sansita-Regular'),
+       url('/fonts/sansita-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/sansita-v4-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* sansita-700 - latin */
+@font-face {
+  font-family: 'Sansita';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Sansita Bold'), local('Sansita-Bold'),
+       url('/fonts/sansita-v4-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/sansita-v4-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 body {
   color: #EEEEEE;
-  font-family: 'THSarabunNew', Verdana, Geneva, Tahoma, sans-serif;
+  //font-family: 'THSarabunNew', Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Sarabun', Verdana, Geneva, Tahoma, sans-serif;
   font-weight: normal;
   font-style: normal;
-  font-size: 2em;
 }
 
 .monospace {
@@ -39,9 +80,36 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6, #sidebar {
+#content {
+  font-size: 1.5rem;
+  h1 { font-size:    4rem !important; } // h1 { font-size: 2em; }
+  h2 { font-size:    3rem !important; } // h2 { font-size: 1.5em; }
+  h3 { font-size: 2.34rem !important; } // h3 { font-size: 1.17em; }
+  h4 { font-size:    2rem !important; } // h4 { font-size: 1em; }
+  h5 { font-size: 1.66rem !important; } // h5 { font-size: .83em; }
+  h6 { font-size: 1.34rem !important; } // h6 { font-size: .67em; }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sansita', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+  }
+}
+
+#sidebar {
   font-family: 'Sansita', Verdana, Geneva, Tahoma, sans-serif;
   font-weight: normal;
+}
+
+#sidebar-title {
+  font-size: 3em;
+  font-weight: normal;
+}
+
+#mobile-menu, td.menu {
+  font-size: 2em;
+}
+
+table.social {
+  font-size: 2em;
 }
 
 .sidebar#icon {

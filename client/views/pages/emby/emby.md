@@ -44,3 +44,5 @@ Music, however, takes a lot longer. Most of the music files are called "FLAC" fi
 [1]: https://emby.jmoore.dev
 [2]: https://play.google.com/store/apps/details?id=com.mb.android&hl=en_US
 [3]: https://apps.apple.com/us/app/emby/id992180193
+
+### <i class="fas fa-cogs"></i> How does it work?

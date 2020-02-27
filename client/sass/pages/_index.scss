@@ -1,7 +1,8 @@
 /* Sidebar */
 #sidebar {
   background-color: #212121;
-  padding: 1em 1em 0.5em 1em;
+  //padding: 1em 1em 0.5em 1em;
+  padding: 2em 2em 0.5em 2em;
   text-align: center;
   @include device('desktop') {
     height: 100%;
@@ -16,7 +17,7 @@ img#profile {
   border: 1px solid #EEE;
   @include device('desktop') {
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
 }
 table.sidebar.social {
