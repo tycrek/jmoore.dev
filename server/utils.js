@@ -11,6 +11,7 @@ module.exports = {
 		icon: joinPath('../client/static/favicon.ico'),
 		static: joinPath('../client/static'),
 		images: joinPath('../client/images'),
+		fonts: joinPath('../client/static/fonts'),
 		views: joinPath('../client/views/pages'),
 		h2PushPaths: [ // These paths will be added to the Link header for HTTP/2 Push events
 			// Static
