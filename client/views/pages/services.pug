@@ -1,10 +1,55 @@
 extends ../_main
 block title
 	title Services
-//-block content
-	h2 Page title
-	p Some fun text, or
-	include:markdown-it(html) markdown-file-with-raw-html.md
+block content
+	h2 <i class="fas fa-cogs"></i> Services
+	.col-12
+		h3 <i class="fas fa-wrench"></i> PC Building
+		p You will pay the cost of parts, #[strong Windows 10], and #[strong Microsoft Office 2019]. If you wish to have a different OS installed, let me know. Windows 10 and Office keys are purchased from #[strong verified] eBay sellers to ensure you get the best price.
+		p Due to complexity, I am unable to do water-cooled builds at this time.
+		.col-4
+			h4 Standard
+			ul
+				li Build PC
+				li Install OS
+				li Install updates
+				li Install antivirus
+				li: strong $40
+		.col-4
+			h4 Premium
+			ul
+				li: em Includes everything from #[strong Standard]
+				li Transfer files from old PC
+				li Initial restore point will be created
+				li: strong $60
+		.col-4
+			h4 Platinum
+			ul
+				li: em Includes everything from #[strong Premium]
+				li Install any requested software, such as: Google Chrome, Firefox, Steam, Discord, or any other requested software.
+				li: strong $80
+	.col-12
+		br
+		h3 <i class="fas fa-user-headset"></i> IT Services
+		p Not sure what you are looking for? Contact me for a #[strong free] email consultation: #[a(href='mailto:josh.moore@jmoore.dev') josh.moore@jmoore.dev]
+		.col-6
+			h4 Device troubleshooting &amp; repair
+			ul
+				li Diagnostic fee: #[strong $25]
+				li Repairs: #[em cost of parts + #[strong $25] (will be contacted before doing any repairs)]
+				li Data backup: #[em cost of backup drive + #[strong $25] (will be contacted before doing any backups)]
+		.col-6
+			h4 Technical support
+			ul
+				li #[strong Free] email consultation: #[a(href='mailto:josh.moore@jmoore.dev') josh.moore@jmoore.dev]
+				li On-site support: #[strong $20/hr]
+				li Travel fee: #[strong $10] (For every #[strong 30 minutes] of travel)
+	.col-6
+		br
+		h3 <i class="fas fa-laptop-code"></i> Web design
+		p Please contact me at #[a(href='mailto:josh.moore@jmoore.dev') josh.moore@jmoore.dev] for more information.
+		br
+		br
 block append scripts
 	//- Links to any extra external or inline scripts/stylesheets.
 		Can use either block to replace all defaults (not recommended!)
