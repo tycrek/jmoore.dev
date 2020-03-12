@@ -89,7 +89,8 @@ img#banner {
   width: 100%;
   @include device('desktop') {
     border-radius: 32px;
-    border: 1px solid #EEE
+    border: 1px solid #EEE;
+    width: 80%;
   }
 }
 
