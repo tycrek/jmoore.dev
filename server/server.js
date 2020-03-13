@@ -12,7 +12,7 @@ app.enable('strict routing');
     modern Favicon serving */
 app.use(require('compression')());
 app.use(require('helmet')());
-app.use(require('express-pino-logger')({ logger: log }));
+//app.use(require('express-pino-logger')({ logger: log }));
 app.use(require('serve-favicon')(CONFIG.icon));
 
 // Add Link header for HTTP/2 Push events
@@ -24,6 +24,9 @@ app.use((_req, res, next) => {
 	res.header('Link', pushHeader.substring(0, pushHeader.length - 1));
 	next();
 });
+
+// Analytics
+app.use(require('./analytics').track);
 
 // Static Express routes (for JavaScript, images, robots.txt, manifests, etc.)
 app.use(express.static(CONFIG.static));

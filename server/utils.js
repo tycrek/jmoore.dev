@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs-extra');
 const pino = require('pino')({
-	prettyPrint: process.env.NODE_ENV === 'production' ? false : true
+	prettyPrint: process.env.NODE_ENV === 'production' ? false : true,
+	level: process.env.NODE_ENV === 'production' ? 'info' : 'debug'
 });
 
 module.exports = {
