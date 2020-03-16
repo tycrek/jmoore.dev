@@ -64,3 +64,5 @@ typings/
 uploads/
 
 *.mkv
+
+auth.json
