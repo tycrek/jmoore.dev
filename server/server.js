@@ -1,4 +1,5 @@
 const { CONFIG, log } = require('./utils');
+const analytics = require('./analytics');
 const cluster = require('cluster');
 const express = require('express');
 const app = express();
@@ -26,7 +27,9 @@ app.use((_req, res, next) => {
 });
 
 // Analytics
-app.use(require('./analytics').track);
+const schedule = require('node-schedule');
+analytics.init().then(() => schedule.scheduleJob('*/5 * * * *', analytics.flushAnalytics()));
+app.use(analytics.track);
 
 // Static Express routes (for JavaScript, images, robots.txt, manifests, etc.)
 app.use(express.static(CONFIG.static));
@@ -42,7 +45,7 @@ app.set('view engine', 'pug');
 
 // Call proper task for multithreading
 cluster.isMaster ? masterThread() : workerThread();
-
+console.log('ohdear');
 // Thread for master (only runs at launch, possibly after a crash or server reboot)
 function masterThread() {
 	// One thread per CPU
