@@ -71,6 +71,10 @@ router.post('/upload', (req, res, next) => {
 		.catch(err => res.type('html').send(err.message));
 });
 
+router.get('/donate', (req, res, next) => {
+	res.redirect(301, 'https://paypal.me/jmoore235');
+});
+
 // HTTP 404
 router.use((_req, res) => res.status(404).send(http._404));
 
