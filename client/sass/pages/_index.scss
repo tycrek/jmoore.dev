@@ -94,7 +94,7 @@ img#banner {
   }
 }
 
-#uses {
+#uses, #projects {
   @include device('desktop') {
     padding-left: 2em;
   }

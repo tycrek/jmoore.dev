@@ -1,0 +1,21 @@
+extends ../../_main
+block title
+	title Projects
+block content
+	h2 <i class="fas fa-code"></i> Projects
+	.row#projects
+		.col-6.projects#degoogle: include:markdown-it(html) md/p-degoogle.md
+		.col-6.projects#asciiquarium: include:markdown-it(html) md/p-asciiquarium.md
+		//-.col-6.projects#mcserverman: include:markdown-it(html) md/p-mcserverman.md
+		//-.col-6.projects#garage-py: include:markdown-it(html) md/p-garagy-py.md
+		//-.col-6.projects#call-flooder: include:markdown-it(html) md/p-call-flooder.md
+
+
+//- Checklist:
+	1. Properly extends _main?
+	2. Page has a Title?
+	3. Page has a manifest (if required)?
+	4. Page has content (leave blank for coming soon)?
+	5. Page has scripts/styles if needed?
+	6. Page has relevant Sass?
+	7. Page is working both mobile & desktop?
