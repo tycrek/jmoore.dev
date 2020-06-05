@@ -30,7 +30,7 @@
     "fs-extra": "^8.1.0",
     "helmet": "^3.21.2",
     "jstransformer-markdown-it": "^2.1.0",
-    "minimist": "^1.2.2",
+    "minimist": "^1.2.3",
     "node-sass": "^4.13.1",
     "pino": "^5.16.0",
     "pino-pretty": "^3.5.0",
