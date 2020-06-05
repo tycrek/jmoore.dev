@@ -40,7 +40,6 @@ router.get('*', (req, res, next) => {
 			if (typeof (exists) !== 'boolean') return exists;
 			if (!exists) throw Error(`Pug path for '${page}' does not exist`);
 			else {
-				console.log(page);
 				page += '/index';
 				return getData(page);
 			};
