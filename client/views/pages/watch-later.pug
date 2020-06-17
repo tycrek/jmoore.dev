@@ -1,0 +1,20 @@
+extends ../_main
+block title
+	title Watch Later for YouTube
+block manifest
+	link(rel='manifest' href='/watch-later.manifest.json')
+block content
+	h2 <i class="fab fa-youtube-square"></i> Watch Later
+	p Coming soon y'know?!
+block append scripts
+	script(src='/bus.js' type="text/javascript")
+
+
+//- Checklist:
+	1. Properly extends _main?
+	2. Page has a Title?
+	3. Page has a manifest (if required)?
+	4. Page has content (leave blank for coming soon)?
+	5. Page has scripts/styles if needed?
+	6. Page has relevant Sass?
+	7. Page is working both mobile & desktop?

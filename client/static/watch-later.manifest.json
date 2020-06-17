@@ -1,0 +1,20 @@
+{
+	"short_name": "Watch Later",
+	"name": "Watch Later for YouTube - jmoore.dev",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "/images/icons/watch-later/icon-16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/images/icons/watch-later/icon-80.png",
+			"sizes": "80x80",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/watch-later/",
+	"background_color": "#F44336",
+	"theme_color": "#F44336"
+}
