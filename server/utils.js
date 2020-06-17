@@ -61,8 +61,8 @@ function getData(page) {
 	return new Promise((resolve, reject) => {
 		let filepath = joinPath(page ? `../data/${page}.json` : '../data/main.json');
 		fs.pathExists(filepath)
-			.then(exists => exists ? fs.readJson(filepath) : resolve())
-			.then(json => resolve(json))
-			.catch(err => reject(err));
+			.then((exists) => exists ? fs.readJson(filepath) : resolve())
+			.then((json) => resolve(json))
+			.catch((err) => reject(err));
 	});
 }

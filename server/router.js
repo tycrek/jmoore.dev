@@ -16,10 +16,10 @@ router.get('/css', (_req, res, next) => {
 // Compress all JavaScript files using Uglify-ES
 router.get('*.js', (req, res, next) => {
 	fs.readFile(path(`../client/javascript${req.url}`))
-		.then(bytes => bytes.toString())
-		.then(javascript => minify({ compressor: uglify, content: javascript }))
-		.then(minified => res.type('js').send(minified))
-		.catch(err => next(err));
+		.then((bytes) => bytes.toString())
+		.then((javascript) => minify({ compressor: uglify, content: javascript }))
+		.then((minified) => res.type('js').send(minified))
+		.catch((err) => next(err));
 });
 
 // All other routes
@@ -28,15 +28,15 @@ router.get('*', (req, res, next) => {
 	if (url !== '/' && !url.endsWith('/')) return res.redirect(301, `${url}/`);
 
 	getData()
-		.then(data => mainData = data)
+		.then((data) => mainData = data)
 		.then(() => page = url === '/' ? 'index' : url.substring(1, url.length - 1))
 		.then(() => fs.pathExists(path(`../client/views/pages/${page}.pug`)))
-		.then(exists => {
+		.then((exists) => {
 			if (!exists) throw Error(`Pug path for '${page}' does not exist`);
 			else return getData(page);
 		})
-		.catch(_err => fs.pathExists(path(`../client/views/pages/${page}/index.pug`)))
-		.then(exists => {
+		.catch((_err) => fs.pathExists(path(`../client/views/pages/${page}/index.pug`)))
+		.then((exists) => {
 			if (typeof (exists) !== 'boolean') return exists;
 			if (!exists) throw Error(`Pug path for '${page}' does not exist`);
 			else {
@@ -44,30 +44,30 @@ router.get('*', (req, res, next) => {
 				return getData(page);
 			};
 		})
-		.then(pageData => ({
+		.then((pageData) => ({
 			headTitle: headData(pageData, 'title'),
 			headDescription: headData(pageData, 'description'),
 			main: mainData,
 			data: pageData
 		}))
-		.then(data => res.render(page, data))
-		.catch(_err => next());
+		.then((data) => res.render(page, data))
+		.catch((_err) => next());
 
 	function headData(data, meta) {
 		return data && data[meta] ? data[meta] : mainData[`${meta}s`][page];
 	}
 });
 
-router.post('/upload', (req, res, next) => {
+router.post('/upload', (req, res, _next) => {
 	if (!req.files || Object.keys(req.files).length === 0) return res.status(400).send('No files were uploaded');
 
 	let file = req.files.file;
 	let savePath = path(`../client/uploads/${file.name}`);
 	fs.pathExists(savePath)
-		.then(exists => { if (exists) throw Error('File with same name already exists.'); })
+		.then((exists) => { if (exists) throw Error('File with same name already exists.'); })
 		.then(() => file.mv(savePath))
 		.then(() => res.send(`Uploaded to: <a href="/files/${file.name}" download>https://jmoore.dev/files/${file.name}</a>`))
-		.catch(err => res.type('html').send(err.message));
+		.catch((err) => res.type('html').send(err.message));
 });
 
 router.get('/donate', (_req, res, _next) => {
