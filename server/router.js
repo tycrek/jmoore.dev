@@ -70,7 +70,7 @@ router.post('/upload', (req, res, next) => {
 		.catch(err => res.type('html').send(err.message));
 });
 
-router.get('/donate', (req, res, next) => {
+router.get('/donate', (_req, res, _next) => {
 	res.redirect(301, 'https://paypal.me/jmoore235');
 });
 
