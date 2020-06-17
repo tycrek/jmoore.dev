@@ -74,6 +74,14 @@ router.get('/donate', (_req, res, _next) => {
 	res.redirect(301, 'https://paypal.me/jmoore235');
 });
 
+router.get('/watch-later/add/:uri', (req, res, _next) => {
+	let file = path('../data/watch-later.json');
+	fs.readJson(file)
+		.then((json) => fs.writeJson(file, (json.urls.push(decodeURIComponent(req.params.uri)), json), { spaces: '\t' }))
+		.then(() => res.type('json').send({ success: true }))
+		.catch((err) => res.type('json').send({ success: false, msg: err.toString() }));
+});
+
 // HTTP 404
 router.use((_req, res) => res.status(404).send(http._404));
 

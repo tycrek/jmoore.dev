@@ -94,7 +94,7 @@ img#banner {
   }
 }
 
-#uses, #projects {
+#uses, #projects, #watch-later {
   @include device('desktop') {
     padding-left: 2em;
   }
