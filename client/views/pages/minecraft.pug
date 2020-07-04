@@ -3,7 +3,13 @@ block title
 	title Minecraft
 block content
 	h2 <i class="fas fa-swords"></i> Minecraft
-	center: video(controls src='/MinecraftTrailerReborn.mp4' style='width: 90%;')
+	.col-12
+		h3 Texture pack
+		p I didn't like the default look of obsidian and netherrack when playing on 2b2t.org, so I made a tiny resource pack to make their textures a bit easier on the eyes. The pack contains images for both obsidian and netherrack. It should work with any Minecraft version.
+		p: a(href='/tycreks_obby.zip' download) Click here to download
+	.col-12
+		h3 Trailer
+		center: video(controls src='/MinecraftTrailerReborn.mp4' style='width: 90%;')
 block append scripts
 	//- Links to any extra external or inline scripts/stylesheets.
 		Can use either block to replace all defaults (not recommended!)
