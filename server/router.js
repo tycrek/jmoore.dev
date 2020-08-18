@@ -4,7 +4,10 @@ const Sass = require('node-sass');
 const minify = require('@node-minify/core');
 const uglify = require('@node-minify/uglify-es');
 const router = require('express').Router();
+
 module.exports = router;
+
+router.use(require('express-fileupload')());
 
 // Compile and compress Sass
 router.get('/css', (_req, res, next) => {
