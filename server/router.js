@@ -70,20 +70,19 @@ router.post('/upload', (req, res, _next) => {
 		.catch((err) => res.type('html').send(err.message));
 });
 
-router.get('/donate', (_req, res, _next) => {
-	res.redirect(301, 'https://paypal.me/jmoore235');
-});
-
-router.get('/blm', (_req, res, _next) => {
-	res.redirect(301, 'https://blacklivesmatter-canada.carrd.co/');
-});
-
 router.get('/watch-later/add/:uri', (req, res, _next) => {
 	let file = path('../data/watch-later.json');
 	fs.readJson(file)
 		.then((json) => fs.writeJson(file, (json.urls.push(decodeURIComponent(req.params.uri)), json), { spaces: '\t' }))
 		.then(() => res.type('json').send({ success: true }))
 		.catch((err) => res.type('json').send({ success: false, msg: err.toString() }));
+});
+
+// Redirects
+fs.readJsonSync(path('../data/redirects.json')).forEach((redirect) => {
+	router.get(`/${redirect.path}`, (_req, res, _next) => {
+		res.redirect(301, redirect.url);
+	});
 });
 
 // HTTP 404
