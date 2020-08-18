@@ -10,6 +10,7 @@ module.exports = {
 		port: 8235,
 		icon: joinPath('../client/static/favicon.ico'),
 		static: joinPath('../client/static'),
+		uploads: joinPath('../client/uploads'),
 		images: joinPath('../client/images'),
 		fonts: joinPath('../client/static/fonts'),
 		views: joinPath('../client/views/pages'),
