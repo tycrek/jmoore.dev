@@ -6,6 +6,9 @@ const app = express();
 // Only allow paths ending in trailing slash (/) (except for direct file paths)
 app.enable('strict routing');
 
+// Allow cases in paths (used for uploads/static files with capitalization)
+app.enable('case sensitive routing');
+
 /*  Compress any eligible traffic;
     security enhancements;
     logging for Express functions;
@@ -31,6 +34,7 @@ app.use((_req, res, next) => {
 app.use(express.static(CONFIG.static));
 app.use('/fonts', express.static(CONFIG.fonts));
 app.use('/images', express.static(CONFIG.images));
+app.use('/files', express.static(CONFIG.uploads));
 
 // Route handler
 app.use(require('./router'));
