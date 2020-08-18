@@ -74,6 +74,10 @@ router.get('/donate', (_req, res, _next) => {
 	res.redirect(301, 'https://paypal.me/jmoore235');
 });
 
+router.get('/blm', (_req, res, _next) => {
+	res.redirect(301, 'https://blacklivesmatter-canada.carrd.co/');
+});
+
 router.get('/watch-later/add/:uri', (req, res, _next) => {
 	let file = path('../data/watch-later.json');
 	fs.readJson(file)
