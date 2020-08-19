@@ -10,5 +10,9 @@
 	{
 		"path": "code",
 		"url": "https://github.com/tycrek/jmoore.dev"
+	},
+	{
+		"path": "archive",
+		"url": "https://github.com/tycrek-archive"
 	}
 ]
