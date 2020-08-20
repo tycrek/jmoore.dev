@@ -1,4 +1,4 @@
-### Degoogle
+### Degoogle <a href="https://github.com/tycrek/degoogle" target='_blank'><i class="fab fa-github" id="icon"></i></a>
 
 The [Degoogle](https://github.com/tycrek/degoogle) project started in **Mid 2018** and is ongoing to this day. What originally started out as a [request for a megathread](https://web.archive.org/web/20190910044130/https://old.reddit.com/r/privacy/comments/8l3vjy/can_we_get_a_megathread_on_breaking_away_from/) turned into an actual megathread (link no longer available), eventually making it's way to the [r/privacy wiki](https://old.reddit.com/r/privacy/wiki/de-google). A year after the first thread, I made a [new thread for 2019](https://web.archive.org/web/20190727004453/https://old.reddit.com/r/privacy/comments/byzq4w/megathread_cutting_google_out_of_your_life_2019/). This one had a bunch of new rules on what could be added as an alternative. The project is now maintained through [GitHub](https://github.com/tycrek/degoogle) but the Reddit wiki still acts as a mirror.
 

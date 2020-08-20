@@ -1,4 +1,4 @@
-### Asciiquarium
+### Asciiquarium <a href="https://twitch.tv/asciiquarium" target="_blank"><i class="fab fa-twitch" id="icon"></i></a>
 
 **[Click here to watch the live stream!](https://www.twitch.tv/asciiquarium)**
 
