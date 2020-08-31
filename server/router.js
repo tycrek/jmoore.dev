@@ -5,6 +5,8 @@ const minify = require('@node-minify/core');
 const uglify = require('@node-minify/uglify-es');
 const router = require('express').Router();
 
+var TEMP_DOWNLOADS = {};
+
 module.exports = router;
 
 router.use(require('express-fileupload')());
@@ -79,6 +81,18 @@ router.get('/watch-later/add/:uri', (req, res, _next) => {
 		.then((json) => fs.writeJson(file, (json.urls.push(decodeURIComponent(req.params.uri)), json), { spaces: '\t' }))
 		.then(() => res.type('json').send({ success: true }))
 		.catch((err) => res.type('json').send({ success: false, msg: err.toString() }));
+});
+
+router.get('/totem/:username', (req, res, next) => {
+	let username = req.params.username;
+	//TODO: this shit
+});
+
+router.get('/download/:did', (req, res, _next) => {
+	res.download(TEMP_DOWNLOADS[req.params.did], (err) => {
+		err != null && log.warn(err);
+		if (res.headersSent) fs.remove(TEMP_DOWNLOADS[req.params.did]);
+	});
 });
 
 // Redirects

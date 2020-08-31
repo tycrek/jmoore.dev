@@ -1,0 +1,48 @@
+extends ../_main
+block title
+	title Custom Minecraft Totem
+block content
+	h2 Custom Minecraft Totem
+	text Username:&nbsp;
+	input(id='username')
+	button(onclick='download();') Download
+
+block append scripts
+	//- Links to any extra external or inline scripts/stylesheets.
+		Can use either block to replace all defaults (not recommended!)
+		Or can use append to add on to existing defaults (recommended).
+	script.
+		function download() {
+			let nameElm = $('#username');
+			if (nameElm.length == 0 || nameElm == '') {
+				alert('Enter a username');
+			} else {
+				fetch(`/totem/${nameElm.value()}`)
+				.then((res) => res.json())
+				.then((json) => {
+					if (!json.success) throw Error('Failed');
+					else window.open(`/download/${json.message}`).focus();
+				})
+				.catch((err) => alert(err));
+			}
+		}
+
+//- Checklist:
+	1. Properly extends _main?
+	2. Page has a Title?
+	3. Page has a manifest (if required)?
+	4. Page has content (leave blank for coming soon)?
+	5. Page has scripts/styles if needed?
+	6. Page has relevant Sass?
+	7. Page is working both mobile & desktop?
+
+//-
+	const Jimp = require('jimp');
+
+	Jimp.read('https://minotar.net/armor/body/tycrek/64.png')
+		.then(image => {
+			image.contain(64, 64, Jimp.HORIZONTAL_ALIGN_CENTER, Jimp.RESIZE_NEAREST_NEIGHBOR);
+			return image.writeAsync(require('path').join(__dirname, 'tycrek.png'));
+		})
+		.then(() => console.log('Done'))
+		.catch(err => console.error(err));
