@@ -17,7 +17,7 @@ block append scripts
 			if (nameElm.length == 0 || nameElm == '') {
 				alert('Enter a username');
 			} else {
-				fetch(`/totem/${nameElm.value()}`)
+				fetch(`/totem/${nameElm.val()}`)
 				.then((res) => res.json())
 				.then((json) => {
 					if (!json.success) throw Error('Failed');
@@ -35,14 +35,3 @@ block append scripts
 	5. Page has scripts/styles if needed?
 	6. Page has relevant Sass?
 	7. Page is working both mobile & desktop?
-
-//-
-	const Jimp = require('jimp');
-
-	Jimp.read('https://minotar.net/armor/body/tycrek/64.png')
-		.then(image => {
-			image.contain(64, 64, Jimp.HORIZONTAL_ALIGN_CENTER, Jimp.RESIZE_NEAREST_NEIGHBOR);
-			return image.writeAsync(require('path').join(__dirname, 'tycrek.png'));
-		})
-		.then(() => console.log('Done'))
-		.catch(err => console.error(err));

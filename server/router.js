@@ -3,6 +3,9 @@ const fs = require('fs-extra');
 const Sass = require('node-sass');
 const minify = require('@node-minify/core');
 const uglify = require('@node-minify/uglify-es');
+const AdmZip = require('adm-zip');
+const uuid = require('uuid').v4;
+const Jimp = require('jimp');
 const router = require('express').Router();
 
 var TEMP_DOWNLOADS = {};
@@ -85,8 +88,58 @@ router.get('/watch-later/add/:uri', (req, res, _next) => {
 
 router.get('/totem/:username', (req, res, next) => {
 	let username = req.params.username;
-	//TODO: this shit
+	let mcmeta = {
+		pack: {
+			'pack_format': 3, // * Pack format 3 is for Minecraft 1.11 – 1.12.2
+			'description': `\u00a76\u00a7l\u00a7n${username}\u00a76 \u00a76\u00a7l\u00a7nTotem\u00a7r\n\u00a77\u25b6\u00a78\u00a7o jmoore.dev\/custom-totem`
+		}
+	};
+
+	let zip = new AdmZip();
+	let did = uuid().split('-')[0];
+	let base = `../client/downloads/${username}-totem`;
+
+	let basePath = path(base);
+	let archivePath = path(`${base}.zip`);
+	let mcmetaPath = path(`${base}/pack.mcmeta`);
+	let pngPath = path(`${base}/pack.png`);
+	let totemPath = path(`${base}/assets/minecraft/textures/items/totem.png`);
+
+	fs.mkdir(basePath)
+		.then(() => new Promise((resolve, reject) => {
+			Jimp.read(`https://minotar.net/helm/${username}/128.png`)
+				.then((image) => image.writeAsync(pngPath))
+				.then(() => resolve())
+				.catch((err) => reject(err));
+		}))
+		.then(() => new Promise((resolve, reject) => {
+			Jimp.read(`https://minotar.net/armor/body/${username}/64.png`)
+				.then((image) => {
+					image.contain(64, 64, Jimp.HORIZONTAL_ALIGN_CENTER, Jimp.RESIZE_NEAREST_NEIGHBOR);
+					return image.writeAsync(totemPath);
+				})
+				.then(() => resolve())
+				.catch((err) => reject(err));
+		}))
+		.then(() => fs.writeJson(mcmetaPath, mcmeta))
+		.then(() => zip.addLocalFolder(basePath))
+		.then(() => zip.writeZip(archivePath))
+		.then(() => TEMP_DOWNLOADS[did] = archivePath)
+		.then(() => res.type('json').send({ success: true, message: did }))
+		.then(() => fs.remove(basePath))
+		.catch((err) => {
+			log.error(err);
+			res.type('json').send({ success: false, message: err })
+		});
 });
+//Jimp.read('https://minotar.net/armor/body/tycrek/64.png')
+/*  .then(image => {
+					image.contain(64, 64, Jimp.HORIZONTAL_ALIGN_CENTER, Jimp.RESIZE_NEAREST_NEIGHBOR);
+					return image.writeAsync(require('path').join(__dirname, 'tycrek.png'));
+				})
+				.then(() => console.log('Done'))
+				.catch(err => console.error(err));
+				*/
 
 router.get('/download/:did', (req, res, _next) => {
 	res.download(TEMP_DOWNLOADS[req.params.did], (err) => {
@@ -97,7 +150,7 @@ router.get('/download/:did', (req, res, _next) => {
 
 // Redirects
 fs.readJsonSync(path('../data/redirects.json')).forEach((redirect) => {
-	router.get(`/${redirect.path}`, (_req, res, _next) => {
+	router.get(`/ ${redirect.path}`, (_req, res, _next) => {
 		res.redirect(301, redirect.url);
 	});
 });
