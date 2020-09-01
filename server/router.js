@@ -129,7 +129,7 @@ router.get('/totem/:username', (req, res, _next) => {
 		.then(() => fs.remove(basePath))
 		.catch((err) => {
 			log.error(err);
-			res.type('json').send({ success: false, message: err })
+			res.type('json').send({ success: false, message: err });
 		});
 });
 
