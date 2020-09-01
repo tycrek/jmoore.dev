@@ -86,7 +86,7 @@ router.get('/watch-later/add/:uri', (req, res, _next) => {
 		.catch((err) => res.type('json').send({ success: false, msg: err.toString() }));
 });
 
-router.get('/totem/:username', (req, res, next) => {
+router.get('/totem/:username', (req, res, _next) => {
 	let username = req.params.username;
 	let mcmeta = {
 		pack: {
@@ -142,7 +142,7 @@ router.get('/download/:did', (req, res, _next) => {
 
 // Redirects
 fs.readJsonSync(path('../data/redirects.json')).forEach((redirect) => {
-	router.get(`/ ${redirect.path}`, (_req, res, _next) => {
+	router.get(`/${redirect.path}`, (_req, res, _next) => {
 		res.redirect(301, redirect.url);
 	});
 });
