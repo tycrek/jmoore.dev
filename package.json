@@ -33,7 +33,7 @@
     "jimp": "^0.16.1",
     "jstransformer-markdown-it": "^2.1.0",
     "minimist": "^1.2.3",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "pino": "^5.16.0",
     "pino-pretty": "^3.5.0",
     "pug": "^2.0.4",
