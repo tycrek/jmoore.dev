@@ -106,21 +106,21 @@ router.get('/totem/:username', (req, res, next) => {
 	let totemPath = path(`${base}/assets/minecraft/textures/items/totem.png`);
 
 	fs.mkdir(basePath)
-		.then(() => new Promise((resolve, reject) => {
+		.then(() => new Promise((resolve, reject) =>
 			Jimp.read(`https://minotar.net/helm/${username}/128.png`)
 				.then((image) => image.writeAsync(pngPath))
 				.then(() => resolve())
-				.catch((err) => reject(err));
-		}))
-		.then(() => new Promise((resolve, reject) => {
+				.catch((err) => reject(err))
+		))
+		.then(() => new Promise((resolve, reject) =>
 			Jimp.read(`https://minotar.net/armor/body/${username}/64.png`)
 				.then((image) => {
 					image.contain(64, 64, Jimp.HORIZONTAL_ALIGN_CENTER, Jimp.RESIZE_NEAREST_NEIGHBOR);
 					return image.writeAsync(totemPath);
 				})
 				.then(() => resolve())
-				.catch((err) => reject(err));
-		}))
+				.catch((err) => reject(err))
+		))
 		.then(() => fs.writeJson(mcmetaPath, mcmeta))
 		.then(() => zip.addLocalFolder(basePath))
 		.then(() => zip.writeZip(archivePath))
@@ -132,14 +132,6 @@ router.get('/totem/:username', (req, res, next) => {
 			res.type('json').send({ success: false, message: err })
 		});
 });
-//Jimp.read('https://minotar.net/armor/body/tycrek/64.png')
-/*  .then(image => {
-					image.contain(64, 64, Jimp.HORIZONTAL_ALIGN_CENTER, Jimp.RESIZE_NEAREST_NEIGHBOR);
-					return image.writeAsync(require('path').join(__dirname, 'tycrek.png'));
-				})
-				.then(() => console.log('Done'))
-				.catch(err => console.error(err));
-				*/
 
 router.get('/download/:did', (req, res, _next) => {
 	res.download(TEMP_DOWNLOADS[req.params.did], (err) => {

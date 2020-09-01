@@ -3,8 +3,11 @@ block title
 	title Custom Minecraft Totem
 block content
 	h2 Custom Minecraft Totem
+	p This tool will create a custom Totem of Undying texture for Minecraft 1.12.2 based on the skin of your username. Eventually I may add support for other versions.
+	p To use this tool, just enter your Minecraft username, click Download, and save it to #[code .minecraft/resourcepacks]. In game, place it at the top of your resource pack list (it is compatible with all other resource packs).
 	text Username:&nbsp;
 	input(id='username')
+	text &nbsp;
 	button(onclick='download();') Download
 
 block append scripts
@@ -18,12 +21,12 @@ block append scripts
 				alert('Enter a username');
 			} else {
 				fetch(`/totem/${nameElm.val()}`)
-				.then((res) => res.json())
-				.then((json) => {
-					if (!json.success) throw Error('Failed');
-					else window.open(`/download/${json.message}`).focus();
-				})
-				.catch((err) => alert(err));
+					.then((res) => res.json())
+					.then((json) => {
+						if (!json.success) throw Error('Failed');
+						else window.open(`/download/${json.message}`).focus();
+					})
+					.catch((err) => alert(err));
 			}
 		}
 
