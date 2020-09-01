@@ -1,6 +1,8 @@
 extends ../_main
 block title
 	title Page Title
+block description
+	meta(name='description', content='Personal website of Josh Moore')
 block manifest
 	link(rel='manifest' href='/link-to-manifest.json')
 block content
@@ -14,7 +16,7 @@ block append scripts
 
 //- Checklist:
 	1. Properly extends _main?
-	2. Page has a Title?
+	2. Page has a Title and Description?
 	3. Page has a manifest (if required)?
 	4. Page has content (leave blank for coming soon)?
 	5. Page has scripts/styles if needed?
