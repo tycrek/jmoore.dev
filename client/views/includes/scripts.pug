@@ -25,26 +25,12 @@ script.
 		$('#menu').slideToggle('fast');
 	});
 
-	$('#social-github').click((e) => {
-		console.log('clicked github');
-		umami.trackEvent('github', 'social-click');
-		//umami('github');
-	});
-	$('#social-email').click((e) => {
-		console.log('clicked email');
-		umami.trackEvent('email', 'social-click');
-		//umami('email');
-	});
-	$('#social-dev-to').click((e) => {
-		console.log('clicked dev-to');
-		umami.trackEvent('dev-to', 'social-click');
-		//umami('dev-to');
-	});
-	$('#social-twitter').click((e) => {
-		console.log('clicked twitter');
-		umami.trackEvent('twitter', 'social-click');
-		//umami('twitter');
-	});
+	$('#social-github').click((e) => umami.trackEvent('github', 'social-click'));
+	$('#social-email').click((e) => umami.trackEvent('email', 'social-click'));
+	$('#social-dev-to').click((e) => umami.trackEvent('dev-to', 'social-click'));
+	$('#social-twitter').click((e) => umami.trackEvent('twitter', 'social-click'));
+
+	$('.strong-link').click((e) => umami.trackEvent(e.target.textContent.trim(), 'strong-link-click'));
 
 //- You can figure this one out ;)
 script.
