@@ -55,6 +55,7 @@ router.get('*', (req, res, next) => {
 		.then((pageData) => ({
 			headTitle: headData(pageData, 'title'),
 			headDescription: headData(pageData, 'description'),
+			isProd: process.env.NODE_ENV === 'production',
 			main: mainData,
 			data: pageData
 		}))
