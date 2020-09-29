@@ -30,7 +30,7 @@ script.
 	$('#social-dev-to').click((e) => umami.trackEvent('dev-to', 'social-click'));
 	$('#social-twitter').click((e) => umami.trackEvent('twitter', 'social-click'));
 
-	$('.strong-link').click((e) => umami.trackEvent(e.target.textContent.trim(), 'strong-link-click'));
+	$('a').click((e) => umami.trackEvent(e.target.textContent.trim(), 'link-click'));
 
 //- You can figure this one out ;)
 script.
