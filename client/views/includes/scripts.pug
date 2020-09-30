@@ -21,16 +21,16 @@ script(src='https://cdn.rawgit.com/adriancooney/console.image/c9e6d4fd/console.i
 
 //- The menu button for mobile
 script.
-	$('#mobile-menu').click((e) => {
-		$('#menu').slideToggle('fast');
-	});
+	$('#mobile-menu').click((e) => $('#menu').slideToggle('fast'));
 
+	// This needs to be here because sidebar.pug can't run jQuery
 	$('#social-github').click((e) => umami.trackEvent('github', 'social-click'));
 	$('#social-email').click((e) => umami.trackEvent('email', 'social-click'));
 	$('#social-dev-to').click((e) => umami.trackEvent('dev-to', 'social-click'));
 	$('#social-twitter').click((e) => umami.trackEvent('twitter', 'social-click'));
 
-	$('a').click((e) => umami.trackEvent(e.target.textContent.trim(), 'link-click'));
+	//- Doesn't work
+	//-$('a').click((e) => umami.trackEvent(e.target.textContent.trim(), 'link-click'));
 
 //- You can figure this one out ;)
 script.
