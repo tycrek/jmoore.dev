@@ -1,0 +1,5 @@
+- [Dune by Frank Herbert](https://www.amazon.ca/Dune-Frank-Herbert/dp/0441172717/147-2876979-5101837?psc=1)
+- [L. L. Bean Men's Flannel-Lined Hurricane Shirt (Regular, Medium or Large, Coal)](https://www.llbean.ca/shop/Mens-Flannel-Lined-Hurricane-Shirt/90119.html?CORECRD=true&attrValue_0=Coal)
+- [UPS (backup battery)](https://www.amazon.ca/CyberPower-ST425-Standby-Outlets-Compact/dp/B07SKX78PV) (either CyberPower or APC, at least 650VA)
+- Poster frames (18.0" x 24.0") (at least 5 for posters I already have)
+- [space travel posters](https://www.uncommongoods.com/product/interstellar-travel-posters)

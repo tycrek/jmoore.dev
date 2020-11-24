@@ -1,0 +1,17 @@
+extends ../../_main
+block title
+	title Xmas list 2020
+block description
+	meta(name='description', content='a list')
+block content
+	h2 Xmas gift list 2020
+	include:markdown-it(html) gifts.md
+
+//- Checklist:
+	1. Properly extends _main?
+	2. Page has a Title and Description?
+	3. Page has a manifest (if required)?
+	4. Page has content (leave blank for coming soon)?
+	5. Page has scripts/styles if needed?
+	6. Page has relevant Sass?
+	7. Page is working both mobile & desktop?
