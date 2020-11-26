@@ -3,3 +3,4 @@
 - [UPS (backup battery)](https://www.amazon.ca/CyberPower-ST425-Standby-Outlets-Compact/dp/B07SKX78PV) (either CyberPower or APC, at least 650VA)
 - Poster frames (18.0" x 24.0") (at least 5 for posters I already have)
 - [space travel posters](https://www.uncommongoods.com/product/interstellar-travel-posters)
+- [Elgato Stream Deck](https://www.elgato.com/en/gaming/stream-deck)
