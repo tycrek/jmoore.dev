@@ -22,7 +22,7 @@ chown -R nodejs:nodejs .\
 
 echo
 echo 'Restarting systemd service...'
-systemctl restart node-jmoore.dev.service nginx.service varnish.service\
+systemctl restart node-jmoore.dev.service caddy.service varnish.service\
 && echo 'Done'\
 || echo 'Failed'
 
